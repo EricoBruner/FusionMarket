@@ -4,5 +4,7 @@ public class FusionMarket
     {
         String nome;
         
+        double numero;
+        
     }
 }
