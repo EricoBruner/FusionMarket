@@ -5,6 +5,6 @@ public class FusionMarket
         String nome;
         
         double numero;
-        
+        String nomecacau;
     }
 }
