@@ -1,4 +1,4 @@
-package arquiteturamvc.DAO;
+package DAO;
 
 public class Configuracao extends Object {
 
