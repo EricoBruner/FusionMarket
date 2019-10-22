@@ -7,6 +7,5 @@ public class FusionMarket
         double numero;
         String nomecacau;
         String hugo;
-        hugo hugo;
     }
 }
