@@ -1,4 +1,4 @@
-package arquiteturamvc.DAO;
+package Playroom.DAO;
 
 public class Configuracao extends Object {
 

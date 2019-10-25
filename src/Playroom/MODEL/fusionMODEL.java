@@ -1,4 +1,4 @@
-package FusionMarket.MODEL;
+package Playroom.MODEL;
 
 public class fusionMODEL 
 {
