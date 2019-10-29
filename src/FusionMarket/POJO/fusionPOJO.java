@@ -1,4 +1,4 @@
-package Playroom.POJO;
+package FusionMarket.POJO;
 
 public class fusionPOJO 
 {
