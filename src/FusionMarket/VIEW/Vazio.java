@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Playroom.VIEW;
+package FusionMarket.VIEW;
 
 import javax.swing.JOptionPane;
 
@@ -50,7 +50,7 @@ public class Vazio extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Playroom/IMAGENS/Tela1.png"))); // NOI18N
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(-130, 150, 1368, 796);
+        jLabel3.setBounds(-130, 150, 0, 0);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

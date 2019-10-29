@@ -5,6 +5,8 @@
  */
 package Playroom.VIEW;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author metag
@@ -43,6 +45,11 @@ public class Login_VIEW extends javax.swing.JFrame {
 
         LLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Playroom/IMAGENS/icons8_login_rounded_right_50px.png"))); // NOI18N
         LLogin.setText("Login");
+        LLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LLoginMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -77,6 +84,11 @@ public class Login_VIEW extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void LLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LLoginMouseClicked
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null,"DO CARALHO");
+    }//GEN-LAST:event_LLoginMouseClicked
 
     /**
      * @param args the command line arguments
