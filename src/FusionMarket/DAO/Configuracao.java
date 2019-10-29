@@ -1,4 +1,4 @@
-package Playroom.DAO;
+package FusionMarket.DAO;
 
 public class Configuracao extends Object {
 
