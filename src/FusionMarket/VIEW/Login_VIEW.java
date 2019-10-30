@@ -31,11 +31,11 @@ public class Login_VIEW extends javax.swing.JFrame {
 
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         LFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(null);
         setSize(new java.awt.Dimension(300, 425));
         getContentPane().setLayout(null);
 
@@ -55,6 +55,15 @@ public class Login_VIEW extends javax.swing.JFrame {
         getContentPane().add(jTextField2);
         jTextField2.setBounds(40, 210, 270, 30);
 
+        jButton1.setText("X");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(280, 13, 40, 20);
+
         LFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/loginTELA.png"))); // NOI18N
         getContentPane().add(LFundo);
         LFundo.setBounds(0, 0, 330, 430);
@@ -69,6 +78,12 @@ public class Login_VIEW extends javax.swing.JFrame {
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Login_VIEW telaLogin = new Login_VIEW();
+        telaLogin.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -107,6 +122,7 @@ public class Login_VIEW extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LFundo;
+    private javax.swing.JButton jButton1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
