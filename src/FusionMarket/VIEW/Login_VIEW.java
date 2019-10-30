@@ -81,8 +81,7 @@ public class Login_VIEW extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Login_VIEW telaLogin = new Login_VIEW();
-        telaLogin.setVisible(false);
+        System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
