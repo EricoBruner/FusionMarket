@@ -7,13 +7,10 @@ public class Starting
 {
     public static void main(String[] args) 
     {
-        Vazio variavel  = new Vazio(); // Coloque aqui a tela principal que vai iniciar
-        variavel.setVisible(true);
+        telaPrincipal telaprincipal  = new telaPrincipal(); // Coloque aqui a tela principal que vai iniciar
+        telaprincipal.setVisible(true);
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension dimension = toolkit.getScreenSize();
-        variavel.setSize((int)dimension.getWidth(), (int)dimension.getHeight());  
-        Vazio internal = new Vazio(); // Coloque aqui o primeiro internal
-        nomedaaredetrabalho.add(internal);
-        internal.setVisible(true);
+        telaprincipal.setSize((int)dimension.getWidth(), (int)dimension.getHeight());  
     }
 }
