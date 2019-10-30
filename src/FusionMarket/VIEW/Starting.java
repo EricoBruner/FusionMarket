@@ -7,7 +7,7 @@ public class Starting
 {
     public static void main(String[] args) 
     {
-        telaPrincipal telaprincipal  = new telaPrincipal(); // Coloque aqui a tela principal que vai iniciar
+        telaPrincipal telaprincipal  = new telaPrincipal();
         telaprincipal.setVisible(true);
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension dimension = toolkit.getScreenSize();
