@@ -50,7 +50,7 @@ public class Vazio extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Playroom/IMAGENS/Tela1.png"))); // NOI18N
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(-130, 150, 0, 0);
+        jLabel3.setBounds(190, 200, 1368, 796);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
