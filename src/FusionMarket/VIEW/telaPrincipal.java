@@ -30,7 +30,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         location = new javax.swing.JDesktopPane();
         Exit = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setEnabled(false);
         setResizable(false);
 
