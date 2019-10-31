@@ -1,6 +1,7 @@
 package FusionMarket.VIEW;
 
 import java.awt.Dimension;
+import java.awt.Frame;
 import java.awt.Toolkit;
 
 public class Starting 
@@ -9,8 +10,6 @@ public class Starting
     {
         telaPrincipal telaprincipal  = new telaPrincipal();
         telaprincipal.setVisible(true);
-        Toolkit toolkit = Toolkit.getDefaultToolkit();
-        Dimension dimension = toolkit.getScreenSize();
-        telaprincipal.setSize((int)dimension.getWidth(), (int)dimension.getHeight());  
+        telaprincipal.setExtendedState(Frame.MAXIMIZED_BOTH);
     }
 }
