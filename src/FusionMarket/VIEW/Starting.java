@@ -6,8 +6,8 @@ public class Starting
 {
     public static void main(String[] args) 
     {
-        telaPrincipal telaprincipal  = new telaPrincipal();
-        telaprincipal.setVisible(true);
-        telaprincipal.setExtendedState(Frame.MAXIMIZED_BOTH);
+        TelaPrincipal tela_principal  = new TelaPrincipal();
+        tela_principal.setVisible(true);
+        tela_principal.setExtendedState(Frame.MAXIMIZED_BOTH);
     }
 }
