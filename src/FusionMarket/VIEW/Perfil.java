@@ -9,12 +9,12 @@ package FusionMarket.VIEW;
  *
  * @author cedup
  */
-public class Perfil_VIEW extends javax.swing.JInternalFrame {
+public class Perfil extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form Perfil_VIEW
      */
-    public Perfil_VIEW() {
+    public Perfil() {
         initComponents();
     }
 

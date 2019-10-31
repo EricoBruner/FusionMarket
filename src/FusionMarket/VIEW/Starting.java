@@ -6,7 +6,7 @@ public class Starting
 {
     public static void main(String[] args) 
     {
-        telaPrincipal telaprincipal  = new telaPrincipal();
+        TelaPrincipal telaprincipal  = new TelaPrincipal();
         telaprincipal.setVisible(true);
         telaprincipal.setExtendedState(Frame.MAXIMIZED_BOTH);
     }
