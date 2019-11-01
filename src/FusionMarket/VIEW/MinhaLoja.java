@@ -16,6 +16,7 @@ public class MinhaLoja extends javax.swing.JInternalFrame {
      */
     public MinhaLoja() {
         initComponents();
+        
     }
 
     /**
@@ -27,15 +28,23 @@ public class MinhaLoja extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        setBorder(null);
+        setEnabled(false);
+        setFocusable(false);
+        setMaximumSize(new java.awt.Dimension(950, 550));
+        setMinimumSize(new java.awt.Dimension(950, 550));
+        setName(""); // NOI18N
+        setPreferredSize(new java.awt.Dimension(950, 550));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGap(0, 950, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGap(0, 523, Short.MAX_VALUE)
         );
 
         pack();

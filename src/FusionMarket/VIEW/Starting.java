@@ -9,5 +9,6 @@ public class Starting
         TelaPrincipal tela_principal  = new TelaPrincipal();
         tela_principal.setVisible(true);
         tela_principal.setExtendedState(Frame.MAXIMIZED_BOTH);
+        
     }
 }
