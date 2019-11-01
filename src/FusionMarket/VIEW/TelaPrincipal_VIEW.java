@@ -2,12 +2,10 @@ package FusionMarket.VIEW;
 
 public class TelaPrincipal_VIEW extends javax.swing.JFrame 
 {
-
     public TelaPrincipal_VIEW() 
     {
         initComponents();
-    }
-    
+    }    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -63,7 +61,6 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }
