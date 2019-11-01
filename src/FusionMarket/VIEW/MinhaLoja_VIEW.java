@@ -11,7 +11,8 @@ public class MinhaLoja_VIEW extends javax.swing.JFrame
     private void initComponents() {
 
         B_Voltar = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        B_Adicionar = new javax.swing.JLabel();
+        Paine_Minha_Loja = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(950, 550));
@@ -32,9 +33,18 @@ public class MinhaLoja_VIEW extends javax.swing.JFrame
         getContentPane().add(B_Voltar);
         B_Voltar.setBounds(850, 10, 80, 37);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_Minha_Loja.png"))); // NOI18N
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(0, 0, 1010, 550);
+        B_Adicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Botão_Adicionar.png"))); // NOI18N
+        B_Adicionar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                B_AdicionarMouseClicked(evt);
+            }
+        });
+        getContentPane().add(B_Adicionar);
+        B_Adicionar.setBounds(80, 140, 110, 100);
+
+        Paine_Minha_Loja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_Minha_Loja.png"))); // NOI18N
+        getContentPane().add(Paine_Minha_Loja);
+        Paine_Minha_Loja.setBounds(0, 0, 1010, 550);
 
         pack();
         setLocationRelativeTo(null);
@@ -43,6 +53,12 @@ public class MinhaLoja_VIEW extends javax.swing.JFrame
     private void B_VoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B_VoltarMouseClicked
         this.dispose();
     }//GEN-LAST:event_B_VoltarMouseClicked
+
+    private void B_AdicionarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B_AdicionarMouseClicked
+        AdicionarProduto_VIEW Tela_AdicionarProduto = new AdicionarProduto_VIEW();
+        Tela_AdicionarProduto.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_B_AdicionarMouseClicked
 
     public static void main(String args[]) 
     {
@@ -77,7 +93,8 @@ public class MinhaLoja_VIEW extends javax.swing.JFrame
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel B_Adicionar;
     private javax.swing.JLabel B_Voltar;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel Paine_Minha_Loja;
     // End of variables declaration//GEN-END:variables
 }
