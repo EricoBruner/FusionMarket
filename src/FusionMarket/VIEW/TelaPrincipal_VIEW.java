@@ -10,17 +10,17 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        B_MinhaLoja = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1366, 768));
         setUndecorated(true);
         setResizable(false);
 
-        B_MinhaLoja.setText("     Minha Loja");
-        B_MinhaLoja.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                B_MinhaLojaMouseClicked(evt);
+        jButton1.setText("Minha_Loja");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -30,24 +30,24 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(B_MinhaLoja, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1273, Short.MAX_VALUE))
+                .addComponent(jButton1)
+                .addContainerGap(1269, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(B_MinhaLoja, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(710, Short.MAX_VALUE))
+                .addComponent(jButton1)
+                .addContainerGap(734, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void B_MinhaLojaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B_MinhaLojaMouseClicked
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         new MinhaLoja_VIEW().setVisible(true);
-    }//GEN-LAST:event_B_MinhaLojaMouseClicked
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) 
     {
@@ -82,6 +82,6 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel B_MinhaLoja;
+    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }
