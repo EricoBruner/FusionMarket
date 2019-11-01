@@ -18,7 +18,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         initComponents();
         area.setLayout(null);
         area.setLocation(300, 300);
-        MinhaLoja mloja = new MinhaLoja();
+        MinhaLoja_VIEW mloja = new MinhaLoja_VIEW();
         area.add(mloja);
         mloja.setVisible(true);
         
