@@ -10,6 +10,7 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         TelaPrincipal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -17,6 +18,11 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(null);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Botão_Minha_Loja.png"))); // NOI18N
+        jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(690, 60, 60, 60);
 
         TelaPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_TelaPrincipal.png"))); // NOI18N
         TelaPrincipal.setMaximumSize(new java.awt.Dimension(1366, 768));
@@ -63,5 +69,6 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel TelaPrincipal;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
