@@ -55,7 +55,7 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         MinhaLoja_VIEW Tela_MinhaLoja = new MinhaLoja_VIEW();
         Tela_MinhaLoja.setVisible(true);
-        
+
     }//GEN-LAST:event_jLabel1MouseClicked
 
     public static void main(String args[]) 
