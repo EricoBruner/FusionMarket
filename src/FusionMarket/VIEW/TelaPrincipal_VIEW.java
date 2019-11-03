@@ -12,6 +12,8 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
 
         jLabel2 = new javax.swing.JLabel();
         BotãoLoja = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         TelaPrincipal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,6 +48,20 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         getContentPane().add(BotãoLoja);
         BotãoLoja.setBounds(503, 51, 53, 53);
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Botão_Fechar_2.png"))); // NOI18N
+        jLabel1.setMaximumSize(new java.awt.Dimension(18, 18));
+        jLabel1.setMinimumSize(new java.awt.Dimension(18, 18));
+        jLabel1.setPreferredSize(new java.awt.Dimension(18, 18));
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(1341, 6, 18, 18);
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(1110, 10, 100, 90);
+
         TelaPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_TelaPrincipal.png"))); // NOI18N
         getContentPane().add(TelaPrincipal);
         TelaPrincipal.setBounds(0, -30, 1366, 830);
@@ -58,6 +74,10 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         MinhaLoja_VIEW Tela_MinhaLoja = new MinhaLoja_VIEW();
         Tela_MinhaLoja.setVisible(true);
     }//GEN-LAST:event_BotãoLojaMouseClicked
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     public static void main(String args[]) 
     {
@@ -94,6 +114,8 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BotãoLoja;
     private javax.swing.JLabel TelaPrincipal;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }
