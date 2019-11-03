@@ -15,10 +15,8 @@ public class MinhaLoja_VIEW extends javax.swing.JFrame
         Paine_Minha_Loja = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(950, 550));
         setMinimumSize(new java.awt.Dimension(950, 550));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(950, 550));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -46,8 +44,7 @@ public class MinhaLoja_VIEW extends javax.swing.JFrame
         getContentPane().add(Paine_Minha_Loja);
         Paine_Minha_Loja.setBounds(0, 0, 1010, 550);
 
-        pack();
-        setLocationRelativeTo(null);
+        setBounds(354, 155, 951, 551);
     }// </editor-fold>//GEN-END:initComponents
 
     private void B_VoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B_VoltarMouseClicked
