@@ -39,6 +39,13 @@ public class AdicionarProduto_VIEW extends javax.swing.JFrame {
         });
         getContentPane().add(Publicar);
         Publicar.setBounds(750, 470, 160, 50);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Botão_AdicionarImagem.png"))); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabel1);
         jLabel1.setBounds(750, 150, 160, 160);
 
@@ -56,6 +63,10 @@ public class AdicionarProduto_VIEW extends javax.swing.JFrame {
     private void PublicarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PublicarMouseClicked
         //Colocar codigo para salvar dados no banco de dados
     }//GEN-LAST:event_PublicarMouseClicked
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        // Colocar opção pro usuario colocar imagem
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     public static void main(String args[]) 
     {
