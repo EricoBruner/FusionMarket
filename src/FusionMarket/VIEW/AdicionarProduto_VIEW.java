@@ -14,6 +14,7 @@ public class AdicionarProduto_VIEW extends javax.swing.JFrame {
         Cancelar = new javax.swing.JLabel();
         Publicar = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         PainelAdicionarProduto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,6 +50,15 @@ public class AdicionarProduto_VIEW extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(750, 150, 160, 160);
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Botão_Voltar.png"))); // NOI18N
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(22, 20, 60, 60);
+
         PainelAdicionarProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Paine_AdicionarProduto.png"))); // NOI18N
         getContentPane().add(PainelAdicionarProduto);
         PainelAdicionarProduto.setBounds(0, 0, 950, 550);
@@ -67,6 +77,10 @@ public class AdicionarProduto_VIEW extends javax.swing.JFrame {
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         // Colocar opção pro usuario colocar imagem
     }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        this.dispose();
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     public static void main(String args[]) 
     {
@@ -105,5 +119,6 @@ public class AdicionarProduto_VIEW extends javax.swing.JFrame {
     private javax.swing.JLabel PainelAdicionarProduto;
     private javax.swing.JLabel Publicar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
