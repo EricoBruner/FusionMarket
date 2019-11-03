@@ -14,8 +14,10 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         TelaPrincipal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1366, 768));
         setMinimumSize(new java.awt.Dimension(1366, 768));
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1366, 768));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -25,9 +27,6 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         jLabel1.setBounds(690, 60, 60, 60);
 
         TelaPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_TelaPrincipal.png"))); // NOI18N
-        TelaPrincipal.setMaximumSize(new java.awt.Dimension(1366, 768));
-        TelaPrincipal.setMinimumSize(new java.awt.Dimension(1366, 768));
-        TelaPrincipal.setPreferredSize(new java.awt.Dimension(1366, 768));
         getContentPane().add(TelaPrincipal);
         TelaPrincipal.setBounds(0, -30, 1366, 830);
 
