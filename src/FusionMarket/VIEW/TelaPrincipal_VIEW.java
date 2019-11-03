@@ -11,7 +11,7 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        BotãoLoja = new javax.swing.JLabel();
         TelaPrincipal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -33,9 +33,18 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         getContentPane().add(jLabel2);
         jLabel2.setBounds(354, 52, 52, 52);
 
-        jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(380, 220, 34, 14);
+        BotãoLoja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Botão_Loja.png"))); // NOI18N
+        BotãoLoja.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        BotãoLoja.setMaximumSize(new java.awt.Dimension(53, 53));
+        BotãoLoja.setMinimumSize(new java.awt.Dimension(53, 53));
+        BotãoLoja.setPreferredSize(new java.awt.Dimension(53, 53));
+        BotãoLoja.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotãoLojaMouseClicked(evt);
+            }
+        });
+        getContentPane().add(BotãoLoja);
+        BotãoLoja.setBounds(503, 51, 53, 53);
 
         TelaPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_TelaPrincipal.png"))); // NOI18N
         getContentPane().add(TelaPrincipal);
@@ -44,6 +53,11 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BotãoLojaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotãoLojaMouseClicked
+        MinhaLoja_VIEW Tela_MinhaLoja = new MinhaLoja_VIEW();
+        Tela_MinhaLoja.setVisible(true);
+    }//GEN-LAST:event_BotãoLojaMouseClicked
 
     public static void main(String args[]) 
     {
@@ -78,8 +92,8 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BotãoLoja;
     private javax.swing.JLabel TelaPrincipal;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }
