@@ -1,5 +1,8 @@
 package FusionMarket.VIEW;
 
+import java.awt.Frame;
+import javax.swing.JFrame;
+
 public class TelaPrincipal_VIEW extends javax.swing.JFrame 
 {
     public TelaPrincipal_VIEW() 
@@ -59,8 +62,18 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         });
         getContentPane().add(jLabel1);
         jLabel1.setBounds(1341, 6, 18, 18);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Botão_Minimizar_1.png"))); // NOI18N
+        jLabel4.setMaximumSize(new java.awt.Dimension(18, 18));
+        jLabel4.setMinimumSize(new java.awt.Dimension(18, 18));
+        jLabel4.setPreferredSize(new java.awt.Dimension(18, 18));
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(1110, 10, 100, 90);
+        jLabel4.setBounds(1319, 6, 18, 18);
 
         TelaPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_TelaPrincipal.png"))); // NOI18N
         getContentPane().add(TelaPrincipal);
@@ -78,6 +91,10 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         System.exit(0);
     }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        this.setState(JFrame.ICONIFIED);
+    }//GEN-LAST:event_jLabel4MouseClicked
 
     public static void main(String args[]) 
     {
