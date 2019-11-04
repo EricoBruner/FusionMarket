@@ -15,6 +15,7 @@ public class AdicionarProduto_VIEW extends javax.swing.JFrame {
         Publicar = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox();
         PainelAdicionarProduto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,6 +59,13 @@ public class AdicionarProduto_VIEW extends javax.swing.JFrame {
         });
         getContentPane().add(jLabel2);
         jLabel2.setBounds(22, 20, 60, 60);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "VAZIO", "FPS", "MOBA", "AVENTURA", " " }));
+        jComboBox1.setMaximumSize(new java.awt.Dimension(357, 50));
+        jComboBox1.setMinimumSize(new java.awt.Dimension(357, 50));
+        jComboBox1.setPreferredSize(new java.awt.Dimension(357, 50));
+        getContentPane().add(jComboBox1);
+        jComboBox1.setBounds(25, 250, 350, 50);
 
         PainelAdicionarProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Paine_AdicionarProduto.png"))); // NOI18N
         getContentPane().add(PainelAdicionarProduto);
@@ -118,6 +126,7 @@ public class AdicionarProduto_VIEW extends javax.swing.JFrame {
     private javax.swing.JLabel Cancelar;
     private javax.swing.JLabel PainelAdicionarProduto;
     private javax.swing.JLabel Publicar;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
