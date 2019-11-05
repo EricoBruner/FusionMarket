@@ -33,13 +33,10 @@ public class Historico_VIEW extends javax.swing.JInternalFrame {
         getContentPane().setLayout(null);
 
         Painel_Historico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_Historico.png"))); // NOI18N
-        Painel_Historico.setMaximumSize(new java.awt.Dimension(950, 550));
-        Painel_Historico.setMinimumSize(new java.awt.Dimension(950, 550));
-        Painel_Historico.setPreferredSize(new java.awt.Dimension(950, 550));
         getContentPane().add(Painel_Historico);
         Painel_Historico.setBounds(0, 0, 950, 550);
 
-        setBounds(-7, -20, 966, 580);
+        setBounds(-2, -23, 966, 580);
     }// </editor-fold>//GEN-END:initComponents
 
 
