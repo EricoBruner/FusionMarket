@@ -7,14 +7,14 @@ package FusionMarket.VIEW;
 
 /**
  *
- * @author User
+ * @author cedup
  */
-public class Historico_VIEW extends javax.swing.JInternalFrame {
+public class CadastroUsuario_VIEW extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form Historico_VIEW
+     * Creates new form CadastroUsuario_VIEW
      */
-    public Historico_VIEW() {
+    public CadastroUsuario_VIEW() {
         initComponents();
     }
 
@@ -27,7 +27,7 @@ public class Historico_VIEW extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Painel_Historico = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setBorder(null);
         setMaximumSize(new java.awt.Dimension(966, 580));
@@ -35,15 +35,17 @@ public class Historico_VIEW extends javax.swing.JInternalFrame {
         setPreferredSize(new java.awt.Dimension(966, 580));
         getContentPane().setLayout(null);
 
-        Painel_Historico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_Historico.png"))); // NOI18N
-        getContentPane().add(Painel_Historico);
-        Painel_Historico.setBounds(0, 0, 950, 550);
+        jLabel1.setMaximumSize(new java.awt.Dimension(950, 550));
+        jLabel1.setMinimumSize(new java.awt.Dimension(950, 550));
+        jLabel1.setPreferredSize(new java.awt.Dimension(950, 550));
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 950, 550);
 
         setBounds(-2, -23, 966, 580);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Painel_Historico;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
