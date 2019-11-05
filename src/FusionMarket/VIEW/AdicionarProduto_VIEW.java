@@ -9,12 +9,12 @@ package FusionMarket.VIEW;
  *
  * @author User
  */
-public class AdicionarProduto_VIEW2 extends javax.swing.JInternalFrame {
+public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form AdicionarProduto_VIEW2
      */
-    public AdicionarProduto_VIEW2() {
+    public AdicionarProduto_VIEW() {
         initComponents();
     }
 
