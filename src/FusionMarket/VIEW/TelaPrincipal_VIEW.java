@@ -17,6 +17,7 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         BotãoLoja = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        Painel = new javax.swing.JDesktopPane();
         TelaPrincipal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -75,6 +76,12 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         getContentPane().add(jLabel4);
         jLabel4.setBounds(1319, 6, 18, 18);
 
+        Painel.setMaximumSize(new java.awt.Dimension(950, 550));
+        Painel.setMinimumSize(new java.awt.Dimension(950, 550));
+        Painel.setPreferredSize(new java.awt.Dimension(950, 550));
+        getContentPane().add(Painel);
+        Painel.setBounds(353, 154, 950, 550);
+
         TelaPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_TelaPrincipal.png"))); // NOI18N
         getContentPane().add(TelaPrincipal);
         TelaPrincipal.setBounds(0, -30, 1366, 830);
@@ -130,6 +137,7 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BotãoLoja;
+    private javax.swing.JDesktopPane Painel;
     private javax.swing.JLabel TelaPrincipal;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
