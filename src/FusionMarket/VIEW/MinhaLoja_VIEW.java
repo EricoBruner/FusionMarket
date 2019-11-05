@@ -61,7 +61,7 @@ public class MinhaLoja_VIEW extends javax.swing.JInternalFrame {
         Painei_MinhaLoja.setPreferredSize(new java.awt.Dimension(950, 550));
         getContentPane().add(Painei_MinhaLoja, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, -1));
 
-        setBounds(-1, -25, 966, 580);
+        setBounds(-1, -22, 966, 580);
     }// </editor-fold>//GEN-END:initComponents
 
     private void B_AdicionarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B_AdicionarMouseClicked
