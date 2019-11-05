@@ -138,7 +138,7 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BotãoLoja;
-    private javax.swing.JDesktopPane Painel;
+    public static javax.swing.JDesktopPane Painel;
     private javax.swing.JLabel TelaPrincipal;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
