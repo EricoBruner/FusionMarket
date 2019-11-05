@@ -19,7 +19,6 @@ public class AdicionarProduto_VIEW extends javax.swing.JFrame {
         PainelAdicionarProduto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(950, 550));
         setMinimumSize(new java.awt.Dimension(950, 550));
         setUndecorated(true);
         getContentPane().setLayout(null);
