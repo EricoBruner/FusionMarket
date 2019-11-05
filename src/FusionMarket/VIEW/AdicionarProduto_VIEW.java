@@ -27,21 +27,17 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PainelAdicionarProduto = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         Cancelar = new javax.swing.JLabel();
         Publicar = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        PainelAdicionarProduto = new javax.swing.JLabel();
 
         setBorder(null);
         setMaximumSize(new java.awt.Dimension(966, 580));
         setMinimumSize(new java.awt.Dimension(966, 580));
         setPreferredSize(new java.awt.Dimension(966, 580));
         getContentPane().setLayout(null);
-
-        PainelAdicionarProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Paine_AdicionarProduto.png"))); // NOI18N
-        getContentPane().add(PainelAdicionarProduto);
-        PainelAdicionarProduto.setBounds(0, 0, 950, 550);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Botão_Voltar.png"))); // NOI18N
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -78,6 +74,10 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame {
         });
         getContentPane().add(jLabel1);
         jLabel1.setBounds(750, 150, 160, 160);
+
+        PainelAdicionarProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Paine_AdicionarProduto.png"))); // NOI18N
+        getContentPane().add(PainelAdicionarProduto);
+        PainelAdicionarProduto.setBounds(0, 0, 950, 550);
 
         setBounds(-1, -22, 966, 580);
     }// </editor-fold>//GEN-END:initComponents
