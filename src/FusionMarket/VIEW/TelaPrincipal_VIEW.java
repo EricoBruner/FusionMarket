@@ -78,7 +78,6 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
 
         Painel.setMaximumSize(new java.awt.Dimension(950, 550));
         Painel.setMinimumSize(new java.awt.Dimension(950, 550));
-        Painel.setPreferredSize(new java.awt.Dimension(950, 550));
         getContentPane().add(Painel);
         Painel.setBounds(353, 154, 950, 550);
 
