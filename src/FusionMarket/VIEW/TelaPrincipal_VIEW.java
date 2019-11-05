@@ -18,6 +18,7 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         Painel = new javax.swing.JDesktopPane();
+        jLabel3 = new javax.swing.JLabel();
         TelaPrincipal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -81,6 +82,15 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         getContentPane().add(Painel);
         Painel.setBounds(353, 154, 950, 550);
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Botão_Historico_1.png"))); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(580, 53, 50, 50);
+
         TelaPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_TelaPrincipal.png"))); // NOI18N
         getContentPane().add(TelaPrincipal);
         TelaPrincipal.setBounds(0, -30, 1366, 830);
@@ -102,6 +112,12 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         this.setState(JFrame.ICONIFIED);
     }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        Historico_VIEW Tela_Historico = new Historico_VIEW();
+        TelaPrincipal_VIEW.Painel.add(Tela_Historico);
+        Tela_Historico.setVisible(true);
+    }//GEN-LAST:event_jLabel3MouseClicked
 
     public static void main(String args[]) 
     {
@@ -141,6 +157,7 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
     private javax.swing.JLabel TelaPrincipal;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }
