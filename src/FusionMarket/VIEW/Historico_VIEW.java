@@ -27,21 +27,23 @@ public class Historico_VIEW extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
-        );
+        Painel_Historico = new javax.swing.JLabel();
 
-        pack();
+        setBorder(null);
+        getContentPane().setLayout(null);
+
+        Painel_Historico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_Historico.png"))); // NOI18N
+        Painel_Historico.setMaximumSize(new java.awt.Dimension(950, 550));
+        Painel_Historico.setMinimumSize(new java.awt.Dimension(950, 550));
+        Painel_Historico.setPreferredSize(new java.awt.Dimension(950, 550));
+        getContentPane().add(Painel_Historico);
+        Painel_Historico.setBounds(0, 0, 950, 550);
+
+        setBounds(-7, -20, 966, 580);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Painel_Historico;
     // End of variables declaration//GEN-END:variables
 }
