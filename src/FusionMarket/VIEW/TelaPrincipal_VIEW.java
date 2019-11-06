@@ -19,6 +19,11 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         jLabel4 = new javax.swing.JLabel();
         Painel = new javax.swing.JDesktopPane();
         jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox();
+        jComboBox2 = new javax.swing.JComboBox();
         TelaPrincipal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -91,6 +96,54 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         getContentPane().add(jLabel3);
         jLabel3.setBounds(580, 53, 50, 50);
 
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Botão_Perfil_1.png"))); // NOI18N
+        jLabel5.setMaximumSize(new java.awt.Dimension(50, 49));
+        jLabel5.setMinimumSize(new java.awt.Dimension(50, 49));
+        jLabel5.setPreferredSize(new java.awt.Dimension(50, 49));
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(430, 53, 50, 49);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Botão_Pesquisa.png"))); // NOI18N
+        jLabel6.setMaximumSize(new java.awt.Dimension(49, 49));
+        jLabel6.setMinimumSize(new java.awt.Dimension(49, 49));
+        jLabel6.setPreferredSize(new java.awt.Dimension(49, 49));
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(268, 404, 50, 50);
+
+        jTextField1.setBorder(null);
+        jTextField1.setMaximumSize(new java.awt.Dimension(231, 46));
+        jTextField1.setMinimumSize(new java.awt.Dimension(231, 46));
+        jTextField1.setPreferredSize(new java.awt.Dimension(231, 46));
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(31, 406, 231, 46);
+
+        jComboBox1.setEditable(true);
+        jComboBox1.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "                        ", " FPS", " MOBA", " Aventura", " Simulação", " RPG", " Ação", " Corrida" }));
+        jComboBox1.setBorder(null);
+        jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jComboBox1.setMaximumSize(new java.awt.Dimension(286, 46));
+        jComboBox1.setMinimumSize(new java.awt.Dimension(286, 46));
+        jComboBox1.setPreferredSize(new java.awt.Dimension(286, 46));
+        getContentPane().add(jComboBox1);
+        jComboBox1.setBounds(30, 655, 286, 46);
+
+        jComboBox2.setEditable(true);
+        jComboBox2.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "               ", " Timbó", " Pomerode", " Indaial" }));
+        jComboBox2.setBorder(null);
+        jComboBox2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jComboBox2.setMaximumSize(new java.awt.Dimension(286, 46));
+        jComboBox2.setMinimumSize(new java.awt.Dimension(286, 46));
+        jComboBox2.setPreferredSize(new java.awt.Dimension(286, 46));
+        getContentPane().add(jComboBox2);
+        jComboBox2.setBounds(30, 530, 286, 46);
+
         TelaPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_TelaPrincipal.png"))); // NOI18N
         getContentPane().add(TelaPrincipal);
         TelaPrincipal.setBounds(0, -30, 1366, 830);
@@ -118,6 +171,12 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         TelaPrincipal_VIEW.Painel.add(Tela_Historico);
         Tela_Historico.setVisible(true);
     }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        Perfil_VIEW Tela_Perfil = new Perfil_VIEW();
+        TelaPrincipal_VIEW.Painel.add(Tela_Perfil);
+        Tela_Perfil.setVisible(true);
+    }//GEN-LAST:event_jLabel5MouseClicked
 
     public static void main(String args[]) 
     {
@@ -155,9 +214,14 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
     private javax.swing.JLabel BotãoLoja;
     public static javax.swing.JDesktopPane Painel;
     private javax.swing.JLabel TelaPrincipal;
+    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
