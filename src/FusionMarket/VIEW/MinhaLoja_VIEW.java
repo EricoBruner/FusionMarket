@@ -37,9 +37,6 @@ public class MinhaLoja_VIEW extends javax.swing.JInternalFrame {
         getContentPane().add(B_Voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 20, 60, 60));
 
         Painei_MinhaLoja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painei_MinhaLoja.png"))); // NOI18N
-        Painei_MinhaLoja.setMaximumSize(new java.awt.Dimension(950, 550));
-        Painei_MinhaLoja.setMinimumSize(new java.awt.Dimension(950, 550));
-        Painei_MinhaLoja.setPreferredSize(new java.awt.Dimension(950, 550));
         getContentPane().add(Painei_MinhaLoja, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, -1));
 
         setBounds(-1, -22, 966, 580);
