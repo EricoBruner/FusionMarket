@@ -51,10 +51,9 @@ public class Configuracao extends Object {
 
 	public Configuracao() {
 		driver = "com.mysql.jdbc.Driver";
-		user = "root";
-		password = "admin";
-
-		dbURL = "jdbc:mysql://127.0.0.1/agenda_info18";
+		user = "jose1";
+		password = "7qnQCqAh{}";
+		dbURL = "jdbc:mysql://fusionmarket.mysql.uhserver.com/fusionmarket";
 
 	}
 
