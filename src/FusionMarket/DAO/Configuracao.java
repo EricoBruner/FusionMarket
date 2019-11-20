@@ -1,7 +1,7 @@
 package FusionMarket.DAO;
 
-public class Configuracao extends Object {
-
+public class Configuracao extends Object 
+{
 	private String driver;
 
 	private String user;
@@ -19,35 +19,6 @@ public class Configuracao extends Object {
 	private String diretorioDownloadVirtual;
 
 	private String smtp;
-
-	/* CONFIGURA��O PARA O MYSQL */
-	/*
-	 * //driver para clausulas normais driver = "org.gjt.mm.mysql.Driver";
-	 * 
-	 * //driver para o jdeveloper driver = "com.mysql.jdbc.Driver";
-	 * 
-	 * user = "root"; password = "roger";
-	 * 
-	 * dbURL = "jdbc:mysql://127.0.0.1/bibliasagrada";
-	 */
-
-	/* CONFIGURA��O PARA O INTERBASE */
-	/*
-	 * driver = "org.firebirdsql.jdbc.FBDriver"; user = "SYSDBA"; password =
-	 * "masterkey";
-	 * 
-	 * dbURL =
-	 * "jdbc:firebirdsql:127.0.0.1/3050:D:/HEVistorias/BaseDados/VISTORIA.GDB";
-	 */
-   
-   /* CONFIGURA��O PARA O POSTGRESQL */
-	/*
-	 * driver = "org.postgresql.Driver"; 
-   * user = "postgres"; 
-   * password = "";
-	 * 
-	 * dbURL = "jdbc:postgresql://127.0.0.1/biblia";
-	 */
 
 	public Configuracao() 
         {
