@@ -23,9 +23,9 @@ public class Configuracao extends Object
 	public Configuracao() 
         {
 		driver = "com.mysql.jdbc.Driver";
-		user = "jose1";
-		password = "7qnQCqAh{}";
-		dbURL = "jdbc:mysql://fusionmarket.mysql.uhserver.com/fusionmarket";
+		user = "root";
+		password = "root_password";
+		dbURL = "jdbc:mysql://10.104.201.37:3306/fusionmarket";
 	}
 	public String getDriver() {
 		return this.driver;
