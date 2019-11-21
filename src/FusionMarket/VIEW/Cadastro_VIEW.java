@@ -27,6 +27,9 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -38,27 +41,47 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
         setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(330, 656));
         setResizable(false);
+        getContentPane().setLayout(null);
+
+        jTextField1.setBorder(null);
+        jTextField1.setCaretColor(new java.awt.Color(255, 0, 51));
+        jTextField1.setDisabledTextColor(new java.awt.Color(255, 0, 51));
+        jTextField1.setOpaque(false);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(20, 170, 290, 40);
+
+        jTextField2.setBorder(null);
+        jTextField2.setMaximumSize(new java.awt.Dimension(290, 40));
+        jTextField2.setMinimumSize(new java.awt.Dimension(290, 40));
+        jTextField2.setOpaque(false);
+        jTextField2.setPreferredSize(new java.awt.Dimension(290, 35));
+        getContentPane().add(jTextField2);
+        jTextField2.setBounds(20, 258, 290, 35);
+
+        jTextField3.setBorder(null);
+        jTextField3.setMaximumSize(new java.awt.Dimension(290, 40));
+        jTextField3.setMinimumSize(new java.awt.Dimension(290, 40));
+        jTextField3.setOpaque(false);
+        jTextField3.setPreferredSize(new java.awt.Dimension(290, 35));
+        getContentPane().add(jTextField3);
+        jTextField3.setBounds(22, 341, 290, 35);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_Cadastro.png"))); // NOI18N
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 330, 656);
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -97,5 +120,8 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
