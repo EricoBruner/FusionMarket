@@ -14,6 +14,8 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         Cancelar = new javax.swing.JLabel();
         Publicar = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
         PainelAdicionarProduto = new javax.swing.JLabel();
 
         setBorder(null);
@@ -58,7 +60,18 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         getContentPane().add(jLabel1);
         jLabel1.setBounds(750, 150, 160, 160);
 
-        PainelAdicionarProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Paine_AdicionarProduto.png"))); // NOI18N
+        jTextField1.setBorder(null);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(29, 150, 340, 40);
+        getContentPane().add(jTextField2);
+        jTextField2.setBounds(30, 260, 340, 40);
+
+        PainelAdicionarProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel _AdicionarProduto.png"))); // NOI18N
         getContentPane().add(PainelAdicionarProduto);
         PainelAdicionarProduto.setBounds(0, 0, 950, 550);
 
@@ -81,11 +94,17 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         // Colocar opção pro usuario colocar imagem
     }//GEN-LAST:event_jLabel1MouseClicked
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Cancelar;
     private javax.swing.JLabel PainelAdicionarProduto;
     private javax.swing.JLabel Publicar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
