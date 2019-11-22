@@ -30,10 +30,10 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setEnabled(false);
         setFocusable(false);
         setFocusableWindowState(false);
         setMaximumSize(new java.awt.Dimension(330, 656));
@@ -41,10 +41,13 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
         setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(330, 656));
         setResizable(false);
+        setSize(new java.awt.Dimension(330, 656));
         getContentPane().setLayout(null);
 
+        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setBorder(null);
-        jTextField1.setCaretColor(new java.awt.Color(255, 0, 51));
+        jTextField1.setCaretColor(new java.awt.Color(102, 255, 255));
         jTextField1.setDisabledTextColor(new java.awt.Color(255, 0, 51));
         jTextField1.setOpaque(false);
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -53,7 +56,7 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(20, 170, 290, 40);
+        jTextField1.setBounds(30, 170, 280, 40);
 
         jTextField2.setBorder(null);
         jTextField2.setMaximumSize(new java.awt.Dimension(290, 40));
@@ -61,7 +64,7 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
         jTextField2.setOpaque(false);
         jTextField2.setPreferredSize(new java.awt.Dimension(290, 35));
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(20, 258, 290, 35);
+        jTextField2.setBounds(30, 258, 280, 35);
 
         jTextField3.setBorder(null);
         jTextField3.setMaximumSize(new java.awt.Dimension(290, 40));
@@ -69,7 +72,15 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
         jTextField3.setOpaque(false);
         jTextField3.setPreferredSize(new java.awt.Dimension(290, 35));
         getContentPane().add(jTextField3);
-        jTextField3.setBounds(22, 341, 290, 35);
+        jTextField3.setBounds(30, 340, 280, 35);
+
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(20, 580, 110, 50);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_Cadastro.png"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -82,6 +93,10 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        this.dispose();
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -120,6 +135,7 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
