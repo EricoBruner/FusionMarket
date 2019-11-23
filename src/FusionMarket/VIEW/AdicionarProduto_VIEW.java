@@ -64,6 +64,7 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         getContentPane().add(jLabel1);
         jLabel1.setBounds(750, 150, 160, 160);
 
+        jTextField1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextField1.setBorder(null);
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
