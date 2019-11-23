@@ -16,6 +16,10 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox();
+        jTextField5 = new javax.swing.JTextField();
         PainelAdicionarProduto = new javax.swing.JLabel();
 
         setBorder(null);
@@ -68,8 +72,28 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         });
         getContentPane().add(jTextField1);
         jTextField1.setBounds(29, 150, 340, 40);
+
+        jTextField2.setBorder(null);
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(30, 260, 340, 40);
+        jTextField2.setBounds(30, 256, 340, 40);
+
+        jTextField3.setBorder(null);
+        getContentPane().add(jTextField3);
+        jTextField3.setBounds(30, 367, 340, 40);
+
+        jTextField4.setBorder(null);
+        getContentPane().add(jTextField4);
+        jTextField4.setBounds(30, 476, 340, 40);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Novo", "Usado", "Semi-novo" }));
+        jComboBox1.setLightWeightPopupEnabled(false);
+        jComboBox1.setMaximumSize(new java.awt.Dimension(302, 50));
+        jComboBox1.setMinimumSize(new java.awt.Dimension(302, 50));
+        jComboBox1.setPreferredSize(new java.awt.Dimension(302, 50));
+        getContentPane().add(jComboBox1);
+        jComboBox1.setBounds(413, 470, 302, 50);
+        getContentPane().add(jTextField5);
+        jTextField5.setBounds(419, 148, 290, 260);
 
         PainelAdicionarProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel _AdicionarProduto.png"))); // NOI18N
         getContentPane().add(PainelAdicionarProduto);
@@ -102,9 +126,13 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
     private javax.swing.JLabel Cancelar;
     private javax.swing.JLabel PainelAdicionarProduto;
     private javax.swing.JLabel Publicar;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }
