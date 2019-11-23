@@ -92,6 +92,8 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         jComboBox1.setPreferredSize(new java.awt.Dimension(302, 50));
         getContentPane().add(jComboBox1);
         jComboBox1.setBounds(413, 470, 302, 50);
+
+        jTextField5.setBorder(null);
         getContentPane().add(jTextField5);
         jTextField5.setBounds(419, 148, 290, 260);
 
