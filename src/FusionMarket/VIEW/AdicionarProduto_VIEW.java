@@ -95,6 +95,11 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         jComboBox1.setBounds(413, 470, 302, 50);
 
         jTextField5.setBorder(null);
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField5ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTextField5);
         jTextField5.setBounds(419, 148, 290, 260);
 
@@ -124,6 +129,10 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Cancelar;

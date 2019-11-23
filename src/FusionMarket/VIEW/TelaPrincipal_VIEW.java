@@ -115,9 +115,12 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         getContentPane().add(jLabel6);
         jLabel6.setBounds(268, 404, 50, 50);
 
+        jTextField1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setBorder(null);
         jTextField1.setMaximumSize(new java.awt.Dimension(231, 46));
         jTextField1.setMinimumSize(new java.awt.Dimension(231, 46));
+        jTextField1.setOpaque(false);
         jTextField1.setPreferredSize(new java.awt.Dimension(231, 46));
         getContentPane().add(jTextField1);
         jTextField1.setBounds(31, 406, 231, 46);
