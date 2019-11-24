@@ -1,6 +1,7 @@
 package FusionMarket.VIEW;
 
 import FusionMarket.DAO.Produto_DAO;
+import FusionMarket.MODEL.Produto_MODEL;
 import FusionMarket.POJO.Produto_POJO;
 import javax.swing.JOptionPane;
 
@@ -8,6 +9,7 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
 {
     Produto_POJO pp = new Produto_POJO();
     Produto_DAO pd = new Produto_DAO();
+    Produto_MODEL pm = new Produto_MODEL();
     
     public AdicionarProduto_VIEW() 
     {
@@ -142,7 +144,7 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         }
         catch(IllegalArgumentException e)
         {
-            JOptionPane.showMessageDialog(null, "Todos os campos são obrigatorios");
+            JOptionPane.showMessageDialog(null, "O campo "+pp.getErro()+" é obrigatorio");
         }
     }//GEN-LAST:event_PublicarMouseClicked
 
