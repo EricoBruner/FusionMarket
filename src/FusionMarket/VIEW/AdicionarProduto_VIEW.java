@@ -1,15 +1,25 @@
 package FusionMarket.VIEW;
 
+import FusionMarket.DAO.Produto_DAO;
+import FusionMarket.POJO.Produto_POJO;
+import javax.swing.JOptionPane;
+
 public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame 
 {
-
+    Produto_POJO pp = new Produto_POJO();
+    Produto_DAO pd = new Produto_DAO();
+    
     public AdicionarProduto_VIEW() 
     {
         initComponents();
     }
     public void Pegar_Dados()
     {
-        
+        pp.setTitulo(TTitulo.getText());
+        pp.setPreco(TPreco.getText());
+        pp.setQuantidade(Integer.parseInt(TQuantidade.getText()));
+        pp.setDescricao(TDescricao.getText());
+        pp.setCategoria(TCategoria.getText());
     }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -123,7 +133,17 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
     }//GEN-LAST:event_CancelarMouseClicked
 
     private void PublicarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PublicarMouseClicked
-        //Colocar codigo para salvar dados no banco de dados
+        
+        Pegar_Dados();
+        
+        try
+        {
+            pd.inserir_produto(pp);
+        }
+        catch(IllegalArgumentException e)
+        {
+            JOptionPane.showMessageDialog(null, "Todos os campos são obrigatorios");
+        }
     }//GEN-LAST:event_PublicarMouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked

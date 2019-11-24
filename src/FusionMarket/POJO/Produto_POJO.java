@@ -3,7 +3,15 @@ package FusionMarket.POJO;
 public class Produto_POJO 
 {
     int id_produto,quantidade;
-    String titulo,categoria,preco,descricao;
+    String titulo,categoria,preco,descricao,condicao;
+
+    public String getCondicao() {
+        return condicao;
+    }
+
+    public void setCondicao(String condicao) {
+        this.condicao = condicao;
+    }
     
     public int getId_produto() {
         return id_produto;
