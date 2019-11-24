@@ -7,6 +7,10 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
     {
         initComponents();
     }
+    public void Pegar_Dados()
+    {
+        
+    }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -14,12 +18,12 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         Cancelar = new javax.swing.JLabel();
         Publicar = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox();
-        jTextField5 = new javax.swing.JTextField();
+        TTitulo = new javax.swing.JTextField();
+        TCategoria = new javax.swing.JTextField();
+        TPreco = new javax.swing.JTextField();
+        TQuantidade = new javax.swing.JTextField();
+        TCondicao = new javax.swing.JComboBox();
+        TDescricao = new javax.swing.JTextField();
         PainelAdicionarProduto = new javax.swing.JLabel();
 
         setBorder(null);
@@ -64,44 +68,44 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         getContentPane().add(jLabel1);
         jLabel1.setBounds(750, 150, 160, 160);
 
-        jTextField1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        TTitulo.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        TTitulo.setBorder(null);
+        TTitulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                TTituloActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(29, 150, 340, 40);
+        getContentPane().add(TTitulo);
+        TTitulo.setBounds(29, 150, 340, 40);
 
-        jTextField2.setBorder(null);
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(30, 256, 340, 40);
+        TCategoria.setBorder(null);
+        getContentPane().add(TCategoria);
+        TCategoria.setBounds(30, 256, 340, 40);
 
-        jTextField3.setBorder(null);
-        getContentPane().add(jTextField3);
-        jTextField3.setBounds(30, 367, 340, 40);
+        TPreco.setBorder(null);
+        getContentPane().add(TPreco);
+        TPreco.setBounds(30, 367, 340, 40);
 
-        jTextField4.setBorder(null);
-        getContentPane().add(jTextField4);
-        jTextField4.setBounds(30, 476, 340, 40);
+        TQuantidade.setBorder(null);
+        getContentPane().add(TQuantidade);
+        TQuantidade.setBounds(30, 476, 340, 40);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Novo", "Usado", "Semi-novo" }));
-        jComboBox1.setLightWeightPopupEnabled(false);
-        jComboBox1.setMaximumSize(new java.awt.Dimension(302, 50));
-        jComboBox1.setMinimumSize(new java.awt.Dimension(302, 50));
-        jComboBox1.setPreferredSize(new java.awt.Dimension(302, 50));
-        getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(413, 470, 302, 50);
+        TCondicao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Novo", "Usado", "Semi-novo" }));
+        TCondicao.setLightWeightPopupEnabled(false);
+        TCondicao.setMaximumSize(new java.awt.Dimension(302, 50));
+        TCondicao.setMinimumSize(new java.awt.Dimension(302, 50));
+        TCondicao.setPreferredSize(new java.awt.Dimension(302, 50));
+        getContentPane().add(TCondicao);
+        TCondicao.setBounds(413, 470, 302, 50);
 
-        jTextField5.setBorder(null);
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        TDescricao.setBorder(null);
+        TDescricao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                TDescricaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField5);
-        jTextField5.setBounds(419, 148, 290, 260);
+        getContentPane().add(TDescricao);
+        TDescricao.setBounds(419, 148, 290, 260);
 
         PainelAdicionarProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel _AdicionarProduto.png"))); // NOI18N
         getContentPane().add(PainelAdicionarProduto);
@@ -126,25 +130,25 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         // Colocar opção pro usuario colocar imagem
     }//GEN-LAST:event_jLabel1MouseClicked
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void TTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TTituloActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_TTituloActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void TDescricaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TDescricaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_TDescricaoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Cancelar;
     private javax.swing.JLabel PainelAdicionarProduto;
     private javax.swing.JLabel Publicar;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JTextField TCategoria;
+    private javax.swing.JComboBox TCondicao;
+    private javax.swing.JTextField TDescricao;
+    private javax.swing.JTextField TPreco;
+    private javax.swing.JTextField TQuantidade;
+    private javax.swing.JTextField TTitulo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }
