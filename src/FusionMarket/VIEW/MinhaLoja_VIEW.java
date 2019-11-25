@@ -10,6 +10,8 @@ public class MinhaLoja_VIEW extends javax.swing.JInternalFrame {
 
         B_Adicionar = new javax.swing.JLabel();
         B_Voltar = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         Painei_MinhaLoja = new javax.swing.JLabel();
 
         setBorder(null);
@@ -19,12 +21,15 @@ public class MinhaLoja_VIEW extends javax.swing.JInternalFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         B_Adicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Botão_AdicionarProduto.png"))); // NOI18N
+        B_Adicionar.setMaximumSize(new java.awt.Dimension(300, 46));
+        B_Adicionar.setMinimumSize(new java.awt.Dimension(300, 46));
+        B_Adicionar.setPreferredSize(new java.awt.Dimension(300, 46));
         B_Adicionar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 B_AdicionarMouseClicked(evt);
             }
         });
-        getContentPane().add(B_Adicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 114, 160, 150));
+        getContentPane().add(B_Adicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 110, -1, 50));
 
         B_Voltar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         B_Voltar.setForeground(new java.awt.Color(255, 255, 255));
@@ -36,7 +41,19 @@ public class MinhaLoja_VIEW extends javax.swing.JInternalFrame {
         });
         getContentPane().add(B_Voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 20, 60, 60));
 
-        Painei_MinhaLoja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painei_MinhaLoja.png"))); // NOI18N
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Titulo", "Preço", "Categoria", "Quantidade"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 930, 360));
+
+        Painei_MinhaLoja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_MinhaLoja.png"))); // NOI18N
         getContentPane().add(Painei_MinhaLoja, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, -1));
 
         setBounds(-1, -22, 966, 580);
@@ -56,5 +73,7 @@ public class MinhaLoja_VIEW extends javax.swing.JInternalFrame {
     private javax.swing.JLabel B_Adicionar;
     private javax.swing.JLabel B_Voltar;
     private javax.swing.JLabel Painei_MinhaLoja;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
