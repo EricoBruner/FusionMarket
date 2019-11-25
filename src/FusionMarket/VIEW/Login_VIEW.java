@@ -1,5 +1,8 @@
 package FusionMarket.VIEW;
 
+import static FusionMarket.VIEW.TelaPrincipal_VIEW.Painel;
+import javax.swing.JFrame;
+
 public class Login_VIEW extends javax.swing.JFrame {
 
     public Login_VIEW() 
@@ -11,6 +14,10 @@ public class Login_VIEW extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        LEntrar = new javax.swing.JLabel();
+        LFechar = new javax.swing.JLabel();
+        LMinimizar = new javax.swing.JLabel();
+        LCadastro = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -23,6 +30,40 @@ public class Login_VIEW extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(330, 450));
         getContentPane().setLayout(null);
 
+        LEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LEntrarMouseClicked(evt);
+            }
+        });
+        getContentPane().add(LEntrar);
+        LEntrar.setBounds(200, 380, 110, 50);
+
+        LFechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Botão_Fechar_2.png"))); // NOI18N
+        LFechar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LFecharMouseClicked(evt);
+            }
+        });
+        getContentPane().add(LFechar);
+        LFechar.setBounds(300, 10, 20, 20);
+
+        LMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Botão_Minimizar_1.png"))); // NOI18N
+        LMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LMinimizarMouseClicked(evt);
+            }
+        });
+        getContentPane().add(LMinimizar);
+        LMinimizar.setBounds(270, 10, 20, 20);
+
+        LCadastro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LCadastroMouseClicked(evt);
+            }
+        });
+        getContentPane().add(LCadastro);
+        LCadastro.setBounds(20, 380, 160, 50);
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_Login.png"))); // NOI18N
         jLabel2.setToolTipText("");
         getContentPane().add(jLabel2);
@@ -31,6 +72,37 @@ public class Login_VIEW extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void LFecharMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LFecharMouseClicked
+        System.exit(0);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LFecharMouseClicked
+
+    private void LMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LMinimizarMouseClicked
+        this.setState(JFrame.ICONIFIED);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LMinimizarMouseClicked
+
+    private void LEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LEntrarMouseClicked
+        this.dispose();
+        TelaPrincipal_VIEW Tela = new TelaPrincipal_VIEW();
+        Tela.setVisible(true);
+        
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LEntrarMouseClicked
+
+    private void LCadastroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LCadastroMouseClicked
+             this.dispose();
+        Cadastro_VIEW Tela = new Cadastro_VIEW();
+        Tela.setVisible(true);
+        
+        
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LCadastroMouseClicked
 
     public static void main(String args[]) 
     {
@@ -65,6 +137,10 @@ public class Login_VIEW extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LCadastro;
+    private javax.swing.JLabel LEntrar;
+    private javax.swing.JLabel LFechar;
+    private javax.swing.JLabel LMinimizar;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

@@ -140,7 +140,6 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         TCategoria.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         TCategoria.setForeground(new java.awt.Color(255, 255, 255));
         TCategoria.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "                        ", " FPS", " MOBA", " Aventura", " Simulação", " RPG", " Ação", " Corrida" }));
-        TCategoria.setBorder(null);
         TCategoria.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         TCategoria.setMaximumSize(new java.awt.Dimension(286, 46));
         TCategoria.setMinimumSize(new java.awt.Dimension(286, 46));
@@ -158,7 +157,6 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         TRegiao.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         TRegiao.setForeground(new java.awt.Color(255, 255, 255));
         TRegiao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "               ", " Timbó", " Pomerode", " Indaial" }));
-        TRegiao.setBorder(null);
         TRegiao.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         TRegiao.setMaximumSize(new java.awt.Dimension(286, 46));
         TRegiao.setMinimumSize(new java.awt.Dimension(286, 46));
@@ -190,7 +188,8 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        this.setState(JFrame.ICONIFIED);
+            
+            this.setState(JFrame.ICONIFIED);
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
