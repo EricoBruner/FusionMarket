@@ -59,6 +59,8 @@ public class MinhaLoja_VIEW extends javax.swing.JInternalFrame {
         });
         getContentPane().add(B_Voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 20, 60, 60));
 
+        TTabela.setBackground(new java.awt.Color(204, 204, 204));
+        TTabela.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         TTabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -67,6 +69,9 @@ public class MinhaLoja_VIEW extends javax.swing.JInternalFrame {
                 "Titulo", "Preço", "Categoria", "Quantidade"
             }
         ));
+        TTabela.setOpaque(false);
+        TTabela.setSelectionBackground(new java.awt.Color(102, 255, 255));
+        TTabela.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(TTabela);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 930, 360));
@@ -74,7 +79,7 @@ public class MinhaLoja_VIEW extends javax.swing.JInternalFrame {
         Painei_MinhaLoja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_MinhaLoja.png"))); // NOI18N
         getContentPane().add(Painei_MinhaLoja, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, -1));
 
-        setBounds(-1, -22, 966, 580);
+        setBounds(-1, -22, 966, 583);
     }// </editor-fold>//GEN-END:initComponents
 
     private void B_AdicionarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B_AdicionarMouseClicked
