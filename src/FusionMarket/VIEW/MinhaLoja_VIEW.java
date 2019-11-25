@@ -59,7 +59,6 @@ public class MinhaLoja_VIEW extends javax.swing.JInternalFrame {
         });
         getContentPane().add(B_Voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 20, 60, 60));
 
-        TTabela.setBackground(new java.awt.Color(204, 204, 204));
         TTabela.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         TTabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -70,8 +69,6 @@ public class MinhaLoja_VIEW extends javax.swing.JInternalFrame {
             }
         ));
         TTabela.setOpaque(false);
-        TTabela.setSelectionBackground(new java.awt.Color(102, 255, 255));
-        TTabela.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(TTabela);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 930, 360));
