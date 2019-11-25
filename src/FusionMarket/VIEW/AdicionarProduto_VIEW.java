@@ -35,7 +35,8 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         TPreco = new javax.swing.JTextField();
         TQuantidade = new javax.swing.JTextField();
         TCondicao = new javax.swing.JComboBox();
-        TDescricao = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        TDescricao = new javax.swing.JTextArea();
         PainelAdicionarProduto = new javax.swing.JLabel();
 
         setBorder(null);
@@ -110,15 +111,15 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         getContentPane().add(TCondicao);
         TCondicao.setBounds(413, 470, 302, 50);
 
-        TDescricao.setBorder(null);
-        TDescricao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TDescricaoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(TDescricao);
-        TDescricao.setBounds(419, 148, 290, 260);
+        TDescricao.setColumns(20);
+        TDescricao.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        TDescricao.setRows(5);
+        jScrollPane2.setViewportView(TDescricao);
 
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(420, 150, 290, 260);
+
+        PainelAdicionarProduto.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         PainelAdicionarProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel _AdicionarProduto.png"))); // NOI18N
         getContentPane().add(PainelAdicionarProduto);
         PainelAdicionarProduto.setBounds(0, 0, 950, 550);
@@ -157,21 +158,18 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         // TODO add your handling code here:
     }//GEN-LAST:event_TTituloActionPerformed
 
-    private void TDescricaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TDescricaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TDescricaoActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Cancelar;
     private javax.swing.JLabel PainelAdicionarProduto;
     private javax.swing.JLabel Publicar;
     private javax.swing.JTextField TCategoria;
     private javax.swing.JComboBox TCondicao;
-    private javax.swing.JTextField TDescricao;
+    private javax.swing.JTextArea TDescricao;
     private javax.swing.JTextField TPreco;
     private javax.swing.JTextField TQuantidade;
     private javax.swing.JTextField TTitulo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }
