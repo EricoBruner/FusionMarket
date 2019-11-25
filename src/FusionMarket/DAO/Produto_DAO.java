@@ -38,7 +38,7 @@ public class Produto_DAO
     {
         List lista = new ArrayList();
         Connection con = cn.getConnection();
-        String sql = "select * from produto;";
+        String sql = "select * from produto where titulo like ?;";
         try
         {
             PreparedStatement p = con.prepareStatement(sql);
