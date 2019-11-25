@@ -146,6 +146,7 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         {
             JOptionPane.showMessageDialog(null, "O campo "+pp.getErro()+" é obrigatorio");
         }
+        this.dispose();
     }//GEN-LAST:event_PublicarMouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
