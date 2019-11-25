@@ -3,7 +3,10 @@ package FusionMarket.DAO;
 import FusionMarket.POJO.Produto_POJO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 public class Produto_DAO 
@@ -30,4 +33,32 @@ public class Produto_DAO
             JOptionPane.showMessageDialog(null, e);
         }
     }
-}
+    
+    public List buscar_produto()
+    {
+        List lista = new ArrayList();
+        Connection con = cn.getConnection();
+        String sql = "select * from produto;";
+        try
+        {
+            PreparedStatement p = con.prepareStatement(sql);
+            p.setString(1, "%");
+            ResultSet rs = p.executeQuery();
+            while (rs.next())
+            {
+                Produto_POJO produto = new Produto_POJO();
+                produto.setTitulo(rs.getString("titulo"));
+                produto.setPreco(rs.getString("preco"));
+                produto.setCategoria(rs.getString("categoria"));
+                produto.setQuantidade(rs.getInt("quantidade"));
+                lista.add(produto);
+            }
+        }
+        catch (SQLException e)
+        {
+            JOptionPane.showMessageDialog( null, e ) ;
+        }
+        return lista;
+        }
+    }
+

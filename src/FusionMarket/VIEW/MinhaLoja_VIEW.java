@@ -1,9 +1,27 @@
 package FusionMarket.VIEW;
 
+import FusionMarket.DAO.Produto_DAO;
+import FusionMarket.POJO.Produto_POJO;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 public class MinhaLoja_VIEW extends javax.swing.JInternalFrame {
 
-    public MinhaLoja_VIEW() {
+    public MinhaLoja_VIEW() 
+    {
         initComponents();
+        Produto_DAO pd = new Produto_DAO();
+        Produto_POJO pp = new Produto_POJO();
+        List lista = pd.buscar_produto();
+        DefaultTableModel dtm = (DefaultTableModel)TTabela.getModel();
+        for (int i=0 ; i < lista.size() ; i++)
+        {
+            pp = (Produto_POJO)lista.get(i);
+            dtm.addRow(new Object[]
+            {
+                pp.getTitulo(), pp.getPreco(), pp.getCategoria(), pp.getQuantidade()
+            });
+        }    
     }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -11,7 +29,7 @@ public class MinhaLoja_VIEW extends javax.swing.JInternalFrame {
         B_Adicionar = new javax.swing.JLabel();
         B_Voltar = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TTabela = new javax.swing.JTable();
         Painei_MinhaLoja = new javax.swing.JLabel();
 
         setBorder(null);
@@ -41,7 +59,7 @@ public class MinhaLoja_VIEW extends javax.swing.JInternalFrame {
         });
         getContentPane().add(B_Voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 20, 60, 60));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TTabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -49,7 +67,7 @@ public class MinhaLoja_VIEW extends javax.swing.JInternalFrame {
                 "Titulo", "Preço", "Categoria", "Quantidade"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TTabela);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 930, 360));
 
@@ -73,7 +91,7 @@ public class MinhaLoja_VIEW extends javax.swing.JInternalFrame {
     private javax.swing.JLabel B_Adicionar;
     private javax.swing.JLabel B_Voltar;
     private javax.swing.JLabel Painei_MinhaLoja;
+    private javax.swing.JTable TTabela;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
