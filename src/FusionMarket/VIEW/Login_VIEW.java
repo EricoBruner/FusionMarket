@@ -94,9 +94,10 @@ public class Login_VIEW extends javax.swing.JFrame {
     }//GEN-LAST:event_LEntrarMouseClicked
 
     private void LCadastroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LCadastroMouseClicked
-             this.dispose();
+          
         Cadastro_VIEW Tela = new Cadastro_VIEW();
         Tela.setVisible(true);
+        this.dispose();
         
         
 
