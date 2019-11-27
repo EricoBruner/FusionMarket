@@ -4,6 +4,7 @@ import FusionMarket.DAO.Cadastro_DAO;
 import FusionMarket.MODEL.Produto_MODEL;
 import FusionMarket.POJO.Cadastro_POJO;
 import FusionMarket.POJO.Produto_POJO;
+import java.awt.Color;
 
 import javax.swing.JOptionPane;
 
@@ -15,7 +16,18 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
     
     public Cadastro_VIEW() 
     {
-        initComponents();       
+        initComponents();
+        
+        TNome.setEditable(true);
+        TNome.setBackground(new Color(1.0f,1.0f,1.0f,0f));
+        TSenha.setEditable(true);
+        TSenha.setBackground(new Color(1.0f,1.0f,1.0f,0f));
+        TEmail.setEditable(true);
+        TEmail.setBackground(new Color(1.0f,1.0f,1.0f,0f));
+        TCpf_Cnpj.setEditable(true);
+        TCpf_Cnpj.setBackground(new Color(1.0f,1.0f,1.0f,0f));
+        TEndereco.setEditable(true);
+        TEndereco.setBackground(new Color(1.0f,1.0f,1.0f,0f));
     }
     
     public void Pegar_Dados()
@@ -34,10 +46,10 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
         TNome = new javax.swing.JTextField();
         TSenha = new javax.swing.JTextField();
         TEmail = new javax.swing.JTextField();
+        TCpf_Cnpj = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        TCpf_Cnpj = new javax.swing.JTextField();
-        TEndereco = new javax.swing.JLabel();
+        TEndereco = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -81,6 +93,14 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
         getContentPane().add(TEmail);
         TEmail.setBounds(25, 340, 290, 35);
 
+        TCpf_Cnpj.setBorder(null);
+        TCpf_Cnpj.setMaximumSize(new java.awt.Dimension(290, 35));
+        TCpf_Cnpj.setMinimumSize(new java.awt.Dimension(290, 35));
+        TCpf_Cnpj.setOpaque(false);
+        TCpf_Cnpj.setPreferredSize(new java.awt.Dimension(290, 35));
+        getContentPane().add(TCpf_Cnpj);
+        TCpf_Cnpj.setBounds(25, 426, 290, 35);
+
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
@@ -97,20 +117,14 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
         getContentPane().add(jLabel3);
         jLabel3.setBounds(150, 580, 160, 50);
 
-        TCpf_Cnpj.setBorder(null);
-        TCpf_Cnpj.setMaximumSize(new java.awt.Dimension(290, 35));
-        TCpf_Cnpj.setMinimumSize(new java.awt.Dimension(290, 35));
-        TCpf_Cnpj.setOpaque(false);
-        TCpf_Cnpj.setPreferredSize(new java.awt.Dimension(290, 35));
-        getContentPane().add(TCpf_Cnpj);
-        TCpf_Cnpj.setBounds(25, 426, 290, 35);
-
-        TEndereco.setText("\n");
+        TEndereco.setForeground(new java.awt.Color(255, 255, 255));
+        TEndereco.setBorder(null);
         TEndereco.setMaximumSize(new java.awt.Dimension(288, 35));
         TEndereco.setMinimumSize(new java.awt.Dimension(288, 35));
+        TEndereco.setOpaque(false);
         TEndereco.setPreferredSize(new java.awt.Dimension(288, 35));
         getContentPane().add(TEndereco);
-        TEndereco.setBounds(26, 511, 288, 35);
+        TEndereco.setBounds(23, 512, 288, 35);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_Cadastro.png"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -180,7 +194,7 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField TCpf_Cnpj;
     private javax.swing.JTextField TEmail;
-    private javax.swing.JLabel TEndereco;
+    private javax.swing.JTextField TEndereco;
     private javax.swing.JTextField TNome;
     private javax.swing.JTextField TSenha;
     private javax.swing.JLabel jLabel1;
