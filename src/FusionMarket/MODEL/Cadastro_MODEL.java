@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package FusionMarket.POJO;
+package FusionMarket.MODEL;
 
 /**
  *
  * @author cedup
  */
-public class CadastroUsuário_POJO {
+public class Cadastro_MODEL {
     
 }
