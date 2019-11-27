@@ -18,6 +18,8 @@ public class Login_VIEW extends javax.swing.JFrame {
         LFechar = new javax.swing.JLabel();
         LMinimizar = new javax.swing.JLabel();
         LCadastro = new javax.swing.JLabel();
+        TSenha = new javax.swing.JLabel();
+        TLogin = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -63,6 +65,10 @@ public class Login_VIEW extends javax.swing.JFrame {
         });
         getContentPane().add(LCadastro);
         LCadastro.setBounds(20, 380, 160, 50);
+        getContentPane().add(TSenha);
+        TSenha.setBounds(20, 320, 290, 30);
+        getContentPane().add(TLogin);
+        TLogin.setBounds(20, 220, 290, 30);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_Login.png"))); // NOI18N
         jLabel2.setToolTipText("");
@@ -85,8 +91,26 @@ public class Login_VIEW extends javax.swing.JFrame {
     }//GEN-LAST:event_LMinimizarMouseClicked
 
     private void LEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LEntrarMouseClicked
-        this.dispose();
-        TelaPrincipal_VIEW Tela = new TelaPrincipal_VIEW();
+     
+    Usuario_DAO dao = new Usuari();
+        try {
+            if (dao.checkLogin(TLogin.getText(), TSenha.getText())){
+                new TelaPrincipal_VIEW().setVisible(true);
+                this.dispose();
+                
+            } else {
+                JOptionPane.showMessageDialog(null, "Nome do usuario ou senha incorretos!");
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Login_VIEW.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }                                    
+
+    private void LCadastroMouseClicked(java.awt.event.MouseEvent evt) {                                       
+             this.dispose();
+        Cadastro_VIEW Tela = new Cadastro_VIEW();
         Tela.setVisible(true);
         
 
@@ -142,6 +166,8 @@ public class Login_VIEW extends javax.swing.JFrame {
     private javax.swing.JLabel LEntrar;
     private javax.swing.JLabel LFechar;
     private javax.swing.JLabel LMinimizar;
+    private javax.swing.JLabel TLogin;
+    private javax.swing.JLabel TSenha;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
