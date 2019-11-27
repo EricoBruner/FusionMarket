@@ -53,13 +53,10 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setFocusable(false);
-        setFocusableWindowState(false);
         setMaximumSize(new java.awt.Dimension(330, 656));
         setMinimumSize(new java.awt.Dimension(330, 656));
         setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(330, 656));
-        setResizable(false);
         setSize(new java.awt.Dimension(330, 656));
         getContentPane().setLayout(null);
 
