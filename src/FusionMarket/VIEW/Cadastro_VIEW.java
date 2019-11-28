@@ -149,8 +149,6 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
     private void jLabel3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabel3KeyPressed
         Pegar_Dados();
         
-        Pegar_Dados();
-        
         try
         {
             cd.inserir_usuario(cp);
@@ -159,7 +157,11 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(null, "O campo "+cp.getErro()+" é obrigatorio");
         }
+        
         this.dispose();
+        
+        Login_VIEW tela = new Login_VIEW();
+        tela.setVisible(true);
     }//GEN-LAST:event_jLabel3KeyPressed
 
     public static void main(String args[]) 
