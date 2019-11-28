@@ -72,31 +72,37 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
             }
         });
         getContentPane().add(TNome);
-        TNome.setBounds(20, 170, 290, 40);
+        TNome.setBounds(30, 170, 280, 40);
 
+        TSenha.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        TSenha.setForeground(new java.awt.Color(255, 255, 255));
         TSenha.setBorder(null);
         TSenha.setMaximumSize(new java.awt.Dimension(290, 40));
         TSenha.setMinimumSize(new java.awt.Dimension(290, 40));
         TSenha.setOpaque(false);
         TSenha.setPreferredSize(new java.awt.Dimension(290, 35));
         getContentPane().add(TSenha);
-        TSenha.setBounds(20, 258, 290, 35);
+        TSenha.setBounds(30, 258, 280, 35);
 
+        TEmail.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        TEmail.setForeground(new java.awt.Color(255, 255, 255));
         TEmail.setBorder(null);
         TEmail.setMaximumSize(new java.awt.Dimension(290, 40));
         TEmail.setMinimumSize(new java.awt.Dimension(290, 40));
         TEmail.setOpaque(false);
         TEmail.setPreferredSize(new java.awt.Dimension(290, 35));
         getContentPane().add(TEmail);
-        TEmail.setBounds(25, 340, 290, 35);
+        TEmail.setBounds(35, 340, 280, 35);
 
+        TCpf_Cnpj.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        TCpf_Cnpj.setForeground(new java.awt.Color(255, 255, 255));
         TCpf_Cnpj.setBorder(null);
         TCpf_Cnpj.setMaximumSize(new java.awt.Dimension(290, 35));
         TCpf_Cnpj.setMinimumSize(new java.awt.Dimension(290, 35));
         TCpf_Cnpj.setOpaque(false);
         TCpf_Cnpj.setPreferredSize(new java.awt.Dimension(290, 35));
         getContentPane().add(TCpf_Cnpj);
-        TCpf_Cnpj.setBounds(25, 426, 290, 35);
+        TCpf_Cnpj.setBounds(35, 426, 280, 35);
 
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -114,6 +120,7 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
         getContentPane().add(jLabel3);
         jLabel3.setBounds(150, 580, 160, 50);
 
+        TEndereco.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         TEndereco.setForeground(new java.awt.Color(255, 255, 255));
         TEndereco.setBorder(null);
         TEndereco.setMaximumSize(new java.awt.Dimension(288, 35));
@@ -121,7 +128,7 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
         TEndereco.setOpaque(false);
         TEndereco.setPreferredSize(new java.awt.Dimension(288, 35));
         getContentPane().add(TEndereco);
-        TEndereco.setBounds(23, 512, 288, 35);
+        TEndereco.setBounds(34, 512, 280, 35);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_Cadastro.png"))); // NOI18N
         getContentPane().add(jLabel1);
