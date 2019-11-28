@@ -15,10 +15,12 @@ import java.sql.SQLException;
  *
  * @author metag
  */
-public class Usuario_DAO {
+public class Usuario_DAO 
+{
     public static ConPooling cn = ConPooling.getInstance();
-    public boolean checkLogin(String login, String senha)  {
-        
+    
+    public boolean checkLogin(String login, String senha)  
+    {   
         Connection con= cn.getConnection();
             PreparedStatement stmt=null;
             ResultSet rs=null;
