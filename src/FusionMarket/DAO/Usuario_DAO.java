@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
+import javax.xml.transform.Result;
 
 /**
  *
@@ -24,11 +25,11 @@ public class Usuario_DAO {
             boolean check = false;
             
             try {
-               stmt=con.prepareStatement("SELECT * FROM usuario where login=? and senha=?");
+               stmt=con.prepareStatement("SELECT * FROM usuario where id_usuario=? nome=? and senha=?");
                stmt.setString(1, login);
                stmt.setString(2, senha);
                
-               rs= stmt.executeQuery();
+               rs=stmt.executeQuery();
                
                if (rs.next()){
                
@@ -38,9 +39,6 @@ public class Usuario_DAO {
             }   catch (SQLException ex) {
                     Logger.getLogger(Usuario_DAO.class.getName()).log(Level.SEVERE, null, ex);
                 
-            }finally {
-                ConnectionFactory.closeConnection(con,stmt,rs);
-                }
-                
+          
             return check;  
-    }}
+    }

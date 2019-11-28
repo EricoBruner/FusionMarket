@@ -1,7 +1,11 @@
 package FusionMarket.VIEW;
 
-import static FusionMarket.VIEW.TelaPrincipal_VIEW.Painel;
+import FusionMarket.DAO.Usuario_DAO;
+import java.sql.SQLException;
+import java.util.logging.Level;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import jdk.internal.instrumentation.Logger;
 
 public class Login_VIEW extends javax.swing.JFrame {
 
@@ -17,9 +21,9 @@ public class Login_VIEW extends javax.swing.JFrame {
         LEntrar = new javax.swing.JLabel();
         LFechar = new javax.swing.JLabel();
         LMinimizar = new javax.swing.JLabel();
-        LCadastro = new javax.swing.JLabel();
         TSenha = new javax.swing.JLabel();
         TLogin = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -57,18 +61,18 @@ public class Login_VIEW extends javax.swing.JFrame {
         });
         getContentPane().add(LMinimizar);
         LMinimizar.setBounds(270, 10, 20, 20);
-
-        LCadastro.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LCadastroMouseClicked(evt);
-            }
-        });
-        getContentPane().add(LCadastro);
-        LCadastro.setBounds(20, 380, 160, 50);
         getContentPane().add(TSenha);
         TSenha.setBounds(20, 320, 290, 30);
         getContentPane().add(TLogin);
         TLogin.setBounds(20, 220, 290, 30);
+
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(20, 380, 160, 50);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_Login.png"))); // NOI18N
         jLabel2.setToolTipText("");
@@ -92,7 +96,7 @@ public class Login_VIEW extends javax.swing.JFrame {
 
     private void LEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LEntrarMouseClicked
      
-    Usuario_DAO dao = new Usuari();
+    Usuario_DAO dao = new Usuario_DAO();
         try {
             if (dao.checkLogin(TLogin.getText(), TSenha.getText())){
                 new TelaPrincipal_VIEW().setVisible(true);
@@ -110,19 +114,16 @@ public class Login_VIEW extends javax.swing.JFrame {
 
     private void LCadastroMouseClicked(java.awt.event.MouseEvent evt) {                                       
 
-        Cadastro_VIEW Tela = new Cadastro_VIEW();
-        Tela.setVisible(true);
-        this.dispose();
-
         // TODO add your handling code here:
     }//GEN-LAST:event_LEntrarMouseClicked
 
-    private void LCadastroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LCadastroMouseClicked
-          
-        Cadastro_VIEW Tela = new Cadastro_VIEW();
-        Tela.setVisible(true);
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        Cadastro_VIEW tela = new Cadastro_VIEW();
+        tela.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_LCadastroMouseClicked
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     public static void main(String args[]) 
     {
@@ -157,12 +158,12 @@ public class Login_VIEW extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel LCadastro;
     private javax.swing.JLabel LEntrar;
     private javax.swing.JLabel LFechar;
     private javax.swing.JLabel LMinimizar;
     private javax.swing.JLabel TLogin;
     private javax.swing.JLabel TSenha;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
