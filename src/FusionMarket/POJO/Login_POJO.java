@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package FusionMarket.MODEL;
+package FusionMarket.POJO;
 
 /**
  *
  * @author metag
  */
-public class Usuario_MODEL {
+public class Login_POJO {
 
     private int id;
     private String login;

@@ -7,25 +7,25 @@ package FusionMarket.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import javax.xml.transform.Result;
+
 
 /**
  *
  * @author metag
  */
 public class Usuario_DAO {
-    
-    public boolean checkLogin(String login, String senha) throws SQLException {
+    public static ConPooling cn = ConPooling.getInstance();
+    public boolean checkLogin(String login, String senha)  {
         
-        Connection con= Connection.getConnection();
+        Connection con= cn.getConnection();
             PreparedStatement stmt=null;
-            Result rs=null;
+            ResultSet rs=null;
             boolean check = false;
             
             try {
-               stmt=con.prepareStatement("SELECT * FROM usuario where id_usuario=? nome=? and senha=?");
+               stmt=con.prepareStatement("SELECT * FROM usuario where nome=? and senha=?");
                stmt.setString(1, login);
                stmt.setString(2, senha);
                
@@ -37,8 +37,9 @@ public class Usuario_DAO {
                    
                }
             }   catch (SQLException ex) {
-                    Logger.getLogger(Usuario_DAO.class.getName()).log(Level.SEVERE, null, ex);
-                
-          
-            return check;  
+                    //Logger.getLogger(Usuario_DAO.class.getName()).log(Level.SEVERE, null, ex);
+            } 
+          return check;  
+        }  
     }
+    

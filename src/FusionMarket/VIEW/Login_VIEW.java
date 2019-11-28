@@ -1,11 +1,11 @@
 package FusionMarket.VIEW;
 
 import FusionMarket.DAO.Usuario_DAO;
-import java.sql.SQLException;
-import java.util.logging.Level;
+import java.awt.Color;
+import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import jdk.internal.instrumentation.Logger;
 
 public class Login_VIEW extends javax.swing.JFrame {
 
@@ -18,23 +18,46 @@ public class Login_VIEW extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        TNome = new javax.swing.JTextField();
+        TSenha = new javax.swing.JPasswordField();
+        LMensagem = new javax.swing.JLabel();
         LEntrar = new javax.swing.JLabel();
         LFechar = new javax.swing.JLabel();
         LMinimizar = new javax.swing.JLabel();
-        TSenha = new javax.swing.JLabel();
-        TLogin = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setFocusable(false);
-        setFocusableWindowState(false);
         setMaximumSize(new java.awt.Dimension(330, 450));
         setMinimumSize(new java.awt.Dimension(330, 450));
         setUndecorated(true);
         setResizable(false);
         setSize(new java.awt.Dimension(330, 450));
         getContentPane().setLayout(null);
+
+        TNome.setBackground(new java.awt.Color(255, 255, 255));
+        TNome.setForeground(new java.awt.Color(255, 255, 255));
+        TNome.setBorder(null);
+        TNome.setOpaque(false);
+        getContentPane().add(TNome);
+        TNome.setBounds(30, 220, 280, 30);
+
+        TSenha.setBackground(new java.awt.Color(255, 255, 255));
+        TSenha.setForeground(new java.awt.Color(255, 255, 255));
+        TSenha.setBorder(null);
+        TSenha.setOpaque(false);
+        TSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TSenhaKeyPressed(evt);
+            }
+        });
+        getContentPane().add(TSenha);
+        TSenha.setBounds(30, 320, 270, 30);
+
+        LMensagem.setForeground(new java.awt.Color(102, 102, 102));
+        LMensagem.setText("Digite Login e senha para Entrar no Sistema.");
+        getContentPane().add(LMensagem);
+        LMensagem.setBounds(20, 360, 290, 15);
 
         LEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -61,10 +84,6 @@ public class Login_VIEW extends javax.swing.JFrame {
         });
         getContentPane().add(LMinimizar);
         LMinimizar.setBounds(270, 10, 20, 20);
-        getContentPane().add(TSenha);
-        TSenha.setBounds(20, 320, 290, 30);
-        getContentPane().add(TLogin);
-        TLogin.setBounds(20, 220, 290, 30);
 
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -93,23 +112,25 @@ public class Login_VIEW extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_LMinimizarMouseClicked
-
-    private void LEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LEntrarMouseClicked
-     
-    Usuario_DAO dao = new Usuario_DAO();
-        try {
-            if (dao.checkLogin(TLogin.getText(), TSenha.getText())){
+public void entrar()
+{
+       Usuario_DAO dao = new Usuario_DAO();
+            String login=TNome.getText();
+            String senha=TSenha.getText();
+            
+            if (dao.checkLogin(login, senha)){
                 new TelaPrincipal_VIEW().setVisible(true);
                 this.dispose();
                 
             } else {
-                JOptionPane.showMessageDialog(null, "Nome do usuario ou senha incorretos!");
-                
+                LMensagem.setText("Nome do usuario ou senha incorretos!");
+                LMensagem.setForeground(Color.red);
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(Login_VIEW.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+}
+    private void LEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LEntrarMouseClicked
+     
+ 
+     entrar();
     }                                    
 
     private void LCadastroMouseClicked(java.awt.event.MouseEvent evt) {                                       
@@ -124,6 +145,18 @@ public class Login_VIEW extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void TSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TSenhaKeyPressed
+
+
+        int key = evt.getKeyCode();
+           if (key == KeyEvent.VK_ENTER) {
+               Toolkit.getDefaultToolkit().beep();   
+                entrar();
+              }
+           
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TSenhaKeyPressed
 
     public static void main(String args[]) 
     {
@@ -160,9 +193,10 @@ public class Login_VIEW extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LEntrar;
     private javax.swing.JLabel LFechar;
+    private javax.swing.JLabel LMensagem;
     private javax.swing.JLabel LMinimizar;
-    private javax.swing.JLabel TLogin;
-    private javax.swing.JLabel TSenha;
+    private javax.swing.JTextField TNome;
+    private javax.swing.JPasswordField TSenha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
