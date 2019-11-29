@@ -4,6 +4,7 @@ import FusionMarket.DAO.Produto_DAO;
 import FusionMarket.MODEL.Produto_MODEL;
 import FusionMarket.POJO.Produto_POJO;
 import javax.swing.JOptionPane;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame 
 {
@@ -14,6 +15,9 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
     public AdicionarProduto_VIEW() 
     {
         initComponents();
+        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
+        BasicInternalFrameUI bi =(BasicInternalFrameUI)this.getUI();
+        bi.setNorthPane(null);
     }
     public void Pegar_Dados()
     {
@@ -124,7 +128,7 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         getContentPane().add(PainelAdicionarProduto);
         PainelAdicionarProduto.setBounds(0, 0, 950, 550);
 
-        setBounds(-1, -22, 966, 580);
+        setBounds(0, 0, 950, 550);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked

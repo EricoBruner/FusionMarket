@@ -5,6 +5,8 @@
  */
 package FusionMarket.VIEW;
 
+import javax.swing.plaf.basic.BasicInternalFrameUI;
+
 /**
  *
  * @author User
@@ -14,8 +16,12 @@ public class Historico_VIEW extends javax.swing.JInternalFrame {
     /**
      * Creates new form Historico_VIEW
      */
-    public Historico_VIEW() {
+    public Historico_VIEW() 
+    {
         initComponents();
+        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
+        BasicInternalFrameUI bi =(BasicInternalFrameUI)this.getUI();
+        bi.setNorthPane(null);
     }
 
     /**
@@ -39,7 +45,7 @@ public class Historico_VIEW extends javax.swing.JInternalFrame {
         getContentPane().add(Painel_Historico);
         Painel_Historico.setBounds(0, 0, 950, 550);
 
-        setBounds(-2, -23, 966, 580);
+        setBounds(0, 0, 950, 550);
     }// </editor-fold>//GEN-END:initComponents
 
 

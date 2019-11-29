@@ -3,6 +3,7 @@ package FusionMarket.VIEW;
 import FusionMarket.DAO.Produto_DAO;
 import FusionMarket.POJO.Produto_POJO;
 import java.util.List;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 
 public class MinhaLoja_VIEW extends javax.swing.JInternalFrame {
@@ -10,6 +11,11 @@ public class MinhaLoja_VIEW extends javax.swing.JInternalFrame {
     public MinhaLoja_VIEW() 
     {
         initComponents();
+        
+        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
+        BasicInternalFrameUI bi =(BasicInternalFrameUI)this.getUI();
+        bi.setNorthPane(null);
+        
         Produto_DAO pd = new Produto_DAO();
         Produto_POJO pp = new Produto_POJO();
         List lista = pd.buscar_produto();
@@ -80,7 +86,7 @@ public class MinhaLoja_VIEW extends javax.swing.JInternalFrame {
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, -1, -1));
 
-        setBounds(-1, -22, 966, 583);
+        setBounds(0, 0, 950, 550);
     }// </editor-fold>//GEN-END:initComponents
 
     private void B_AdicionarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B_AdicionarMouseClicked
