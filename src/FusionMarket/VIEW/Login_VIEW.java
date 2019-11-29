@@ -48,16 +48,21 @@ public class Login_VIEW extends javax.swing.JFrame
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(330, 450));
         setMinimumSize(new java.awt.Dimension(330, 450));
         setUndecorated(true);
         setResizable(false);
         setSize(new java.awt.Dimension(330, 450));
         getContentPane().setLayout(null);
 
+        TNome.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         TNome.setForeground(new java.awt.Color(255, 255, 255));
         TNome.setBorder(null);
         TNome.setOpaque(false);
+        TNome.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TNomeKeyPressed(evt);
+            }
+        });
         getContentPane().add(TNome);
         TNome.setBounds(30, 220, 280, 30);
 
@@ -75,7 +80,7 @@ public class Login_VIEW extends javax.swing.JFrame
         LMensagem.setForeground(new java.awt.Color(102, 102, 102));
         LMensagem.setText("Digite Login e senha para Entrar no Sistema.");
         getContentPane().add(LMensagem);
-        LMensagem.setBounds(20, 360, 290, 14);
+        LMensagem.setBounds(20, 360, 290, 15);
 
         LEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -156,6 +161,16 @@ public class Login_VIEW extends javax.swing.JFrame
         }
         
     }//GEN-LAST:event_TSenhaKeyPressed
+
+    private void TNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TNomeKeyPressed
+             if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            TSenha.requestFocus();
+        }
+
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TNomeKeyPressed
 
     public static void main(String args[]) 
     {

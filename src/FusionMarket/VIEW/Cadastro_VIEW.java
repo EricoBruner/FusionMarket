@@ -76,6 +76,11 @@ public class Cadastro_VIEW extends javax.swing.JFrame
                 TNomeActionPerformed(evt);
             }
         });
+        TNome.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TNomeKeyPressed(evt);
+            }
+        });
         getContentPane().add(TNome);
         TNome.setBounds(30, 170, 280, 40);
 
@@ -86,6 +91,11 @@ public class Cadastro_VIEW extends javax.swing.JFrame
         TSenha.setMinimumSize(new java.awt.Dimension(290, 40));
         TSenha.setOpaque(false);
         TSenha.setPreferredSize(new java.awt.Dimension(290, 35));
+        TSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TSenhaKeyPressed(evt);
+            }
+        });
         getContentPane().add(TSenha);
         TSenha.setBounds(30, 258, 280, 35);
 
@@ -96,6 +106,11 @@ public class Cadastro_VIEW extends javax.swing.JFrame
         TEmail.setMinimumSize(new java.awt.Dimension(290, 40));
         TEmail.setOpaque(false);
         TEmail.setPreferredSize(new java.awt.Dimension(290, 35));
+        TEmail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TEmailKeyPressed(evt);
+            }
+        });
         getContentPane().add(TEmail);
         TEmail.setBounds(35, 340, 280, 35);
 
@@ -106,6 +121,11 @@ public class Cadastro_VIEW extends javax.swing.JFrame
         TCpf_Cnpj.setMinimumSize(new java.awt.Dimension(290, 35));
         TCpf_Cnpj.setOpaque(false);
         TCpf_Cnpj.setPreferredSize(new java.awt.Dimension(290, 35));
+        TCpf_Cnpj.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TCpf_CnpjKeyPressed(evt);
+            }
+        });
         getContentPane().add(TCpf_Cnpj);
         TCpf_Cnpj.setBounds(35, 426, 280, 35);
 
@@ -183,6 +203,44 @@ public class Cadastro_VIEW extends javax.swing.JFrame
         }
         
     }//GEN-LAST:event_TEnderecoKeyPressed
+
+    private void TNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TNomeKeyPressed
+        
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            TSenha.requestFocus();
+        }
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TNomeKeyPressed
+
+    private void TSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TSenhaKeyPressed
+            
+            if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            TEmail.requestFocus();
+        }
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TSenhaKeyPressed
+
+    private void TEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TEmailKeyPressed
+             if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            TCpf_Cnpj.requestFocus();
+        }
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TEmailKeyPressed
+
+    private void TCpf_CnpjKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TCpf_CnpjKeyPressed
+             if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            TEndereco.requestFocus();
+        }
+
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TCpf_CnpjKeyPressed
 
     public static void main(String args[]) 
     {
