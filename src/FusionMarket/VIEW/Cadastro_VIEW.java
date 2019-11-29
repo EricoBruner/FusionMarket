@@ -5,29 +5,20 @@ import FusionMarket.MODEL.Produto_MODEL;
 import FusionMarket.POJO.Cadastro_POJO;
 import FusionMarket.POJO.Produto_POJO;
 import java.awt.Color;
+import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 
 import javax.swing.JOptionPane;
 
-public class Cadastro_VIEW extends javax.swing.JFrame {
+public class Cadastro_VIEW extends javax.swing.JFrame 
+{
 
     Cadastro_POJO cp = new Cadastro_POJO();
     Cadastro_DAO cd = new Cadastro_DAO();
-    Produto_MODEL pm = new Produto_MODEL();
     
     public Cadastro_VIEW() 
     {
         initComponents();
-        
-        TNome.setEditable(true);
-        TNome.setBackground(new Color(1.0f,1.0f,1.0f,0f));
-        TSenha.setEditable(true);
-        TSenha.setBackground(new Color(1.0f,1.0f,1.0f,0f));
-        TEmail.setEditable(true);
-        TEmail.setBackground(new Color(1.0f,1.0f,1.0f,0f));
-        TCpf_Cnpj.setEditable(true);
-        TCpf_Cnpj.setBackground(new Color(1.0f,1.0f,1.0f,0f));
-        TEndereco.setEditable(true);
-        TEndereco.setBackground(new Color(1.0f,1.0f,1.0f,0f));
     }
     
     public void Pegar_Dados()
@@ -38,7 +29,21 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
         cp.setCpf_cnpj(TCpf_Cnpj.getText());
         cp.setEndereco(TEndereco.getText());
     }
-
+    
+    public void Entrar()
+    {
+        try
+        {
+            cd.inserir_usuario(cp);
+        }
+        catch(IllegalArgumentException e)
+        {
+            JOptionPane.showMessageDialog(null, "O campo "+cp.getErro()+" é obrigatorio");
+        }     
+        Login_VIEW tela = new Login_VIEW();
+        tela.setVisible(true);
+        this.dispose();
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -48,7 +53,7 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
         TEmail = new javax.swing.JTextField();
         TCpf_Cnpj = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        LCadastrar = new javax.swing.JLabel();
         TEndereco = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
@@ -112,13 +117,18 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(30, 580, 100, 50);
 
-        jLabel3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jLabel3KeyPressed(evt);
+        LCadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LCadastrarMouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(150, 580, 160, 50);
+        LCadastrar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                LCadastrarKeyPressed(evt);
+            }
+        });
+        getContentPane().add(LCadastrar);
+        LCadastrar.setBounds(150, 580, 160, 50);
 
         TEndereco.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         TEndereco.setForeground(new java.awt.Color(255, 255, 255));
@@ -127,6 +137,11 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
         TEndereco.setMinimumSize(new java.awt.Dimension(288, 35));
         TEndereco.setOpaque(false);
         TEndereco.setPreferredSize(new java.awt.Dimension(288, 35));
+        TEndereco.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TEnderecoKeyPressed(evt);
+            }
+        });
         getContentPane().add(TEndereco);
         TEndereco.setBounds(34, 512, 280, 35);
 
@@ -146,23 +161,28 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
 
-    private void jLabel3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabel3KeyPressed
+    private void LCadastrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_LCadastrarKeyPressed
+
+    }//GEN-LAST:event_LCadastrarKeyPressed
+
+    private void LCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LCadastrarMouseClicked
+        
         Pegar_Dados();
+        Entrar();
+            
+    }//GEN-LAST:event_LCadastrarMouseClicked
+
+    private void TEnderecoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TEnderecoKeyPressed
         
-        try
+        int key = evt.getKeyCode();
+        if (key == KeyEvent.VK_ENTER) 
         {
-            cd.inserir_usuario(cp);
-        }
-        catch(IllegalArgumentException e)
-        {
-            JOptionPane.showMessageDialog(null, "O campo "+cp.getErro()+" é obrigatorio");
+        Toolkit.getDefaultToolkit().beep();  
+        Pegar_Dados();
+        Entrar();
         }
         
-        this.dispose();
-        
-        Login_VIEW tela = new Login_VIEW();
-        tela.setVisible(true);
-    }//GEN-LAST:event_jLabel3KeyPressed
+    }//GEN-LAST:event_TEnderecoKeyPressed
 
     public static void main(String args[]) 
     {
@@ -198,6 +218,7 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LCadastrar;
     private javax.swing.JTextField TCpf_Cnpj;
     private javax.swing.JTextField TEmail;
     private javax.swing.JTextField TEndereco;
@@ -205,6 +226,5 @@ public class Cadastro_VIEW extends javax.swing.JFrame {
     private javax.swing.JTextField TSenha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

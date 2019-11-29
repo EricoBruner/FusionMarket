@@ -7,13 +7,33 @@ import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-public class Login_VIEW extends javax.swing.JFrame {
-
+public class Login_VIEW extends javax.swing.JFrame 
+{
+    public void entrar()
+    {
+        Usuario_DAO dao = new Usuario_DAO();
+        String login=TNome.getText();
+        String senha=TSenha.getText();
+            
+        if (dao.checkLogin(login, senha))
+        {
+            new TelaPrincipal_VIEW().setVisible(true);
+            this.dispose();
+                
+        }
+        else 
+        {
+            LMensagem.setText("Nome do usuario ou senha incorretos!");
+            LMensagem.setForeground(Color.red);
+        }
+    }
+    
     public Login_VIEW() 
     {
-       initComponents();
+        initComponents();
         setSize(330, 425);
     }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -24,7 +44,7 @@ public class Login_VIEW extends javax.swing.JFrame {
         LEntrar = new javax.swing.JLabel();
         LFechar = new javax.swing.JLabel();
         LMinimizar = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        LCadastrar = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -83,13 +103,13 @@ public class Login_VIEW extends javax.swing.JFrame {
         getContentPane().add(LMinimizar);
         LMinimizar.setBounds(270, 10, 20, 20);
 
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        LCadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                LCadastrarMouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(20, 380, 160, 50);
+        getContentPane().add(LCadastrar);
+        LCadastrar.setBounds(20, 380, 160, 50);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_Login.png"))); // NOI18N
         jLabel2.setToolTipText("");
@@ -101,59 +121,40 @@ public class Login_VIEW extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LFecharMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LFecharMouseClicked
+        
         System.exit(0);
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_LFecharMouseClicked
 
     private void LMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LMinimizarMouseClicked
+        
         this.setState(JFrame.ICONIFIED);
-
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_LMinimizarMouseClicked
-public void entrar()
-{
-       Usuario_DAO dao = new Usuario_DAO();
-            String login=TNome.getText();
-            String senha=TSenha.getText();
-            
-            if (dao.checkLogin(login, senha)){
-                new TelaPrincipal_VIEW().setVisible(true);
-                this.dispose();
-                
-            } else {
-                LMensagem.setText("Nome do usuario ou senha incorretos!");
-                LMensagem.setForeground(Color.red);
-            }
-}
+
     private void LEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LEntrarMouseClicked
-     
- 
-     entrar();
-    }                                    
-
-    private void LCadastroMouseClicked(java.awt.event.MouseEvent evt) {                                       
-
-        // TODO add your handling code here:
+        
+        entrar();
+    
     }//GEN-LAST:event_LEntrarMouseClicked
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+    private void LCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LCadastrarMouseClicked
+        
         Cadastro_VIEW tela = new Cadastro_VIEW();
         tela.setVisible(true);
         this.dispose();
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel1MouseClicked
+        
+    }//GEN-LAST:event_LCadastrarMouseClicked
 
     private void TSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TSenhaKeyPressed
-
-
+        
         int key = evt.getKeyCode();
-           if (key == KeyEvent.VK_ENTER) {
-               Toolkit.getDefaultToolkit().beep();   
-                entrar();
-              }
-           
-        // TODO add your handling code here:
+        if (key == KeyEvent.VK_ENTER) 
+        {
+        Toolkit.getDefaultToolkit().beep();   
+        entrar();
+        }
+        
     }//GEN-LAST:event_TSenhaKeyPressed
 
     public static void main(String args[]) 
@@ -189,13 +190,13 @@ public void entrar()
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LCadastrar;
     private javax.swing.JLabel LEntrar;
     private javax.swing.JLabel LFechar;
     private javax.swing.JLabel LMensagem;
     private javax.swing.JLabel LMinimizar;
     private javax.swing.JTextField TNome;
     private javax.swing.JPasswordField TSenha;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
