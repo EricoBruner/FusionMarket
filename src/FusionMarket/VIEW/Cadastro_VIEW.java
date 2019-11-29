@@ -12,7 +12,6 @@ import javax.swing.JOptionPane;
 
 public class Cadastro_VIEW extends javax.swing.JFrame 
 {
-
     Cadastro_POJO cp = new Cadastro_POJO();
     Cadastro_DAO cd = new Cadastro_DAO();
     
@@ -174,7 +173,7 @@ public class Cadastro_VIEW extends javax.swing.JFrame
     }// </editor-fold>//GEN-END:initComponents
 
     private void TNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TNomeActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_TNomeActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
@@ -206,40 +205,38 @@ public class Cadastro_VIEW extends javax.swing.JFrame
 
     private void TNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TNomeKeyPressed
         
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER)
+        {
             TSenha.requestFocus();
         }
-
-
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_TNomeKeyPressed
 
     private void TSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TSenhaKeyPressed
             
-            if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER)
+        {
             TEmail.requestFocus();
         }
 
-        // TODO add your handling code here:
     }//GEN-LAST:event_TSenhaKeyPressed
 
     private void TEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TEmailKeyPressed
-             if(evt.getKeyCode() == KeyEvent.VK_ENTER){
-            TCpf_Cnpj.requestFocus();
+             
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER)
+        {
+        TCpf_Cnpj.requestFocus();
         }
 
-
-        // TODO add your handling code here:
     }//GEN-LAST:event_TEmailKeyPressed
 
     private void TCpf_CnpjKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TCpf_CnpjKeyPressed
-             if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+             
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER)
+        {
             TEndereco.requestFocus();
         }
 
-
-
-        // TODO add your handling code here:
     }//GEN-LAST:event_TCpf_CnpjKeyPressed
 
     public static void main(String args[]) 
