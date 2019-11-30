@@ -1,5 +1,8 @@
 package FusionMarket.VIEW;
 
+import FusionMarket.DAO.Usuario_DAO;
+import FusionMarket.MODEL.Usuario_MODEL;
+import FusionMarket.POJO.Usuario_POJO;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class Perfil_VIEW extends javax.swing.JInternalFrame {
@@ -7,35 +10,110 @@ public class Perfil_VIEW extends javax.swing.JInternalFrame {
     public Perfil_VIEW() 
     {
         initComponents();
-        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
-        BasicInternalFrameUI bi =(BasicInternalFrameUI)this.getUI();
-        bi.setNorthPane(null);
+            Usuario_DAO cd = new Usuario_DAO();
+            Usuario_MODEL cm = new Usuario_MODEL();
+            Usuario_POJO cp = new Usuario_POJO();
+    
+    
+    TNome.setText(cp.getNome());
+    TEmail1.setText(cp.getEmail());
+    TCPF.setText(cp.getCpf());
+    TEndereco.setText(cp.getEndereco());
+        
+        
+        
     }
+
+   
+ 
+
+        public void limpar_tela()
+        {
+         
+            TNome.setText("");
+            TCPF.setText("");
+            TEmail1.setText("");
+            TEndereco.setText("");
+            
+        }
+  
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        TNome = new javax.swing.JTextField();
+        TEndereco = new javax.swing.JTextField();
+        LSalvar = new javax.swing.JLabel();
+        TEmail1 = new javax.swing.JTextField();
+        TCPF = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_Perfil.png"))); // NOI18N
+        getContentPane().setLayout(null);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1)
-        );
+        TNome.setBorder(null);
+        TNome.setOpaque(false);
+        getContentPane().add(TNome);
+        TNome.setBounds(510, 140, 400, 40);
+
+        TEndereco.setBorder(null);
+        TEndereco.setOpaque(false);
+        TEndereco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TEnderecoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(TEndereco);
+        TEndereco.setBounds(510, 370, 400, 40);
+        getContentPane().add(LSalvar);
+        LSalvar.setBounds(740, 460, 170, 50);
+
+        TEmail1.setBorder(null);
+        TEmail1.setOpaque(false);
+        TEmail1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TEmail1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(TEmail1);
+        TEmail1.setBounds(510, 220, 400, 40);
+
+        TCPF.setBorder(null);
+        TCPF.setOpaque(false);
+        TCPF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TCPFActionPerformed(evt);
+            }
+        });
+        getContentPane().add(TCPF);
+        TCPF.setBounds(510, 300, 400, 40);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_Perfil.png"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 950, 550);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void TEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TEnderecoActionPerformed
+
+    private void TEmail1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TEmail1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TEmail1ActionPerformed
+
+    private void TCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TCPFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TCPFActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LSalvar;
+    private javax.swing.JTextField TCPF;
+    private javax.swing.JTextField TEmail1;
+    private javax.swing.JTextField TEndereco;
+    private javax.swing.JTextField TNome;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
