@@ -1,7 +1,6 @@
 package FusionMarket.DAO;
 
 import FusionMarket.POJO.Cadastro_POJO;
-import FusionMarket.POJO.Produto_POJO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
