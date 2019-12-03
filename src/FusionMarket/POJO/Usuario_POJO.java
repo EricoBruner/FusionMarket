@@ -1,6 +1,6 @@
 package FusionMarket.POJO;
 
-public class Cadastro_POJO 
+public class Usuario_POJO 
 {
     int id_usuario;
     String nome, cpf_cnpj, email, senha, endereco, erro;

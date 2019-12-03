@@ -35,14 +35,12 @@ public class Login_VIEW extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(330, 450));
         getContentPane().setLayout(null);
 
-        TNome.setBackground(new java.awt.Color(255, 255, 255));
         TNome.setForeground(new java.awt.Color(255, 255, 255));
         TNome.setBorder(null);
         TNome.setOpaque(false);
         getContentPane().add(TNome);
         TNome.setBounds(30, 220, 280, 30);
 
-        TSenha.setBackground(new java.awt.Color(255, 255, 255));
         TSenha.setForeground(new java.awt.Color(255, 255, 255));
         TSenha.setBorder(null);
         TSenha.setOpaque(false);
@@ -57,7 +55,7 @@ public class Login_VIEW extends javax.swing.JFrame {
         LMensagem.setForeground(new java.awt.Color(102, 102, 102));
         LMensagem.setText("Digite Login e senha para Entrar no Sistema.");
         getContentPane().add(LMensagem);
-        LMensagem.setBounds(20, 360, 290, 15);
+        LMensagem.setBounds(20, 360, 290, 14);
 
         LEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

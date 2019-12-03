@@ -1,17 +1,16 @@
 package FusionMarket.VIEW;
 
-import FusionMarket.DAO.Cadastro_DAO;
+import FusionMarket.DAO.Usuario_DAO;
 import FusionMarket.MODEL.Produto_MODEL;
-import FusionMarket.POJO.Cadastro_POJO;
-import FusionMarket.POJO.Produto_POJO;
+import FusionMarket.POJO.Usuario_POJO;
 import java.awt.Color;
 
 import javax.swing.JOptionPane;
 
 public class Cadastro_VIEW extends javax.swing.JFrame {
 
-    Cadastro_POJO cp = new Cadastro_POJO();
-    Cadastro_DAO cd = new Cadastro_DAO();
+    Usuario_POJO cp = new Usuario_POJO();
+    Usuario_DAO cd = new Usuario_DAO();
     Produto_MODEL pm = new Produto_MODEL();
     
     public Cadastro_VIEW() 
