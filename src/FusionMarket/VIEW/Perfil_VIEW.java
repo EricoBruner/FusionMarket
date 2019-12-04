@@ -65,6 +65,17 @@ public class Perfil_VIEW extends javax.swing.JInternalFrame {
         });
         getContentPane().add(TEndereco);
         TEndereco.setBounds(510, 370, 400, 40);
+
+        LSalvar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LSalvarMouseClicked(evt);
+            }
+        });
+        LSalvar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                LSalvarKeyPressed(evt);
+            }
+        });
         getContentPane().add(LSalvar);
         LSalvar.setBounds(740, 460, 170, 50);
 
@@ -106,6 +117,17 @@ public class Perfil_VIEW extends javax.swing.JInternalFrame {
     private void TCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TCPFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TCPFActionPerformed
+
+    private void LSalvarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_LSalvarKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LSalvarKeyPressed
+
+    private void LSalvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LSalvarMouseClicked
+        
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LSalvarMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
