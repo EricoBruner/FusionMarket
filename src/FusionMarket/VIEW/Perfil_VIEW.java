@@ -1,14 +1,16 @@
 package FusionMarket.VIEW;
 
+import FusionMarket.DAO.Perfil_DAO;
 import FusionMarket.DAO.Usuario_DAO;
+import FusionMarket.MODEL.Perfil_MODEL;
 import FusionMarket.MODEL.Usuario_MODEL;
 import FusionMarket.POJO.Usuario_POJO;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class Perfil_VIEW extends javax.swing.JInternalFrame {
 
-            Usuario_DAO cd = new Usuario_DAO();
-            Usuario_MODEL cm = new Usuario_MODEL();
+            Perfil_DAO cd = new Perfil_DAO();
+            Perfil_MODEL cm = new Perfil_MODEL();
             Usuario_POJO cp = new Usuario_POJO();
     
             public Perfil_VIEW() 
