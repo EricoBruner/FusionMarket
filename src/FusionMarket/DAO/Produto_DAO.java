@@ -60,5 +60,32 @@ public class Produto_DAO
         }
         return lista;
         }
-    }
+    
+        public List buscar_produto_unico()
+    {
+        List lista = new ArrayList();
+        Connection con = cn.getConnection();
+        String sql = "select * from produto where id_usuario like ?;";
+        try
+        {
+            PreparedStatement p = con.prepareStatement(sql);
+            p.setString(1, "%");
+            ResultSet rs = p.executeQuery();
+            while (rs.next())
+            {
+                Produto_POJO produto = new Produto_POJO();
+                produto.setTitulo(rs.getString("titulo"));
+                produto.setPreco(rs.getString("preco"));
+                produto.setCategoria(rs.getString("categoria"));
+                produto.setQuantidade(rs.getInt("quantidade"));
+                lista.add(produto);
+            }
+        }
+        catch (SQLException e)
+        {
+            JOptionPane.showMessageDialog( null, e ) ;
+        }
+        return lista;
+        }   
+}
 
