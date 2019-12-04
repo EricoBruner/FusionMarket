@@ -132,10 +132,15 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        MinhaLoja_VIEW tela = new MinhaLoja_VIEW();
+        tela.setVisible(true);
         this.dispose();
+        
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void CancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelarMouseClicked
+        MinhaLoja_VIEW tela = new MinhaLoja_VIEW();
+        tela.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CancelarMouseClicked
 

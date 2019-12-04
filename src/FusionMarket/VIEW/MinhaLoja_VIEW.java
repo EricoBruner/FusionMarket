@@ -93,6 +93,7 @@ public class MinhaLoja_VIEW extends javax.swing.JInternalFrame {
         AdicionarProduto_VIEW Tela_AdicionarProduto = new AdicionarProduto_VIEW();
         TelaPrincipal_VIEW.Painel.add(Tela_AdicionarProduto);
         Tela_AdicionarProduto.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_B_AdicionarMouseClicked
 
     private void B_VoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B_VoltarMouseClicked
