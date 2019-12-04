@@ -3,6 +3,12 @@ package FusionMarket.VIEW;
 import FusionMarket.DAO.Produto_DAO;
 import FusionMarket.MODEL.Produto_MODEL;
 import FusionMarket.POJO.Produto_POJO;
+import FusionMarket.POJO.Usuario_POJO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
@@ -11,10 +17,13 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
     Produto_POJO pp = new Produto_POJO();
     Produto_DAO pd = new Produto_DAO();
     Produto_MODEL pm = new Produto_MODEL();
-    
-    public AdicionarProduto_VIEW() 
+    int id_usuario;
+    String rot="";
+    int adfoto=0;
+    public AdicionarProduto_VIEW(int id) 
     {
         initComponents();
+        id_usuario=id;
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI bi =(BasicInternalFrameUI)this.getUI();
         bi.setNorthPane(null);
@@ -26,6 +35,7 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         pp.setQuantidade(Integer.parseInt(TQuantidade.getText()));
         pp.setDescricao(TDescricao.getText());
         pp.setCategoria(TCategoria.getText());
+        pp.setId_usuario(id_usuario);
     }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -33,7 +43,7 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         jLabel2 = new javax.swing.JLabel();
         Cancelar = new javax.swing.JLabel();
         Publicar = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        LFoto = new javax.swing.JLabel();
         TTitulo = new javax.swing.JTextField();
         TCategoria = new javax.swing.JTextField();
         TPreco = new javax.swing.JTextField();
@@ -42,6 +52,7 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         jScrollPane2 = new javax.swing.JScrollPane();
         TDescricao = new javax.swing.JTextArea();
         PainelAdicionarProduto = new javax.swing.JLabel();
+        TUrl = new javax.swing.JLabel();
 
         setBorder(null);
         setMaximumSize(new java.awt.Dimension(966, 580));
@@ -76,14 +87,14 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         getContentPane().add(Publicar);
         Publicar.setBounds(750, 470, 160, 50);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Botão_AdicionarImagem.png"))); // NOI18N
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        LFoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Botão_AdicionarImagem.png"))); // NOI18N
+        LFoto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                LFotoMouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(750, 150, 160, 160);
+        getContentPane().add(LFoto);
+        LFoto.setBounds(750, 145, 164, 165);
 
         TTitulo.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         TTitulo.setBorder(null);
@@ -128,18 +139,45 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         getContentPane().add(PainelAdicionarProduto);
         PainelAdicionarProduto.setBounds(0, 0, 950, 550);
 
+        TUrl.setText("jLabel1");
+        getContentPane().add(TUrl);
+        TUrl.setBounds(330, 80, 34, 14);
+
         setBounds(0, 0, 950, 550);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        MinhaLoja_VIEW tela = new MinhaLoja_VIEW();
+        MinhaLoja_VIEW tela = new MinhaLoja_VIEW(id_usuario);
         tela.setVisible(true);
         this.dispose();
         
     }//GEN-LAST:event_jLabel2MouseClicked
 
+    public void carregar_foto()
+    {
+        JFileChooser j = new JFileChooser();
+        j.setCurrentDirectory(new File("Imagenes/"));
+        int ap = j.showOpenDialog(this);
+        String rota="";
+        BufferedImage bi = null;
+        if(ap == JFileChooser.APPROVE_OPTION){
+            File arquivo = j.getSelectedFile();
+            rota = j.getSelectedFile().getAbsolutePath();
+            ImageIcon icone = new ImageIcon(rota);
+            try {
+                bi = ImageIO.read(arquivo);
+            } catch (Exception e) {
+            }
+
+            icone.setImage(icone.getImage().getScaledInstance(LFoto.getWidth(), LFoto.getHeight(), 1));
+            LFoto.setIcon(icone);
+            TUrl.setText(rota);
+            rot=rota;
+            adfoto=1;
+    }
+    }
     private void CancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelarMouseClicked
-        MinhaLoja_VIEW tela = new MinhaLoja_VIEW();
+        MinhaLoja_VIEW tela = new MinhaLoja_VIEW(id_usuario);
         tela.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CancelarMouseClicked
@@ -150,20 +188,22 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         
         try
         {
-            pd.inserir_produto(pp);
+            pd.inserir_produto(pp,rot,adfoto);
         }
         catch(IllegalArgumentException e)
         {
             JOptionPane.showMessageDialog(null, "O campo "+pp.getErro()+" é obrigatorio");
         }
-        MinhaLoja_VIEW tela = new MinhaLoja_VIEW();
+        MinhaLoja_VIEW tela = new MinhaLoja_VIEW(id_usuario);
         tela.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_PublicarMouseClicked
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+    private void LFotoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LFotoMouseClicked
+
+        carregar_foto();
         // Colocar opção pro usuario colocar imagem
-    }//GEN-LAST:event_jLabel1MouseClicked
+    }//GEN-LAST:event_LFotoMouseClicked
 
     private void TTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TTituloActionPerformed
         // TODO add your handling code here:
@@ -171,6 +211,7 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Cancelar;
+    private javax.swing.JLabel LFoto;
     private javax.swing.JLabel PainelAdicionarProduto;
     private javax.swing.JLabel Publicar;
     private javax.swing.JTextField TCategoria;
@@ -179,7 +220,7 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
     private javax.swing.JTextField TPreco;
     private javax.swing.JTextField TQuantidade;
     private javax.swing.JTextField TTitulo;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel TUrl;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables

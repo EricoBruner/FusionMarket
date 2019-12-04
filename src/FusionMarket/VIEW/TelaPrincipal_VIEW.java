@@ -1,17 +1,21 @@
 package FusionMarket.VIEW;
 
+import FusionMarket.POJO.Usuario_POJO;
 import java.awt.Color;
 import java.awt.Frame;
 import javax.swing.JFrame;
 
 public class TelaPrincipal_VIEW extends javax.swing.JFrame 
 {
-    public TelaPrincipal_VIEW() 
+    Usuario_POJO usuarioPOJO;
+    
+    public TelaPrincipal_VIEW(Usuario_POJO up) 
     {
         initComponents();
-    TProduto.setBackground(new Color(1.0f,1.0f,1.0f,0f));
-    TRegiao.setBackground(new Color(1.0f,1.0f,1.0f,0f));
-    TCategoria.setBackground(new Color(1.0f,1.0f,1.0f,0f));
+        TProduto.setBackground(new Color(1.0f,1.0f,1.0f,0f));
+        TRegiao.setBackground(new Color(1.0f,1.0f,1.0f,0f));
+        TCategoria.setBackground(new Color(1.0f,1.0f,1.0f,0f));
+        usuarioPOJO=up;
     
     
     }    
@@ -178,7 +182,7 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotãoLojaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotãoLojaMouseClicked
-        MinhaLoja_VIEW Tela_MinhaLoja = new MinhaLoja_VIEW();
+        MinhaLoja_VIEW Tela_MinhaLoja = new MinhaLoja_VIEW(usuarioPOJO.getId());
         Painel.add(Tela_MinhaLoja);
         Tela_MinhaLoja.setVisible(true);
     }//GEN-LAST:event_BotãoLojaMouseClicked
@@ -244,7 +248,7 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         {
             public void run() 
             {
-                new TelaPrincipal_VIEW().setVisible(true);
+               // new TelaPrincipal_VIEW().setVisible(true);
             }
         });
     }

@@ -1,8 +1,26 @@
 package FusionMarket.POJO;
 
+import java.sql.Blob;
+
 public class Produto_POJO 
 {
-    int id_produto,quantidade;
+    int id_produto,quantidade, id_usuario;
+    Blob foto;
+
+    public Blob getFoto() {
+        return foto;
+    }
+
+    public void setFoto(Blob foto) {
+        this.foto = foto;
+    }
+    public int getId_usuario() {
+        return id_usuario;
+    }
+
+    public void setId_usuario(int id_usuario) {
+        this.id_usuario = id_usuario;
+    }
     String titulo,categoria,preco,descricao,condicao,erro;
 
     public String getErro() {

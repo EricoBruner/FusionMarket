@@ -7,18 +7,18 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 
 public class MinhaLoja_VIEW extends javax.swing.JInternalFrame {
-
-    public MinhaLoja_VIEW() 
+int Id_usuario;
+    public MinhaLoja_VIEW(int id) 
     {
         initComponents();
-        
+        Id_usuario=id;
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI bi =(BasicInternalFrameUI)this.getUI();
         bi.setNorthPane(null);
         
         Produto_DAO pd = new Produto_DAO();
         Produto_POJO pp = new Produto_POJO();
-        List lista = pd.buscar_produto();
+        List lista = pd.buscar_produto(id);
         DefaultTableModel dtm = (DefaultTableModel)TTabela.getModel();
         for (int i=0 ; i < lista.size() ; i++)
         {
@@ -90,7 +90,7 @@ public class MinhaLoja_VIEW extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void B_AdicionarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B_AdicionarMouseClicked
-        AdicionarProduto_VIEW Tela_AdicionarProduto = new AdicionarProduto_VIEW();
+        AdicionarProduto_VIEW Tela_AdicionarProduto = new AdicionarProduto_VIEW(Id_usuario);
         TelaPrincipal_VIEW.Painel.add(Tela_AdicionarProduto);
         Tela_AdicionarProduto.setVisible(true);
         this.dispose();

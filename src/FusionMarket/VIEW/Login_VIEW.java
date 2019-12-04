@@ -1,6 +1,7 @@
 package FusionMarket.VIEW;
 
 import FusionMarket.DAO.Usuario_DAO;
+import FusionMarket.POJO.Usuario_POJO;
 import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
@@ -11,13 +12,16 @@ public class Login_VIEW extends javax.swing.JFrame
 {
     public void entrar()
     {
+        Usuario_POJO up = new Usuario_POJO();
         Usuario_DAO dao = new Usuario_DAO();
+        up.setId(0);
         String login=TNome.getText();
         String senha=TSenha.getText();
-            
-        if (dao.checkLogin(login, senha))
+        up=dao.checkLogin(login, senha);
+        if (up.getId()!=0)
         {
-            new TelaPrincipal_VIEW().setVisible(true);
+                   
+            new TelaPrincipal_VIEW(up).setVisible(true);
             this.dispose();
                 
         }

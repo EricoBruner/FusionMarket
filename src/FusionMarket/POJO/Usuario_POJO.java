@@ -11,7 +11,16 @@ package FusionMarket.POJO;
  */
 public class Usuario_POJO {
     String nome,email,cpf,endereco,erro;
+    int id;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public String getNome() {
         return nome;
     }

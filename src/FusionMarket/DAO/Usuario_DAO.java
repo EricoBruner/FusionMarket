@@ -5,6 +5,7 @@
  */
 package FusionMarket.DAO;
 
+import FusionMarket.POJO.Usuario_POJO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,13 +20,13 @@ public class Usuario_DAO
 {
     public static ConPooling cn = ConPooling.getInstance();
     
-    public boolean checkLogin(String login, String senha)  
+    public Usuario_POJO checkLogin(String login, String senha)  
     {   
         Connection con= cn.getConnection();
             PreparedStatement stmt=null;
             ResultSet rs=null;
             boolean check = false;
-            
+            Usuario_POJO up=new Usuario_POJO();
             try {
                stmt=con.prepareStatement("SELECT * FROM usuario where nome=? and senha=?");
                stmt.setString(1, login);
@@ -33,15 +34,16 @@ public class Usuario_DAO
                
                rs=stmt.executeQuery();
                
-               if (rs.next()){
+               while(rs.next()){
                
-                   check = true;
-                   
+                   up.setId(rs.getInt("id_usuario"));
+                   //fazer todos
                }
             }   catch (SQLException ex) {
                     //Logger.getLogger(Usuario_DAO.class.getName()).log(Level.SEVERE, null, ex);
             } 
-          return check;  
-        }  
+          return up;  
+        }
+    
     }
     
