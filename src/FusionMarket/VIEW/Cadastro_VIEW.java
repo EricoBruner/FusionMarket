@@ -178,6 +178,8 @@ public class Cadastro_VIEW extends javax.swing.JFrame
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         this.dispose();
+        Login_VIEW tela = new Login_VIEW();
+        tela.setVisible(true);
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void LCadastrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_LCadastrarKeyPressed
