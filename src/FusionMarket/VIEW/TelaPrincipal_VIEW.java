@@ -44,19 +44,14 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Botão_Home_1.png"))); // NOI18N
-        jLabel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
         jLabel2.setMaximumSize(new java.awt.Dimension(52, 52));
         jLabel2.setMinimumSize(new java.awt.Dimension(52, 52));
         jLabel2.setName(""); // NOI18N
         jLabel2.setNextFocusableComponent(TelaPrincipal);
-        jLabel2.setOpaque(true);
         jLabel2.setPreferredSize(new java.awt.Dimension(52, 52));
         getContentPane().add(jLabel2);
         jLabel2.setBounds(354, 52, 52, 52);
 
-        BotãoLoja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Botão_Loja.png"))); // NOI18N
-        BotãoLoja.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         BotãoLoja.setMaximumSize(new java.awt.Dimension(53, 53));
         BotãoLoja.setMinimumSize(new java.awt.Dimension(53, 53));
         BotãoLoja.setPreferredSize(new java.awt.Dimension(53, 53));
@@ -97,7 +92,6 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         getContentPane().add(Painel);
         Painel.setBounds(353, 154, 950, 550);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Botão_Historico_1.png"))); // NOI18N
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
@@ -106,7 +100,6 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         getContentPane().add(jLabel3);
         jLabel3.setBounds(580, 53, 50, 50);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Botão_Perfil_1.png"))); // NOI18N
         jLabel5.setMaximumSize(new java.awt.Dimension(50, 49));
         jLabel5.setMinimumSize(new java.awt.Dimension(50, 49));
         jLabel5.setPreferredSize(new java.awt.Dimension(50, 49));
