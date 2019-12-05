@@ -194,7 +194,9 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         {
             JOptionPane.showMessageDialog(null, "O campo "+pp.getErro()+" é obrigatorio");
         }
+        
         MinhaLoja_VIEW tela = new MinhaLoja_VIEW(id_usuario);
+        TelaPrincipal_VIEW.Painel.add(tela);
         tela.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_PublicarMouseClicked
