@@ -66,7 +66,7 @@ int Id_usuario;
         });
         getContentPane().add(B_Voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 20, 60, 60));
 
-        TTabela.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        TTabela.setFont(new java.awt.Font("Arial", 0, 17)); // NOI18N
         TTabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
