@@ -42,7 +42,7 @@ public class Usuario_DAO
                 up.setNome(rs.getString("nome"));
                 up.setEmail(rs.getString("email"));
                 up.setEndereco(rs.getString("endereco"));
-                up.setEndereco(""+rs.getInt("cpf_cnpj"));
+                up.setCpf(rs.getString("cpf_cnpj"));
                }
         }
         catch (SQLException ex) 
