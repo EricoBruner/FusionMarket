@@ -20,6 +20,11 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
+        LNome = new javax.swing.JLabel();
+        LEmail = new javax.swing.JLabel();
+        LCpf = new javax.swing.JLabel();
+        LEndereco = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         getContentPane().setLayout(null);
@@ -32,6 +37,16 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame {
         jComboBox1.setBorder(null);
         getContentPane().add(jComboBox1);
         jComboBox1.setBounds(236, 411, 52, 40);
+        getContentPane().add(LNome);
+        LNome.setBounds(510, 142, 400, 40);
+        getContentPane().add(LEmail);
+        LEmail.setBounds(510, 216, 400, 40);
+        getContentPane().add(LCpf);
+        LCpf.setBounds(510, 294, 400, 40);
+        getContentPane().add(LEndereco);
+        LEndereco.setBounds(510, 370, 400, 40);
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(740, 460, 170, 50);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_ConfirmarDados_VIEW.png"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -42,9 +57,14 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LCpf;
+    private javax.swing.JLabel LEmail;
+    private javax.swing.JLabel LEndereco;
+    private javax.swing.JLabel LNome;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel8;
     // End of variables declaration//GEN-END:variables
 }
