@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package FusionMarket.POJO;
 
-/**
- *
- * @author metag
- */
 public class Usuario_POJO {
     String nome,email,cpf,endereco,erro;
     int id;
@@ -59,8 +50,5 @@ public class Usuario_POJO {
 
     public void setErro(String erro) {
         this.erro = erro;
-    }
-
-   
-    
+    }  
 }

@@ -8,6 +8,7 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame {
     Usuario_POJO dados_usuario;
     public ConfirmarDados_VIEW(Usuario_POJO up) 
     {
+        
         initComponents();
         
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
@@ -19,7 +20,8 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame {
         LNome.setText(dados_usuario.getNome());
         LEmail.setText(dados_usuario.getEmail());
         LCpf.setText(dados_usuario.getCpf());
-        LEndereco.setText(""+dados_usuario.getEndereco());
+        LEndereco.setText(dados_usuario.getEndereco());
+        
     }
 
     @SuppressWarnings("unchecked")

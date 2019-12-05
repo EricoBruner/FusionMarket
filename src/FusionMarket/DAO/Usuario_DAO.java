@@ -41,8 +41,8 @@ public class Usuario_DAO
                 up.setId(rs.getInt("id_usuario"));
                 up.setNome(rs.getString("nome"));
                 up.setEmail(rs.getString("email"));
-                up.setEndereco(rs.getString("endereco"));
                 up.setCpf(rs.getString("cpf_cnpj"));
+                up.setEndereco(rs.getString("endereco"));
                }
         }
         catch (SQLException ex) 

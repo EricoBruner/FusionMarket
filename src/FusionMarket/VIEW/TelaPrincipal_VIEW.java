@@ -2,7 +2,6 @@ package FusionMarket.VIEW;
 
 import FusionMarket.POJO.Usuario_POJO;
 import java.awt.Color;
-import java.awt.Frame;
 import javax.swing.JFrame;
 
 public class TelaPrincipal_VIEW extends javax.swing.JFrame 
@@ -12,12 +11,12 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
     public TelaPrincipal_VIEW(Usuario_POJO up) 
     {
         initComponents();
+        
         TProduto.setBackground(new Color(1.0f,1.0f,1.0f,0f));
         TRegiao.setBackground(new Color(1.0f,1.0f,1.0f,0f));
         TCategoria.setBackground(new Color(1.0f,1.0f,1.0f,0f));
         usuarioPOJO=up;
-    
-    
+        
     }    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
