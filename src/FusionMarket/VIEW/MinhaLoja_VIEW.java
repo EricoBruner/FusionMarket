@@ -58,13 +58,13 @@ int Id_usuario;
 
         B_Voltar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         B_Voltar.setForeground(new java.awt.Color(255, 255, 255));
-        B_Voltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Botão_Voltar.png"))); // NOI18N
+        B_Voltar.setToolTipText("");
         B_Voltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 B_VoltarMouseClicked(evt);
             }
         });
-        getContentPane().add(B_Voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 20, 60, 60));
+        getContentPane().add(B_Voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 17, 70, 60));
 
         TTabela.setFont(new java.awt.Font("Arial", 0, 17)); // NOI18N
         TTabela.setModel(new javax.swing.table.DefaultTableModel(

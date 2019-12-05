@@ -130,6 +130,11 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         jLabel6.setMaximumSize(new java.awt.Dimension(49, 49));
         jLabel6.setMinimumSize(new java.awt.Dimension(49, 49));
         jLabel6.setPreferredSize(new java.awt.Dimension(49, 49));
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabel6);
         jLabel6.setBounds(268, 404, 50, 50);
 
@@ -175,30 +180,39 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotãoLojaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotãoLojaMouseClicked
+        
         MinhaLoja_VIEW Tela_MinhaLoja = new MinhaLoja_VIEW(usuarioPOJO.getId());
         Painel.add(Tela_MinhaLoja);
         Tela_MinhaLoja.setVisible(true);
+        
     }//GEN-LAST:event_BotãoLojaMouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+       
         System.exit(0);
+        
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
             
             this.setState(JFrame.ICONIFIED);
+            
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        
         Historico_VIEW Tela_Historico = new Historico_VIEW();
         TelaPrincipal_VIEW.Painel.add(Tela_Historico);
         Tela_Historico.setVisible(true);
+        
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        Perfil_VIEW Tela_Perfil = new Perfil_VIEW();
-        TelaPrincipal_VIEW.Painel.add(Tela_Perfil);
-        Tela_Perfil.setVisible(true);
+        
+        Perfil_VIEW tela = new Perfil_VIEW();
+        TelaPrincipal_VIEW.Painel.add(tela);
+        tela.setVisible(true);
+        
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void TProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TProdutoActionPerformed
@@ -206,12 +220,20 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
     }//GEN-LAST:event_TProdutoActionPerformed
 
     private void TRegiaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TRegiaoActionPerformed
-        // TODO add your handling code here:
+ 
     }//GEN-LAST:event_TRegiaoActionPerformed
 
     private void TCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TCategoriaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_TCategoriaActionPerformed
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        
+        TelaPesquisa_VIEW tela = new TelaPesquisa_VIEW();
+        TelaPrincipal_VIEW.Painel.add(tela);
+        tela.setVisible(true);
+        
+    }//GEN-LAST:event_jLabel6MouseClicked
 
     public static void main(String args[]) 
     {

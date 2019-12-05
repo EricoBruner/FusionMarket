@@ -25,8 +25,12 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame {
         LCpf = new javax.swing.JLabel();
         LEndereco = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
+        setMaximumSize(new java.awt.Dimension(950, 550));
+        setMinimumSize(new java.awt.Dimension(950, 550));
+        setPreferredSize(new java.awt.Dimension(950, 550));
         getContentPane().setLayout(null);
         getContentPane().add(jLabel2);
         jLabel2.setBounds(93, 185, 169, 51);
@@ -48,12 +52,26 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame {
         getContentPane().add(jLabel8);
         jLabel8.setBounds(740, 460, 170, 50);
 
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(16, 13, 75, 65);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_ConfirmarDados_VIEW.png"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 950, 550);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        
+        this.dispose();
+        
+    }//GEN-LAST:event_jLabel4MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -65,6 +83,7 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
     // End of variables declaration//GEN-END:variables
 }
