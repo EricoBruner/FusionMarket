@@ -5,6 +5,7 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame {
 
+    Usuario_POJO dados_usuario;
     public ConfirmarDados_VIEW(Usuario_POJO up) 
     {
         initComponents();
@@ -12,6 +13,13 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame {
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI bi =(BasicInternalFrameUI)this.getUI();
         bi.setNorthPane(null);
+        
+        dados_usuario = up;
+        
+        LNome.setText(dados_usuario.getNome());
+        LEmail.setText(dados_usuario.getEmail());
+        LCpf.setText(dados_usuario.getCpf());
+        LEndereco.setText(dados_usuario.getEndereco());
     }
 
     @SuppressWarnings("unchecked")
@@ -42,12 +50,20 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame {
         jComboBox1.setBorder(null);
         getContentPane().add(jComboBox1);
         jComboBox1.setBounds(236, 411, 52, 40);
+
+        LNome.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         getContentPane().add(LNome);
         LNome.setBounds(510, 142, 400, 40);
+
+        LEmail.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         getContentPane().add(LEmail);
         LEmail.setBounds(510, 216, 400, 40);
+
+        LCpf.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         getContentPane().add(LCpf);
         LCpf.setBounds(510, 294, 400, 40);
+
+        LEndereco.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         getContentPane().add(LEndereco);
         LEndereco.setBounds(510, 370, 400, 40);
         getContentPane().add(jLabel8);

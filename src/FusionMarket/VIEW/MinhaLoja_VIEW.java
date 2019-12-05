@@ -6,8 +6,10 @@ import java.util.List;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 
-public class MinhaLoja_VIEW extends javax.swing.JInternalFrame {
-int Id_usuario;
+public class MinhaLoja_VIEW extends javax.swing.JInternalFrame 
+{
+    int Id_usuario;
+    
     public MinhaLoja_VIEW(int id) 
     {
         initComponents();
