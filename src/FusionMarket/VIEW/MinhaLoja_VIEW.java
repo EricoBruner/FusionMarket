@@ -25,7 +25,7 @@ int Id_usuario;
             pp = (Produto_POJO)lista.get(i);
             dtm.addRow(new Object[]
             {
-                pp.getTitulo(), pp.getPreco(), pp.getCategoria(), pp.getQuantidade()
+                pp.getTitulo(), pp.getPreco(), pp.getDescricao(), pp.getQuantidade()
             });
         }    
     }
@@ -72,7 +72,7 @@ int Id_usuario;
 
             },
             new String [] {
-                "Titulo", "Preço", "Categoria", "Quantidade"
+                "Titulo", "Preço", "Descrição", "Quantidade"
             }
         ));
         TTabela.setOpaque(false);
