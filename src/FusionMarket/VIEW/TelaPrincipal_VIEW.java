@@ -229,7 +229,7 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         
-        TelaPesquisa_VIEW tela = new TelaPesquisa_VIEW();
+        TelaPesquisa_VIEW tela = new TelaPesquisa_VIEW(usuarioPOJO);
         TelaPrincipal_VIEW.Painel.add(tela);
         tela.setVisible(true);
         

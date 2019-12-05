@@ -1,16 +1,22 @@
 package FusionMarket.VIEW;
 
+import FusionMarket.POJO.Usuario_POJO;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class TelaPesquisa_VIEW extends javax.swing.JInternalFrame {
 
-    public TelaPesquisa_VIEW() 
+    Usuario_POJO usuarioPojo;
+    
+    public TelaPesquisa_VIEW(Usuario_POJO up) 
     {
         initComponents();
         
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI bi =(BasicInternalFrameUI)this.getUI();
         bi.setNorthPane(null);
+        
+        usuarioPojo = up;
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -45,7 +51,7 @@ public class TelaPesquisa_VIEW extends javax.swing.JInternalFrame {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         
-        ConfirmarDados_VIEW tela = new ConfirmarDados_VIEW();
+        ConfirmarDados_VIEW tela = new ConfirmarDados_VIEW(usuarioPojo);
         TelaPrincipal_VIEW.Painel.add(tela);
         tela.setVisible(true);
         

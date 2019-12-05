@@ -1,10 +1,11 @@
 package FusionMarket.VIEW;
 
+import FusionMarket.POJO.Usuario_POJO;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame {
 
-    public ConfirmarDados_VIEW() 
+    public ConfirmarDados_VIEW(Usuario_POJO up) 
     {
         initComponents();
         
