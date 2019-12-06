@@ -143,7 +143,7 @@ public class Produto_DAO
     {
         List lista = new ArrayList();
         Connection con = cn.getConnection();
-        String sql = "select * from produto where id_usuario like ?;";
+        String sql = "select * from produto where titulo like ?;";
         try
         {
             PreparedStatement p = con.prepareStatement(sql);
@@ -165,5 +165,27 @@ public class Produto_DAO
         }
         return lista;
         }   
+        
+          public List buscar_produto_like(String nome){
+            List lista = new ArrayList();
+        Connection con = cn.getConnection();
+        String sql = "select * from produto where titulo like ?;";
+        try {
+            PreparedStatement p = con.prepareStatement(sql);
+            p.setString(1, nome+"%");
+            ResultSet rs = p.executeQuery();
+            while(rs.next()){
+                Produto_POJO produto = new Produto_POJO();
+                produto.setTitulo(rs.getString("titulo"));
+                produto.setQuantidade(rs.getInt("quantidade"));
+                produto.setPreco(rs.getString("preco"));
+                produto.setCategoria(rs.getString("categoria"));
+                lista.add(produto);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        return lista;
+    }
 }
 
