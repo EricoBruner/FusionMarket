@@ -3,39 +3,33 @@ package FusionMarket.VIEW;
 import FusionMarket.POJO.Usuario_POJO;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
-public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame {
+public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame 
+{
 
-    Usuario_POJO dados_usuario;
     public ConfirmarDados_VIEW(Usuario_POJO up) 
     {
-        
         initComponents();
         
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI bi =(BasicInternalFrameUI)this.getUI();
         bi.setNorthPane(null);
         
-        dados_usuario = up;
-        
-        LNome.setText(dados_usuario.getNome());
-        LEmail.setText(dados_usuario.getEmail());
-        LCpf.setText(dados_usuario.getCpf());
-        LEndereco.setText(dados_usuario.getEndereco());
-        
+        LNome.setText(up.getNome());
+        LEmail.setText(up.getEmail());
+        LCpf.setText(up.getCpf());
+        LEndereco.setText(up.getEndereco());
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
         LNome = new javax.swing.JLabel();
         LEmail = new javax.swing.JLabel();
         LCpf = new javax.swing.JLabel();
         LEndereco = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -43,54 +37,54 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame {
         setMinimumSize(new java.awt.Dimension(950, 550));
         setPreferredSize(new java.awt.Dimension(950, 550));
         getContentPane().setLayout(null);
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(93, 185, 169, 51);
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(93, 303, 168, 51);
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "     1", "     2", "     3", "     4", "     5", "     6", "     7", "     8", "     9 ", "    10", " " }));
-        jComboBox1.setBorder(null);
-        getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(236, 411, 52, 40);
-
-        LNome.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         getContentPane().add(LNome);
-        LNome.setBounds(510, 142, 400, 40);
-
-        LEmail.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        LNome.setBounds(510, 140, 400, 40);
         getContentPane().add(LEmail);
-        LEmail.setBounds(510, 216, 400, 40);
-
-        LCpf.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        LEmail.setBounds(508, 217, 400, 40);
         getContentPane().add(LCpf);
-        LCpf.setBounds(510, 294, 400, 40);
-
-        LEndereco.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        LCpf.setBounds(512, 294, 400, 40);
         getContentPane().add(LEndereco);
-        LEndereco.setBounds(510, 370, 400, 40);
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(740, 460, 170, 50);
+        LEndereco.setBounds(513, 370, 400, 40);
 
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
+                jLabel2MouseClicked(evt);
             }
         });
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(14, 14, 80, 60);
+
+        jLabel3.setBackground(new java.awt.Color(255, 0, 51));
+        jLabel3.setOpaque(true);
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(94, 186, 168, 50);
+
+        jLabel4.setBackground(new java.awt.Color(255, 0, 51));
+        jLabel4.setOpaque(true);
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(16, 13, 75, 65);
+        jLabel4.setBounds(94, 304, 168, 49);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_ConfirmarDados_VIEW.png"))); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 950, 550);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         
         this.dispose();
         
-    }//GEN-LAST:event_jLabel4MouseClicked
+    }//GEN-LAST:event_jLabel2MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -98,11 +92,9 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame {
     private javax.swing.JLabel LEmail;
     private javax.swing.JLabel LEndereco;
     private javax.swing.JLabel LNome;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel8;
     // End of variables declaration//GEN-END:variables
 }
