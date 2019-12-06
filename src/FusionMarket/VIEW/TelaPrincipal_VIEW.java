@@ -1,12 +1,18 @@
 package FusionMarket.VIEW;
 
+import FusionMarket.DAO.Produto_DAO;
+import FusionMarket.MODEL.Produto_MODEL;
+import FusionMarket.POJO.Produto_POJO;
 import FusionMarket.POJO.Usuario_POJO;
 import java.awt.Color;
+import java.util.List;
 import javax.swing.JFrame;
+import javax.swing.table.DefaultTableModel;
 
 public class TelaPrincipal_VIEW extends javax.swing.JFrame 
 {
     Usuario_POJO usuarioPOJO;
+    String nome;
     
     public TelaPrincipal_VIEW(Usuario_POJO up) 
     {
@@ -30,7 +36,7 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         TProduto = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
+        TPesquisar = new javax.swing.JLabel();
         TCategoria = new javax.swing.JComboBox();
         TRegiao = new javax.swing.JComboBox();
         TelaPrincipal = new javax.swing.JLabel();
@@ -122,20 +128,25 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
                 TProdutoActionPerformed(evt);
             }
         });
+        TProduto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TProdutoKeyPressed(evt);
+            }
+        });
         getContentPane().add(TProduto);
         TProduto.setBounds(31, 406, 231, 46);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Botão_Pesquisa.png"))); // NOI18N
-        jLabel6.setMaximumSize(new java.awt.Dimension(49, 49));
-        jLabel6.setMinimumSize(new java.awt.Dimension(49, 49));
-        jLabel6.setPreferredSize(new java.awt.Dimension(49, 49));
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+        TPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Botão_Pesquisa.png"))); // NOI18N
+        TPesquisar.setMaximumSize(new java.awt.Dimension(49, 49));
+        TPesquisar.setMinimumSize(new java.awt.Dimension(49, 49));
+        TPesquisar.setPreferredSize(new java.awt.Dimension(49, 49));
+        TPesquisar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
+                TPesquisarMouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(268, 404, 50, 50);
+        getContentPane().add(TPesquisar);
+        TPesquisar.setBounds(268, 404, 50, 50);
 
         TCategoria.setEditable(true);
         TCategoria.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -208,7 +219,7 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         
-        Perfil_VIEW tela = new Perfil_VIEW();
+        Perfil_VIEW tela = new Perfil_VIEW(usuarioPOJO);
         TelaPrincipal_VIEW.Painel.add(tela);
         tela.setVisible(true);
         
@@ -226,50 +237,26 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
 
     }//GEN-LAST:event_TCategoriaActionPerformed
 
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        
-        TelaPesquisa_VIEW tela = new TelaPesquisa_VIEW(usuarioPOJO);
+    private void TPesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TPesquisarMouseClicked
+
+        nome=TProduto.getText();
+        Pesquisa_VIEW tela = new Pesquisa_VIEW(usuarioPOJO,nome);
         TelaPrincipal_VIEW.Painel.add(tela);
         tela.setVisible(true);
         
-    }//GEN-LAST:event_jLabel6MouseClicked
+    }//GEN-LAST:event_TPesquisarMouseClicked
 
-    public static void main(String args[]) 
-    {
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal_VIEW.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal_VIEW.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal_VIEW.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal_VIEW.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void TProdutoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TProdutoKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TProdutoKeyPressed
 
-        java.awt.EventQueue.invokeLater(new Runnable() 
-        {
-            public void run() 
-            {
-               // new TelaPrincipal_VIEW().setVisible(true);
-            }
-        });
-    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BotãoLoja;
     public static javax.swing.JDesktopPane Painel;
     private javax.swing.JComboBox TCategoria;
+    private javax.swing.JLabel TPesquisar;
     private javax.swing.JTextField TProduto;
     private javax.swing.JComboBox TRegiao;
     private javax.swing.JLabel TelaPrincipal;
@@ -278,6 +265,5 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
 }
