@@ -20,18 +20,18 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         LCpf.setText(up.getCpf());
         LEndereco.setText(up.getEndereco());
         
-        LCartao.setOpaque(false);
         LCartao.setBackground(new Color(255,0,0,60));
-        
-        LBoleto.setOpaque(false);
-        LBoleto.setBackground(new Color(255, 0, 0, 60));
-        
+        LCartao.setVisible(false);
+        LBoleto.setBackground(new Color(255,0,0,60));
+        LBoleto.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         LNome = new javax.swing.JLabel();
         LEmail = new javax.swing.JLabel();
         LCpf = new javax.swing.JLabel();
@@ -46,6 +46,22 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         setMinimumSize(new java.awt.Dimension(950, 550));
         setPreferredSize(new java.awt.Dimension(950, 550));
         getContentPane().setLayout(null);
+
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(90, 300, 180, 60);
+
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(90, 180, 170, 60);
         getContentPane().add(LNome);
         LNome.setBounds(510, 140, 400, 40);
         getContentPane().add(LEmail);
@@ -64,6 +80,7 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         jLabel2.setBounds(14, 14, 80, 60);
 
         LCartao.setBackground(new java.awt.Color(255, 0, 0));
+        LCartao.setOpaque(true);
         LCartao.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LCartaoMouseClicked(evt);
@@ -73,6 +90,7 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         LCartao.setBounds(93, 186, 169, 50);
 
         LBoleto.setBackground(new java.awt.Color(255, 0, 0));
+        LBoleto.setOpaque(true);
         LBoleto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LBoletoMouseClicked(evt);
@@ -111,15 +129,28 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
 
     private void LCartaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LCartaoMouseClicked
         
-        LCartao.setOpaque(true);
+       
         
     }//GEN-LAST:event_LCartaoMouseClicked
 
     private void LBoletoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LBoletoMouseClicked
         
-        LBoleto.setOpaque(true);
+ 
         
     }//GEN-LAST:event_LBoletoMouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        
+        LCartao.setVisible(true);
+        LBoleto.setVisible(false);
+        
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        
+        LBoleto.setVisible(true);
+        LCartao.setVisible(false);
+    }//GEN-LAST:event_jLabel4MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -132,5 +163,7 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }
