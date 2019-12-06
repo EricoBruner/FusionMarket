@@ -1,6 +1,7 @@
 package FusionMarket.VIEW;
 
 import FusionMarket.POJO.Usuario_POJO;
+import java.awt.Color;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame 
@@ -18,6 +19,13 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         LEmail.setText(up.getEmail());
         LCpf.setText(up.getCpf());
         LEndereco.setText(up.getEndereco());
+        
+        LCartao.setOpaque(false);
+        LCartao.setBackground(new Color(255,0,0,60));
+        
+        LBoleto.setOpaque(false);
+        LBoleto.setBackground(new Color(255, 0, 0, 60));
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -29,8 +37,9 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         LCpf = new javax.swing.JLabel();
         LEndereco = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        LCartao = new javax.swing.JLabel();
+        LBoleto = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(950, 550));
@@ -54,15 +63,29 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         getContentPane().add(jLabel2);
         jLabel2.setBounds(14, 14, 80, 60);
 
-        jLabel3.setBackground(new java.awt.Color(255, 0, 51));
-        jLabel3.setOpaque(true);
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(94, 186, 168, 50);
+        LCartao.setBackground(new java.awt.Color(255, 0, 0));
+        LCartao.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LCartaoMouseClicked(evt);
+            }
+        });
+        getContentPane().add(LCartao);
+        LCartao.setBounds(93, 186, 169, 50);
 
-        jLabel4.setBackground(new java.awt.Color(255, 0, 51));
-        jLabel4.setOpaque(true);
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(94, 304, 168, 49);
+        LBoleto.setBackground(new java.awt.Color(255, 0, 0));
+        LBoleto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LBoletoMouseClicked(evt);
+            }
+        });
+        getContentPane().add(LBoleto);
+        LBoleto.setBounds(93, 303, 169, 51);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "   1", "   2", "   3", "   4", "   5", "   6", "   8", "   9 ", "  10" }));
+        jComboBox1.setBorder(null);
+        jComboBox1.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(jComboBox1);
+        jComboBox1.setBounds(237, 412, 50, 38);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_ConfirmarDados_VIEW.png"))); // NOI18N
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -86,15 +109,28 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         
     }//GEN-LAST:event_jLabel2MouseClicked
 
+    private void LCartaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LCartaoMouseClicked
+        
+        LCartao.setOpaque(true);
+        
+    }//GEN-LAST:event_LCartaoMouseClicked
+
+    private void LBoletoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LBoletoMouseClicked
+        
+        LBoleto.setOpaque(true);
+        
+    }//GEN-LAST:event_LBoletoMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LBoleto;
+    private javax.swing.JLabel LCartao;
     private javax.swing.JLabel LCpf;
     private javax.swing.JLabel LEmail;
     private javax.swing.JLabel LEndereco;
     private javax.swing.JLabel LNome;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }
