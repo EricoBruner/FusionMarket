@@ -108,9 +108,7 @@ public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-       /*
-        hugo
-        */ 
+ 
         
     }//GEN-LAST:event_jLabel4MouseClicked
 

@@ -82,9 +82,9 @@ public class Login_VIEW extends javax.swing.JFrame
         TSenha.setBounds(30, 320, 270, 30);
 
         LMensagem.setForeground(new java.awt.Color(102, 102, 102));
-        LMensagem.setText("Digite Login e senha para Entrar no Sistema.");
+        LMensagem.setText("Digite nome e senha para Entrar no Sistema.");
         getContentPane().add(LMensagem);
-        LMensagem.setBounds(20, 360, 290, 15);
+        LMensagem.setBounds(20, 360, 290, 14);
 
         LEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

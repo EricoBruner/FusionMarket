@@ -28,6 +28,8 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         LBoleto.setBackground(new Color(255,0,0,60));
         LBoleto.setVisible(false);
         
+        Aviso.setVisible(false);
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -45,9 +47,7 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         LBoleto = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
         jLabel5 = new javax.swing.JLabel();
-        FlexaD3 = new javax.swing.JLabel();
-        FlexaD2 = new javax.swing.JLabel();
-        FlexaD1 = new javax.swing.JLabel();
+        Aviso = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(950, 550));
@@ -121,26 +121,11 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         getContentPane().add(jLabel5);
         jLabel5.setBounds(742, 461, 168, 50);
 
-        FlexaD3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        FlexaD3.setForeground(new java.awt.Color(255, 0, 0));
-        FlexaD3.setText(">");
-        FlexaD3.setToolTipText("");
-        getContentPane().add(FlexaD3);
-        FlexaD3.setBounds(101, 116, 20, 30);
-
-        FlexaD2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        FlexaD2.setForeground(new java.awt.Color(255, 0, 51));
-        FlexaD2.setText(">");
-        FlexaD2.setToolTipText("");
-        getContentPane().add(FlexaD2);
-        FlexaD2.setBounds(80, 116, 20, 30);
-
-        FlexaD1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        FlexaD1.setForeground(new java.awt.Color(255, 0, 51));
-        FlexaD1.setText(">");
-        FlexaD1.setToolTipText("");
-        getContentPane().add(FlexaD1);
-        FlexaD1.setBounds(60, 116, 20, 30);
+        Aviso.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        Aviso.setForeground(new java.awt.Color(255, 0, 0));
+        Aviso.setText("Nenhum metodo de pagamento selecionado");
+        getContentPane().add(Aviso);
+        Aviso.setBounds(667, 440, 250, 14);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_ConfirmarDados_VIEW.png"))); // NOI18N
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -195,15 +180,18 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         
         if (tipo_pagamento=="vazio")
         {   
-            
+            Aviso.setVisible(true);
+        }
+        
+        if (tipo_pagamento=="boleto")
+        {
+            Pagamentor
         }
     }//GEN-LAST:event_jLabel5MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel FlexaD1;
-    private javax.swing.JLabel FlexaD2;
-    private javax.swing.JLabel FlexaD3;
+    private javax.swing.JLabel Aviso;
     private javax.swing.JLabel LBoleto;
     private javax.swing.JLabel LCartao;
     private javax.swing.JLabel LCpf;
