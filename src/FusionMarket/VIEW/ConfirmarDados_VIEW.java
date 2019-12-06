@@ -2,11 +2,14 @@ package FusionMarket.VIEW;
 
 import FusionMarket.POJO.Usuario_POJO;
 import java.awt.Color;
+import static java.lang.Thread.sleep;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame 
 {
-
+    
+    String tipo_pagamento = "vazio";
+    
     public ConfirmarDados_VIEW(Usuario_POJO up) 
     {
         initComponents();
@@ -24,6 +27,7 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         LCartao.setVisible(false);
         LBoleto.setBackground(new Color(255,0,0,60));
         LBoleto.setVisible(false);
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -40,6 +44,10 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         LCartao = new javax.swing.JLabel();
         LBoleto = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
+        jLabel5 = new javax.swing.JLabel();
+        FlexaD3 = new javax.swing.JLabel();
+        FlexaD2 = new javax.swing.JLabel();
+        FlexaD1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(950, 550));
@@ -105,6 +113,35 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         getContentPane().add(jComboBox1);
         jComboBox1.setBounds(237, 412, 50, 38);
 
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(742, 461, 168, 50);
+
+        FlexaD3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        FlexaD3.setForeground(new java.awt.Color(255, 0, 0));
+        FlexaD3.setText(">");
+        FlexaD3.setToolTipText("");
+        getContentPane().add(FlexaD3);
+        FlexaD3.setBounds(101, 116, 20, 30);
+
+        FlexaD2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        FlexaD2.setForeground(new java.awt.Color(255, 0, 51));
+        FlexaD2.setText(">");
+        FlexaD2.setToolTipText("");
+        getContentPane().add(FlexaD2);
+        FlexaD2.setBounds(80, 116, 20, 30);
+
+        FlexaD1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        FlexaD1.setForeground(new java.awt.Color(255, 0, 51));
+        FlexaD1.setText(">");
+        FlexaD1.setToolTipText("");
+        getContentPane().add(FlexaD1);
+        FlexaD1.setBounds(60, 116, 20, 30);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_ConfirmarDados_VIEW.png"))); // NOI18N
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -143,6 +180,7 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         
         LCartao.setVisible(true);
         LBoleto.setVisible(false);
+        tipo_pagamento = "cartão"; 
         
     }//GEN-LAST:event_jLabel3MouseClicked
 
@@ -150,10 +188,22 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         
         LBoleto.setVisible(true);
         LCartao.setVisible(false);
+        tipo_pagamento = "boleto";
     }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        
+        if (tipo_pagamento=="vazio")
+        {   
+            
+        }
+    }//GEN-LAST:event_jLabel5MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel FlexaD1;
+    private javax.swing.JLabel FlexaD2;
+    private javax.swing.JLabel FlexaD3;
     private javax.swing.JLabel LBoleto;
     private javax.swing.JLabel LCartao;
     private javax.swing.JLabel LCpf;
@@ -165,5 +215,6 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }
