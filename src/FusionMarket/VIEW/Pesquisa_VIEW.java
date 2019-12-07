@@ -10,8 +10,10 @@ import javax.swing.table.DefaultTableModel;
 
 public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
 
-    Usuario_POJO usuarioPojo;
+    Produto_POJO pp = new Produto_POJO();
+    Produto_DAO pd = new Produto_DAO();
     Produto_POJO produtoPojo;
+    Usuario_POJO usuarioPojo;
     
     public void produto_selecionado()
     {
@@ -22,27 +24,28 @@ public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
             LAviso.setVisible(true);
         }else
         {
-            
-            
+            int id = (int) TTable.getValueAt(linha, 0);
+            produtoPojo = pd.buscar_produto_id(id);
+            VerMais_VIEW tela = new VerMais_VIEW(produtoPojo);
+            TelaPrincipal_VIEW.Painel.add(tela);
+            tela.setVisible(true);
         }
     }
     public Pesquisa_VIEW(Usuario_POJO up , String nome) 
     {
         initComponents();
         
-        Produto_DAO cd= new Produto_DAO();
         DefaultTableModel dtm=(DefaultTableModel)TTable.getModel();
-        List lista=cd.buscar_produto_like(nome);
-        Produto_POJO cp = new Produto_POJO();
+        List lista = pd.buscar_produto_like(nome);
         Produto_MODEL cm = new Produto_MODEL();
         
         
          for(int i=0;i<lista.size();i++)
         {
-        cp=(Produto_POJO)lista.get(i);
+        pp=(Produto_POJO)lista.get(i);
   
         dtm.addRow(new Object[]{
-            cp.getId_produto(),cp.getTitulo(),cp.getCategoria(),cp.getQuantidade(),cp.getPreco()
+            pp.getId_produto(),pp.getTitulo(),pp.getCategoria(),pp.getQuantidade(),pp.getPreco()
             //"Titulo", "Categoria", "Quantidade", "Preço"    
         
         });
@@ -132,9 +135,7 @@ public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         
-        VerMais_VIEW tela = new VerMais_VIEW();
-        TelaPrincipal_VIEW.Painel.add(tela);
-        tela.setVisible(true);
+        produto_selecionado();
         
     }//GEN-LAST:event_jLabel4MouseClicked
 

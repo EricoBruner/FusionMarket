@@ -1,5 +1,6 @@
 package FusionMarket.VIEW;
 
+import FusionMarket.POJO.Produto_POJO;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 /**
@@ -8,7 +9,7 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
  */
 public class VerMais_VIEW extends javax.swing.JInternalFrame {
 
-    public VerMais_VIEW() 
+    public VerMais_VIEW(Produto_POJO dados_produto) 
     {
         initComponents();
         

@@ -139,11 +139,11 @@ public class Produto_DAO
         }
         return lista;
         }
-        public List buscar_produto_unico()
+        public Produto_POJO buscar_produto_id(int id)
     {
-        List lista = new ArrayList();
+        Produto_POJO pp = new Produto_POJO();
         Connection con = cn.getConnection();
-        String sql = "select * from produto where titulo like ?;";
+        String sql = "select * from produto where id_produto like ?;";
         try
         {
             PreparedStatement p = con.prepareStatement(sql);
@@ -151,19 +151,18 @@ public class Produto_DAO
             ResultSet rs = p.executeQuery();
             while (rs.next())
             {
-                Produto_POJO produto = new Produto_POJO();
-                produto.setTitulo(rs.getString("titulo"));
-                produto.setPreco(rs.getString("preco"));
-                produto.setCategoria(rs.getString("categoria"));
-                produto.setQuantidade(rs.getInt("quantidade"));
-                lista.add(produto);
+                pp.setId_produto(rs.getInt("id_produto"));
+                pp.setTitulo(rs.getString("titulo"));
+                pp.setPreco(rs.getString("preco"));
+                pp.setCategoria(rs.getString("categoria"));
+                pp.setQuantidade(rs.getInt("quantidade"));
             }
         }
         catch (SQLException e)
         {
             JOptionPane.showMessageDialog( null, e ) ;
         }
-        return lista;
+        return pp;
         }   
         
         public List buscar_produto_like(String nome){
