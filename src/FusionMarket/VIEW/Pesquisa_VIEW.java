@@ -11,10 +11,25 @@ import javax.swing.table.DefaultTableModel;
 public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
 
     Usuario_POJO usuarioPojo;
+    Produto_POJO produtoPojo;
     
+    public void produto_selecionado()
+    {
+        int linha = TTable.getSelectedRow();
+        
+        if(linha < 0 )
+        {
+            LAviso.setVisible(true);
+        }else
+        {
+            
+            
+        }
+    }
     public Pesquisa_VIEW(Usuario_POJO up , String nome) 
     {
         initComponents();
+        
         Produto_DAO cd= new Produto_DAO();
         DefaultTableModel dtm=(DefaultTableModel)TTable.getModel();
         List lista=cd.buscar_produto_like(nome);
@@ -27,7 +42,7 @@ public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
         cp=(Produto_POJO)lista.get(i);
   
         dtm.addRow(new Object[]{
-            cp.getTitulo(),cp.getCategoria(),cp.getQuantidade(),cp.getPreco()
+            cp.getId_produto(),cp.getTitulo(),cp.getCategoria(),cp.getQuantidade(),cp.getPreco()
             //"Titulo", "Categoria", "Quantidade", "Preço"    
         
         });
@@ -43,6 +58,7 @@ public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
         
         usuarioPojo = up;
         
+        LAviso.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -54,6 +70,7 @@ public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         TTable = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
+        LAviso = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
@@ -76,7 +93,7 @@ public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Titulo", "Categoria", "Quantidade", "Preço"
+                "Codigo","Titulo", "Categoria", "Quantidade", "Preço"
             }
         ));
         jScrollPane1.setViewportView(TTable);
@@ -90,7 +107,13 @@ public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(770, 20, 160, 50);
+        jLabel4.setBounds(775, 20, 155, 50);
+
+        LAviso.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        LAviso.setForeground(new java.awt.Color(255, 0, 0));
+        LAviso.setText("Nenhum produto selecionado");
+        getContentPane().add(LAviso);
+        LAviso.setBounds(410, 40, 170, 14);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_TelaPesquisa.png"))); // NOI18N
         getContentPane().add(jLabel2);
@@ -109,11 +132,15 @@ public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         
+        VerMais_VIEW tela = new VerMais_VIEW();
+        TelaPrincipal_VIEW.Painel.add(tela);
+        tela.setVisible(true);
         
     }//GEN-LAST:event_jLabel4MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LAviso;
     private javax.swing.JTable TTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

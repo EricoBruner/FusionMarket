@@ -51,6 +51,7 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
         
         this.dispose();
         
+        
     }//GEN-LAST:event_jLabel2MouseClicked
 
 
