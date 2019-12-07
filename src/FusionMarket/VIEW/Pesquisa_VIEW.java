@@ -68,7 +68,7 @@ public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(20, 0, 200, 50);
+        jLabel3.setBounds(20, 20, 200, 50);
 
         TTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -81,11 +81,11 @@ public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(TTable);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(10, 70, 930, 450);
+        jScrollPane1.setBounds(10, 90, 930, 450);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_TelaPesquisa.png"))); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, -40, 950, 580);
+        jLabel2.setBounds(0, 0, 950, 550);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
