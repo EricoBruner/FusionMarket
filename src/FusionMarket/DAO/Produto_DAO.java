@@ -31,7 +31,7 @@ public class Produto_DAO
         //**************************
         if(adfoto==1)
         {
-            String sql = "insert into produto (titulo, preco, quantidade, categoria, descricao, id_usuario, foto) values (?,?,?,?,?,?,?);";
+            String sql = "insert into produto (titulo, preco, quantidade, categoria, descricao, id_usuario, condicao, foto) values (?,?,?,?,?,?,?,?);";
             try
             {
                 //*************************
@@ -52,7 +52,8 @@ public class Produto_DAO
                 p.setString(4, produto.getCategoria());
                 p.setString(5, produto.getDescricao());
                 p.setInt(6, produto.getId_usuario());
-                p.setBytes(7, imgArray);
+                p.setString(7, produto.getCondicao());
+                p.setBytes(8, imgArray);
                 p.executeUpdate();
             }
             catch (SQLException e)
@@ -63,7 +64,7 @@ public class Produto_DAO
             }
         }else
         {
-            String sql = "insert into produto (titulo, preco, quantidade, categoria, descricao, id_usuario) values (?,?,?,?,?,?);";
+            String sql = "insert into produto (titulo, preco, quantidade, categoria, descricao, id_usuario, condicao) values (?,?,?,?,?,?,?);";
             try
             {
                 
@@ -74,6 +75,7 @@ public class Produto_DAO
                 p.setString(4, produto.getCategoria());
                 p.setString(5, produto.getDescricao());
                 p.setInt(6, produto.getId_usuario());
+                p.setString(7, produto.getCondicao());
                
                 p.executeUpdate();
             }
@@ -102,6 +104,7 @@ public class Produto_DAO
                 produto.setPreco(rs.getString("preco"));
                 produto.setCategoria(rs.getString("categoria"));
                 produto.setQuantidade(rs.getInt("quantidade"));
+                produto.setCondicao(rs.getString("condicao"));
                 lista.add(produto);
             }
         }
@@ -130,6 +133,7 @@ public class Produto_DAO
                 produto.setPreco(rs.getString("preco"));
                 produto.setCategoria(rs.getString("categoria"));
                 produto.setQuantidade(rs.getInt("quantidade"));
+                produto.setCondicao(rs.getString("condicao"));
                 lista.add(produto);
             }
         }
@@ -156,6 +160,7 @@ public class Produto_DAO
                 pp.setPreco(rs.getString("preco"));
                 pp.setCategoria(rs.getString("categoria"));
                 pp.setQuantidade(rs.getInt("quantidade"));
+                pp.setCondicao(rs.getString("condicao"));
             }
         }
         catch (SQLException e)
@@ -180,6 +185,7 @@ public class Produto_DAO
                 produto.setQuantidade(rs.getInt("quantidade"));
                 produto.setPreco(rs.getString("preco"));
                 produto.setCategoria(rs.getString("categoria"));
+                produto.setCondicao(rs.getString("condicao"));
                 lista.add(produto);
             }
         } catch (SQLException e) {
