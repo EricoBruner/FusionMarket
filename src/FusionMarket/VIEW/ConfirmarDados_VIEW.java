@@ -183,9 +183,15 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
             Aviso.setVisible(true);
         }
         
-        if (tipo_pagamento=="boleto")
+        if (tipo_pagamento == "boleto" & tipo_pagamento == "cartão")
         {
-            Pagamentor
+            PagamentoRealizado_VIEW aviso = new PagamentoRealizado_VIEW(tipo_pagamento);
+            MaisVendidos_VIEW tela = new MaisVendidos_VIEW();
+            TelaPrincipal_VIEW.Painel.add(tela);
+            TelaPrincipal_VIEW.Painel.add(aviso);
+            tela.setVisible(true);
+            tela.setVisible(true);     
+            
         }
     }//GEN-LAST:event_jLabel5MouseClicked
 
