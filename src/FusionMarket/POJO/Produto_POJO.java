@@ -6,6 +6,7 @@ public class Produto_POJO
 {
     int id_produto,quantidade, id_usuario;
     Blob foto;
+    String titulo,categoria,preco,descricao,condicao,erro;
 
     public Blob getFoto() {
         return foto;
@@ -21,7 +22,6 @@ public class Produto_POJO
     public void setId_usuario(int id_usuario) {
         this.id_usuario = id_usuario;
     }
-    String titulo,categoria,preco,descricao,condicao,erro;
 
     public String getErro() {
         return erro;

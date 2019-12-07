@@ -166,8 +166,8 @@ public class Produto_DAO
         return lista;
         }   
         
-          public List buscar_produto_like(String nome){
-            List lista = new ArrayList();
+        public List buscar_produto_like(String nome){
+        List lista = new ArrayList();
         Connection con = cn.getConnection();
         String sql = "select * from produto where titulo like ?;";
         try {
@@ -176,6 +176,7 @@ public class Produto_DAO
             ResultSet rs = p.executeQuery();
             while(rs.next()){
                 Produto_POJO produto = new Produto_POJO();
+                produto.setId_produto(rs.getInt("id_produto"));
                 produto.setTitulo(rs.getString("titulo"));
                 produto.setQuantidade(rs.getInt("quantidade"));
                 produto.setPreco(rs.getString("preco"));
