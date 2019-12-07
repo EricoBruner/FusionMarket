@@ -3,7 +3,6 @@ package FusionMarket.VIEW;
 import FusionMarket.DAO.Produto_DAO;
 import FusionMarket.MODEL.Produto_MODEL;
 import FusionMarket.POJO.Produto_POJO;
-import FusionMarket.POJO.Usuario_POJO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import javax.imageio.ImageIO;
@@ -35,6 +34,7 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         pp.setQuantidade(Integer.parseInt(TQuantidade.getText()));
         pp.setDescricao(TDescricao.getText());
         pp.setCategoria(TCategoria.getText());
+        pp.setCondicao(""+TCondicao.getSelectedItem());
         pp.setId_usuario(id_usuario);
     }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

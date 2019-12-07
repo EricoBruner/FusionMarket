@@ -16,6 +16,12 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI bi =(BasicInternalFrameUI)this.getUI();
         bi.setNorthPane(null);
+        
+        LPreco.setText(dados_produto.getPreco());
+        LQuantidade.setText(""+dados_produto.getQuantidade());
+        LCondicao.setText(dados_produto.getCondicao());
+        LDescrição.setText("<html>"+dados_produto.getDescricao()+"<html>");
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -23,6 +29,10 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
+        LPreco = new javax.swing.JLabel();
+        LQuantidade = new javax.swing.JLabel();
+        LCondicao = new javax.swing.JLabel();
+        LDescrição = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(950, 550));
@@ -37,6 +47,14 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
         });
         getContentPane().add(jLabel2);
         jLabel2.setBounds(18, 16, 70, 60);
+        getContentPane().add(LPreco);
+        LPreco.setBounds(210, 104, 160, 40);
+        getContentPane().add(LQuantidade);
+        LQuantidade.setBounds(204, 170, 170, 30);
+        getContentPane().add(LCondicao);
+        LCondicao.setBounds(204, 234, 170, 30);
+        getContentPane().add(LDescrição);
+        LDescrição.setBounds(40, 350, 330, 170);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_VerMais.png"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -48,12 +66,15 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         
         this.dispose();
-        
-        
+           
     }//GEN-LAST:event_jLabel2MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LCondicao;
+    private javax.swing.JLabel LDescrição;
+    private javax.swing.JLabel LPreco;
+    private javax.swing.JLabel LQuantidade;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables

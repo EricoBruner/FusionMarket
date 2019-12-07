@@ -143,11 +143,11 @@ public class Produto_DAO
     {
         Produto_POJO pp = new Produto_POJO();
         Connection con = cn.getConnection();
-        String sql = "select * from produto where id_produto like ?;";
+        String sql = "select * from produto where id_produto=?;";
         try
         {
             PreparedStatement p = con.prepareStatement(sql);
-            p.setString(1, "%");
+            p.setString(1, id+"");
             ResultSet rs = p.executeQuery();
             while (rs.next())
             {

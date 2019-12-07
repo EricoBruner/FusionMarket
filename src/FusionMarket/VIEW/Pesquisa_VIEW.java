@@ -24,7 +24,7 @@ public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
             LAviso.setVisible(true);
         }else
         {
-            int id = (int) TTable.getValueAt(linha, 0);
+            int id = Integer.parseInt(""+TTable.getValueAt(linha, 0));
             produtoPojo = pd.buscar_produto_id(id);
             VerMais_VIEW tela = new VerMais_VIEW(produtoPojo);
             TelaPrincipal_VIEW.Painel.add(tela);
