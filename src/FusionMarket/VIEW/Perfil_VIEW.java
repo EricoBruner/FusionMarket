@@ -12,12 +12,13 @@ public class Perfil_VIEW extends javax.swing.JInternalFrame {
             Perfil_DAO cd = new Perfil_DAO();
             Perfil_MODEL cm = new Perfil_MODEL();
             Usuario_POJO cp = new Usuario_POJO();
-    
-            public Perfil_VIEW() 
-    {
+            
+            public Perfil_VIEW(Usuario_POJO up) 
+                    
+            {
         
         initComponents();
-           
+            
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI bi =(BasicInternalFrameUI)this.getUI();
         bi.setNorthPane(null);
@@ -26,11 +27,11 @@ public class Perfil_VIEW extends javax.swing.JInternalFrame {
             
     
     
-    TNome.setText(""+cp.getNome());
-    TEmail1.setText(""+cp.getEmail());
-    TCPF.setText(""+cp.getCpf());
-    TEndereco.setText(""+cp.getEndereco());
-        
+        TNome.setText(up.getNome());
+        TEmail1.setText(up.getEmail());
+        TCPF.setText(up.getCpf());
+        TEndereco.setText(up.getEndereco());
+
         
         
     }
