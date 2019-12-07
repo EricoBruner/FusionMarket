@@ -21,6 +21,7 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
         LQuantidade.setText(""+dados_produto.getQuantidade());
         LCondicao.setText(dados_produto.getCondicao());
         LDescrição.setText("<html>"+dados_produto.getDescricao()+"<html>");
+        LNome.setText(dados_produto.getTitulo());
         
     }
 
@@ -33,6 +34,7 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
         LQuantidade = new javax.swing.JLabel();
         LCondicao = new javax.swing.JLabel();
         LDescrição = new javax.swing.JLabel();
+        LNome = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(950, 550));
@@ -47,14 +49,29 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
         });
         getContentPane().add(jLabel2);
         jLabel2.setBounds(18, 16, 70, 60);
+
+        LPreco.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        LPreco.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         getContentPane().add(LPreco);
         LPreco.setBounds(210, 104, 160, 40);
+
+        LQuantidade.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        LQuantidade.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         getContentPane().add(LQuantidade);
         LQuantidade.setBounds(204, 170, 170, 30);
+
+        LCondicao.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        LCondicao.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         getContentPane().add(LCondicao);
         LCondicao.setBounds(204, 234, 170, 30);
+
+        LDescrição.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         getContentPane().add(LDescrição);
         LDescrição.setBounds(40, 350, 330, 170);
+
+        LNome.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        getContentPane().add(LNome);
+        LNome.setBounds(210, 20, 690, 50);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_VerMais.png"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -73,6 +90,7 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LCondicao;
     private javax.swing.JLabel LDescrição;
+    private javax.swing.JLabel LNome;
     private javax.swing.JLabel LPreco;
     private javax.swing.JLabel LQuantidade;
     private javax.swing.JLabel jLabel1;
