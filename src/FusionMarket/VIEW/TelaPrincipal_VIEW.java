@@ -21,7 +21,12 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         TProduto.setBackground(new Color(1.0f,1.0f,1.0f,0f));
         TRegiao.setBackground(new Color(1.0f,1.0f,1.0f,0f));
         TCategoria.setBackground(new Color(1.0f,1.0f,1.0f,0f));
+        
         usuarioPOJO=up;
+        
+        MaisVendidos_VIEW tela = new MaisVendidos_VIEW();
+        Painel.add(tela);
+        tela.setVisible(true);
         
     }    
     @SuppressWarnings("unchecked")

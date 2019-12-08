@@ -28,9 +28,9 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
         LDescricao.setText(dados_produto.getDescricao());
         LNome.setText(dados_produto.getTitulo());
         
-        //LVendedor.setText(dados_vendedor.getNome());
+        LVendedor.setText(dados_vendedor.getNome());
         
-        //vendedor = dados_vendedor;
+        vendedor = dados_vendedor;
         
         up = dados_usuario;
 
@@ -88,11 +88,11 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
 
         LVendedor.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         getContentPane().add(LVendedor);
-        LVendedor.setBounds(552, 374, 340, 39);
+        LVendedor.setBounds(562, 374, 340, 39);
 
         LReputacao.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         getContentPane().add(LReputacao);
-        LReputacao.setBounds(553, 465, 340, 40);
+        LReputacao.setBounds(563, 465, 340, 40);
 
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -141,7 +141,7 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         
-        PerfilVendedor_VIEW tela = new PerfilVendedor_VIEW();
+        PerfilVendedor_VIEW tela = new PerfilVendedor_VIEW(vendedor);
         TelaPrincipal_VIEW.Painel.add(tela);
         tela.setVisible(true);
         

@@ -6,7 +6,7 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
 public class PerfilVendedor_VIEW extends javax.swing.JInternalFrame 
 {
 
-    public PerfilVendedor_VIEW()//Usuario_POJO dados_vendedor) 
+    public PerfilVendedor_VIEW(Usuario_POJO dados_vendedor) 
     {
         initComponents();
         
@@ -14,10 +14,10 @@ public class PerfilVendedor_VIEW extends javax.swing.JInternalFrame
         BasicInternalFrameUI bi =(BasicInternalFrameUI)this.getUI();
         bi.setNorthPane(null);
         
-        //LNome.setText(dados_vendedor.getNome());
-        //LEmail.setText(dados_vendedor.getEmail());
-        //LEndereco.setText(dados_vendedor.getEndereco());
-        //LCpf.setText(""+dados_vendedor.getCpf());
+        LNome.setText(dados_vendedor.getNome());
+        LEmail.setText(dados_vendedor.getEmail());
+        LEndereco.setText(dados_vendedor.getEndereco());
+        LCpf.setText(""+dados_vendedor.getCpf());
         
     }
 
@@ -29,8 +29,9 @@ public class PerfilVendedor_VIEW extends javax.swing.JInternalFrame
         LEmail = new javax.swing.JLabel();
         LCpf = new javax.swing.JLabel();
         LEndereco = new javax.swing.JLabel();
-        LContinuar = new javax.swing.JLabel();
         LCancelar = new javax.swing.JLabel();
+        LContinuar = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(950, 550));
@@ -46,6 +47,14 @@ public class PerfilVendedor_VIEW extends javax.swing.JInternalFrame
         getContentPane().add(LEndereco);
         LEndereco.setBounds(500, 370, 400, 40);
 
+        LCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LCancelarMouseClicked(evt);
+            }
+        });
+        getContentPane().add(LCancelar);
+        LCancelar.setBounds(550, 460, 170, 50);
+
         LContinuar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LContinuarMouseClicked(evt);
@@ -54,13 +63,13 @@ public class PerfilVendedor_VIEW extends javax.swing.JInternalFrame
         getContentPane().add(LContinuar);
         LContinuar.setBounds(740, 460, 170, 50);
 
-        LCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LCancelarMouseClicked(evt);
+                jLabel2MouseClicked(evt);
             }
         });
-        getContentPane().add(LCancelar);
-        LCancelar.setBounds(550, 460, 170, 50);
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(10, 10, 90, 70);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_PerfilVendedor.png"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -71,13 +80,22 @@ public class PerfilVendedor_VIEW extends javax.swing.JInternalFrame
 
     private void LContinuarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LContinuarMouseClicked
         
-  
+        this.dispose();
+        
     }//GEN-LAST:event_LContinuarMouseClicked
 
     private void LCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LCancelarMouseClicked
         
-
+        TelaPrincipal_VIEW.Painel.removeAll();
+        MaisVendidos_VIEW tela = new MaisVendidos_VIEW();
+        
     }//GEN-LAST:event_LCancelarMouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        
+        this.dispose();
+        
+    }//GEN-LAST:event_jLabel2MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -88,5 +106,6 @@ public class PerfilVendedor_VIEW extends javax.swing.JInternalFrame
     private javax.swing.JLabel LEndereco;
     private javax.swing.JLabel LNome;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
