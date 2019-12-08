@@ -1,10 +1,17 @@
 package FusionMarket.VIEW;
 
+import javax.swing.plaf.basic.BasicInternalFrameUI;
+
 public class Carrinho_VIEW extends javax.swing.JInternalFrame {
 
     public Carrinho_VIEW() 
     {
         initComponents();
+        
+        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
+        BasicInternalFrameUI bi =(BasicInternalFrameUI)this.getUI();
+        bi.setNorthPane(null);
+        
     }
 
     @SuppressWarnings("unchecked")

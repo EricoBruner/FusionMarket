@@ -61,6 +61,11 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         jLabel2.setName(""); // NOI18N
         jLabel2.setNextFocusableComponent(TelaPrincipal);
         jLabel2.setPreferredSize(new java.awt.Dimension(52, 52));
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabel2);
         jLabel2.setBounds(354, 52, 52, 52);
 
@@ -280,6 +285,15 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         tela.setVisible(true);
         
     }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        
+        MaisVendidos_VIEW tela = new MaisVendidos_VIEW();
+        Painel.removeAll();
+        Painel.add(tela);
+        tela.setVisible(true);
+        
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     
     

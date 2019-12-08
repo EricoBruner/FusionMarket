@@ -13,21 +13,25 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame 
 {
+    
     Produto_POJO pp = new Produto_POJO();
     Produto_DAO pd = new Produto_DAO();
     Produto_MODEL pm = new Produto_MODEL();
     int id_usuario;
     String rot="";
     int adfoto=0;
+    
     public AdicionarProduto_VIEW(int id) 
     {
         initComponents();
+        
         id_usuario=id;
         
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI bi =(BasicInternalFrameUI)this.getUI();
         bi.setNorthPane(null);
     }
+    
     public void Pegar_Dados()
     {
         pp.setTitulo(TTitulo.getText());
@@ -48,7 +52,7 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
+        LVoltar = new javax.swing.JLabel();
         Cancelar = new javax.swing.JLabel();
         Publicar = new javax.swing.JLabel();
         LFoto = new javax.swing.JLabel();
@@ -80,14 +84,14 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         setPreferredSize(new java.awt.Dimension(966, 580));
         getContentPane().setLayout(null);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Botão_Voltar.png"))); // NOI18N
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        LVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Botão_Voltar.png"))); // NOI18N
+        LVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                LVoltarMouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(22, 20, 60, 60);
+        getContentPane().add(LVoltar);
+        LVoltar.setBounds(22, 20, 60, 60);
 
         Cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Botão_Cancelar.png"))); // NOI18N
         Cancelar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -241,12 +245,11 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         setBounds(0, 0, 950, 550);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        MinhaLoja_VIEW tela = new MinhaLoja_VIEW(id_usuario);
-        tela.setVisible(true);
+    private void LVoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LVoltarMouseClicked
+        
         this.dispose();
         
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_LVoltarMouseClicked
 
     public void carregar_foto()
     {
@@ -272,9 +275,9 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
     }
     }
     private void CancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelarMouseClicked
-        MinhaLoja_VIEW tela = new MinhaLoja_VIEW(id_usuario);
-        tela.setVisible(true);
+        
         this.dispose();
+        
     }//GEN-LAST:event_CancelarMouseClicked
 
     private void PublicarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PublicarMouseClicked
@@ -291,9 +294,11 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         }
         
         MinhaLoja_VIEW tela = new MinhaLoja_VIEW(id_usuario);
+        TelaPrincipal_VIEW.Painel.removeAll();
         TelaPrincipal_VIEW.Painel.add(tela);
         tela.setVisible(true);
         this.dispose();
+        
     }//GEN-LAST:event_PublicarMouseClicked
 
     private void LFotoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LFotoMouseClicked
@@ -324,6 +329,7 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
     private javax.swing.JTextField Descricao6;
     private javax.swing.JTextField Descricao7;
     private javax.swing.JLabel LFoto;
+    private javax.swing.JLabel LVoltar;
     private javax.swing.JLabel PainelAdicionarProduto;
     private javax.swing.JLabel Publicar;
     private javax.swing.JTextField TCategoria;
@@ -333,7 +339,6 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
     private javax.swing.JTextField TTitulo;
     private javax.swing.JLabel TUrl;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
