@@ -88,6 +88,7 @@ public class PerfilVendedor_VIEW extends javax.swing.JInternalFrame
         
         TelaPrincipal_VIEW.Painel.removeAll();
         MaisVendidos_VIEW tela = new MaisVendidos_VIEW();
+        tela.setVisible(true);
         
     }//GEN-LAST:event_LCancelarMouseClicked
 
