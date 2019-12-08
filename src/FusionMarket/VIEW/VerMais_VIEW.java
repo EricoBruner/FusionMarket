@@ -1,6 +1,7 @@
 package FusionMarket.VIEW;
 
 import FusionMarket.POJO.Produto_POJO;
+import FusionMarket.POJO.Usuario_POJO;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 /**
@@ -8,8 +9,9 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
  * @author User
  */
 public class VerMais_VIEW extends javax.swing.JInternalFrame {
-
-    public VerMais_VIEW(Produto_POJO dados_produto) 
+    
+    Usuario_POJO up;
+    public VerMais_VIEW(Produto_POJO dados_produto, Usuario_POJO dados_usuario) 
     {
         initComponents();
         
@@ -20,9 +22,10 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
         LPreco.setText(dados_produto.getPreco());
         LQuantidade.setText(""+dados_produto.getQuantidade());
         LCondicao.setText(dados_produto.getCondicao());
-        LDescrição.setText("<html>"+dados_produto.getDescricao()+"<html>");
+        LDescrição.setText(dados_produto.getDescricao());
         LNome.setText(dados_produto.getTitulo());
         
+        up = dados_usuario;
     }
 
     @SuppressWarnings("unchecked")
@@ -35,6 +38,12 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
         LCondicao = new javax.swing.JLabel();
         LDescrição = new javax.swing.JLabel();
         LNome = new javax.swing.JLabel();
+        LVendedor = new javax.swing.JLabel();
+        LReputacao = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(950, 550));
@@ -53,25 +62,43 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
         LPreco.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         LPreco.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         getContentPane().add(LPreco);
-        LPreco.setBounds(210, 104, 160, 40);
+        LPreco.setBounds(193, 106, 170, 40);
 
         LQuantidade.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         LQuantidade.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         getContentPane().add(LQuantidade);
-        LQuantidade.setBounds(204, 170, 170, 30);
+        LQuantidade.setBounds(194, 166, 170, 40);
 
         LCondicao.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         LCondicao.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         getContentPane().add(LCondicao);
-        LCondicao.setBounds(204, 234, 170, 30);
+        LCondicao.setBounds(194, 230, 170, 40);
 
         LDescrição.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         getContentPane().add(LDescrição);
-        LDescrição.setBounds(40, 350, 330, 170);
+        LDescrição.setBounds(42, 350, 330, 170);
 
         LNome.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         getContentPane().add(LNome);
-        LNome.setBounds(210, 20, 690, 50);
+        LNome.setBounds(203, 19, 700, 56);
+        getContentPane().add(LVendedor);
+        LVendedor.setBounds(552, 374, 340, 39);
+        getContentPane().add(LReputacao);
+        LReputacao.setBounds(553, 465, 340, 40);
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(784, 414, 116, 26);
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(430, 100, 210, 220);
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(706, 147, 168, 52);
+
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(706, 226, 169, 50);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_VerMais.png"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -86,6 +113,14 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
            
     }//GEN-LAST:event_jLabel2MouseClicked
 
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        
+        ConfirmarDados_VIEW tela = new ConfirmarDados_VIEW(up);
+        TelaPrincipal_VIEW.Painel.add(tela);
+        tela.setVisible(true);
+        
+    }//GEN-LAST:event_jLabel6MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LCondicao;
@@ -93,7 +128,13 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
     private javax.swing.JLabel LNome;
     private javax.swing.JLabel LPreco;
     private javax.swing.JLabel LQuantidade;
+    private javax.swing.JLabel LReputacao;
+    private javax.swing.JLabel LVendedor;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
 }
