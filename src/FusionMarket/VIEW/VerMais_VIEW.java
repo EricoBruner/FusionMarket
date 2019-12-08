@@ -1,5 +1,6 @@
 package FusionMarket.VIEW;
 
+import FusionMarket.DAO.Usuario_DAO;
 import FusionMarket.POJO.Produto_POJO;
 import FusionMarket.POJO.Usuario_POJO;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
@@ -11,6 +12,9 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
 public class VerMais_VIEW extends javax.swing.JInternalFrame {
     
     Usuario_POJO up;
+    Usuario_POJO vendedor;
+    Usuario_DAO ud;
+    
     public VerMais_VIEW(Produto_POJO dados_produto, Usuario_POJO dados_usuario) 
     {
         initComponents();
@@ -25,7 +29,11 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
         LDescrição.setText(dados_produto.getDescricao());
         LNome.setText(dados_produto.getTitulo());
         
+        int id = dados_produto.getId_usuario();
+        vendedor = ud.busca_usuario_id(id);
+        
         up = dados_usuario;
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -59,32 +67,42 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(18, 16, 70, 60);
 
-        LPreco.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        LPreco.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         LPreco.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         getContentPane().add(LPreco);
         LPreco.setBounds(193, 106, 170, 40);
 
-        LQuantidade.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        LQuantidade.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         LQuantidade.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         getContentPane().add(LQuantidade);
         LQuantidade.setBounds(194, 166, 170, 40);
 
-        LCondicao.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        LCondicao.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         LCondicao.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         getContentPane().add(LCondicao);
         LCondicao.setBounds(194, 230, 170, 40);
 
-        LDescrição.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        LDescrição.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         getContentPane().add(LDescrição);
         LDescrição.setBounds(42, 350, 330, 170);
 
-        LNome.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        LNome.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
         getContentPane().add(LNome);
         LNome.setBounds(203, 19, 700, 56);
+
+        LVendedor.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         getContentPane().add(LVendedor);
         LVendedor.setBounds(552, 374, 340, 39);
+
+        LReputacao.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         getContentPane().add(LReputacao);
         LReputacao.setBounds(553, 465, 340, 40);
+
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabel3);
         jLabel3.setBounds(784, 414, 116, 26);
         getContentPane().add(jLabel4);
@@ -120,6 +138,12 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
         tela.setVisible(true);
         
     }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        
+        
+        
+    }//GEN-LAST:event_jLabel3MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

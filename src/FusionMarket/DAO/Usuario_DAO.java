@@ -16,7 +16,6 @@ public class Usuario_DAO
         
         PreparedStatement stmt=null;
         ResultSet rs=null;
-        boolean check = false;
         Usuario_POJO up=new Usuario_POJO();
         try
         {
@@ -43,5 +42,37 @@ public class Usuario_DAO
         } 
         return up;  
     } 
+        public Usuario_POJO busca_usuario_id(int id)  
+    {   
+        Connection con= cn.getConnection();
+        
+        PreparedStatement stmt=null;
+        ResultSet rs=null;
+        Usuario_POJO up=new Usuario_POJO();
+        try
+        {
+            stmt=con.prepareStatement("SELECT * FROM usuario where id_usuario=?");
+            stmt.setString(1, ""+id);
+               
+            rs=stmt.executeQuery();
+               
+            while(rs.next())
+               {
+                   
+                up.setId(rs.getInt("id_usuario"));
+                up.setNome(rs.getString("nome"));
+                up.setEmail(rs.getString("email"));
+                up.setCpf(rs.getString("cpf_cnpj"));
+                up.setEndereco(rs.getString("endereco"));
+                
+               }
+        }
+        catch (SQLException ex) 
+        {
+
+        } 
+        return up;  
+    } 
 }
+
     
