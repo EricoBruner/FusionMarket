@@ -164,6 +164,7 @@ public class Produto_DAO
                 pp.setDescricao(rs.getString("descricao"));
                 pp.setQuantidade(rs.getInt("quantidade"));
                 pp.setCondicao(rs.getString("condicao"));
+                pp.setId_usuario(rs.getInt("id_usuario"));
             }
         }
         catch (SQLException e)

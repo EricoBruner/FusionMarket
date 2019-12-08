@@ -46,30 +46,38 @@ public class Usuario_DAO
         } 
         return up;  
     } 
-public Usuario_POJO buscar_usuario_id(int id)
-    {
-        Usuario_POJO pp = new Usuario_POJO();
-        Connection con = cn.getConnection();
-        String sql = "select * from usuario where id_usuario=?;";
+        public Usuario_POJO buscar_usuario_id(String id)  
+    {   
+        Connection con= cn.getConnection();
+        
+        PreparedStatement stmt=null;
+        ResultSet rs=null;
+        Usuario_POJO up=new Usuario_POJO();
         try
         {
-            PreparedStatement p = con.prepareStatement(sql);
-            p.setString(1, id+"");
-            ResultSet rs = p.executeQuery();
-            while (rs.next())
-            {
-                pp.setNome(rs.getString("nome"));
-                pp.setEmail(rs.getString("email"));
-                pp.setCpf(rs.getInt("cpf_cnpj"));
-                pp.setEndereco(rs.getString("endereco"));
-            }
+            stmt=con.prepareStatement("SELECT * FROM usuario where id_usuario=?");
+            stmt.setString(1, id);
+               
+            rs=stmt.executeQuery();
+               
+            while(rs.next())
+               {
+                   
+                up.setId(rs.getInt("id_usuario"));
+                up.setNome(rs.getString("nome"));
+                up.setEmail(rs.getString("email"));
+                up.setCpf(rs.getInt("cpf_cnpj"));
+                up.setEndereco(rs.getString("endereco"));
+                
+               }
         }
-        catch (SQLException e)
+        catch (SQLException ex) 
         {
-            JOptionPane.showMessageDialog( null, e ) ;
-        }
-        return pp;
-        }
+
+        } 
+        return up;  
+    } 
+
 }
          
  

@@ -1,13 +1,18 @@
 package FusionMarket.VIEW;
 
 import FusionMarket.POJO.Usuario_POJO;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class PerfilVendedor_VIEW extends javax.swing.JInternalFrame 
 {
 
-    public PerfilVendedor_VIEW() 
+    public PerfilVendedor_VIEW()//Usuario_POJO dados_vendedor) 
     {
         initComponents();
+        
+        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
+        BasicInternalFrameUI bi =(BasicInternalFrameUI)this.getUI();
+        bi.setNorthPane(null);
         
         //LNome.setText(dados_vendedor.getNome());
         //LEmail.setText(dados_vendedor.getEmail());

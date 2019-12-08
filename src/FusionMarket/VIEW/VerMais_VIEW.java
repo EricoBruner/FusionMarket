@@ -12,8 +12,9 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
 public class VerMais_VIEW extends javax.swing.JInternalFrame {
     
     Usuario_POJO up;
+    Usuario_POJO vendedor;
     
-    public VerMais_VIEW(Produto_POJO dados_produto, Usuario_POJO dados_usuario) 
+    public VerMais_VIEW(Produto_POJO dados_produto, Usuario_POJO dados_usuario, Usuario_POJO dados_vendedor) 
     {
         initComponents();
         
@@ -26,6 +27,10 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
         LCondicao.setText(dados_produto.getCondicao());
         LDescricao.setText(dados_produto.getDescricao());
         LNome.setText(dados_produto.getTitulo());
+        
+        //LVendedor.setText(dados_vendedor.getNome());
+        
+        //vendedor = dados_vendedor;
         
         up = dados_usuario;
 

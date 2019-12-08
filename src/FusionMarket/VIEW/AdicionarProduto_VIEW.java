@@ -23,6 +23,7 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
     {
         initComponents();
         id_usuario=id;
+        
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI bi =(BasicInternalFrameUI)this.getUI();
         bi.setNorthPane(null);

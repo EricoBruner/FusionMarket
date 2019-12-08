@@ -29,11 +29,13 @@ public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
         }
         if(linha > 0)
         {
-            //int id_vendedor = produtoPojo.getId_usuario();
-            //vendedor = ud.buscar_usuario_id(id_vendedor);
             int id = Integer.parseInt(""+TTable.getValueAt(linha, 0));
             produtoPojo = pd.buscar_produto_id(id);
-            VerMais_VIEW tela_vermais = new VerMais_VIEW(produtoPojo, usuarioPojo);
+            
+            String id_vendedor = ""+produtoPojo.getId_usuario();
+            vendedor = ud.buscar_usuario_id(id_vendedor);
+            
+            VerMais_VIEW tela_vermais = new VerMais_VIEW(produtoPojo, usuarioPojo, vendedor);
             TelaPrincipal_VIEW.Painel.add(tela_vermais);
             tela_vermais.setVisible(true);
         }
@@ -46,8 +48,7 @@ public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
         List lista = pd.buscar_produto_like(nome);
         Produto_MODEL cm = new Produto_MODEL();
         
-        
-         for(int i=0;i<lista.size();i++)
+        for(int i=0;i<lista.size();i++)
         {
         pp=(Produto_POJO)lista.get(i);
   
