@@ -1,8 +1,8 @@
 package FusionMarket.POJO;
 
 public class Usuario_POJO {
-    String nome,email,cpf,endereco,erro;
-    int id;
+    String nome,email,endereco,erro;
+    int id,cpf;
 
     public int getId() {
         return id;
@@ -28,11 +28,11 @@ public class Usuario_POJO {
         this.email = email;
     }
 
-    public String getCpf() {
+    public int getCpf() {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
+    public void setCpf(int cpf) {
         this.cpf = cpf;
     }
 

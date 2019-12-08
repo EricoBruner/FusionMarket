@@ -12,8 +12,6 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
 public class VerMais_VIEW extends javax.swing.JInternalFrame {
     
     Usuario_POJO up;
-    Usuario_POJO vendedor;
-    Usuario_DAO ud;
     
     public VerMais_VIEW(Produto_POJO dados_produto, Usuario_POJO dados_usuario) 
     {
@@ -29,11 +27,8 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
         LDescrição.setText(dados_produto.getDescricao());
         LNome.setText(dados_produto.getTitulo());
         
-        int id = dados_produto.getId_usuario();
-        vendedor = ud.busca_usuario_id(id);
-        
         up = dados_usuario;
-        
+
     }
 
     @SuppressWarnings("unchecked")
@@ -120,7 +115,7 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_VerMais.png"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 950, 550);
+        jLabel1.setBounds(0, 0, 940, 550);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -141,7 +136,7 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         
-        PerfilVendedor_VIEW tela = new PerfilVendedor_VIEW(vendedor);
+        PerfilVendedor_VIEW tela = new PerfilVendedor_VIEW();
         TelaPrincipal_VIEW.Painel.add(tela);
         tela.setVisible(true);
         

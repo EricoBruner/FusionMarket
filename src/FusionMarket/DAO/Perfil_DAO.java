@@ -31,7 +31,7 @@ public class Perfil_DAO {
                 ResultSet rs = p.executeQuery();
                 rs.next();
                 cp.setNome(rs.getString("nome"));
-                cp.setCpf("cpf_cnpj");
+                cp.setCpf(rs.getInt("cpf_cnpj"));
                 cp.setEmail(rs.getString("email"));
                 cp.setEndereco(rs.getString("endereco"));
             

@@ -3,7 +3,7 @@ package FusionMarket.POJO;
 public class Cadastro_POJO 
 {
     int id_usuario;
-    String nome, cpf_cnpj, email, senha, endereco, erro;
+    String nome,cpf_cnpj, email, senha, endereco, erro;
 
     public String getErro() 
     {

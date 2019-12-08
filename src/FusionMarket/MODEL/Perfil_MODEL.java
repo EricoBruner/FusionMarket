@@ -25,7 +25,7 @@ public class Perfil_MODEL {
             throw new IllegalArgumentException("Email");
         }
     
-                 if (contato.getCpf().equals(""))
+                 if ((""+contato.getCpf()).equals(""))
         {
             contato.setErro("CPF/CNPJ");
             throw new IllegalArgumentException("CPF/CNPJ");

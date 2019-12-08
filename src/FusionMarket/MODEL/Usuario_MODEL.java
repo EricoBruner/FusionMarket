@@ -28,7 +28,7 @@ public class Usuario_MODEL {
         
         }
         
-           if (contato.getCpf().equals(""))
+           if ((""+contato.getCpf()).equals(""))
         {
             contato.setErro("CPF ou CNPJ");
             throw new IllegalAccessException("Email");

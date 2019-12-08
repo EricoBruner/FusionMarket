@@ -13,7 +13,7 @@ public class Cadastro_DAO
     public void inserir_usuario(Cadastro_POJO usuario)
     {
         Connection con = cn.getConnection();
-        String sql = "insert into usuario (nome, cpf_cnpj, email, senha) values (?,?,?,?);";
+        String sql = "insert into usuario (nome, cpf_cnpj, email, senha, endereco) values (?,?,?,?,?);";
         try
         {
             PreparedStatement p = con.prepareStatement(sql);
@@ -21,6 +21,7 @@ public class Cadastro_DAO
             p.setString(2, usuario.getCpf_cnpj());
             p.setString(3, usuario.getEmail());
             p.setString(4, usuario.getSenha());
+            p.setString(5, usuario.getEndereco());
             
             p.executeUpdate();
         }

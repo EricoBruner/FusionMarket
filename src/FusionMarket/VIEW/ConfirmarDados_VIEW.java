@@ -20,7 +20,7 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         
         LNome.setText(up.getNome());
         LEmail.setText(up.getEmail());
-        LCpf.setText(up.getCpf());
+        LCpf.setText(""+up.getCpf());
         LEndereco.setText(up.getEndereco());
         
         LCartao.setBackground(new Color(255,0,0,60));

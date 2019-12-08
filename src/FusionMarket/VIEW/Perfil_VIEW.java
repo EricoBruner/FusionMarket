@@ -29,7 +29,7 @@ public class Perfil_VIEW extends javax.swing.JInternalFrame {
     
         TNome.setText(up.getNome());
         TEmail1.setText(up.getEmail());
-        TCPF.setText(up.getCpf());
+        TCPF.setText(""+up.getCpf());
         TEndereco.setText(up.getEndereco());
 
         

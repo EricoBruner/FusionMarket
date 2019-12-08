@@ -1,10 +1,12 @@
 package FusionMarket.VIEW;
 
 import FusionMarket.DAO.Produto_DAO;
+import FusionMarket.DAO.Usuario_DAO;
 import FusionMarket.MODEL.Produto_MODEL;
 import FusionMarket.POJO.Produto_POJO;
 import FusionMarket.POJO.Usuario_POJO;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 
@@ -12,8 +14,10 @@ public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
 
     Produto_POJO pp = new Produto_POJO();
     Produto_DAO pd = new Produto_DAO();
+    Usuario_DAO ud = new Usuario_DAO();
     Produto_POJO produtoPojo;
     Usuario_POJO usuarioPojo;
+    Usuario_POJO vendedor;
     
     public void produto_selecionado()
     {
@@ -22,13 +26,16 @@ public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
         if(linha < 0 )
         {
             LAviso.setVisible(true);
-        }else
+        }
+        if(linha > 0)
         {
+            //int id_vendedor = produtoPojo.getId_usuario();
+            //vendedor = ud.buscar_usuario_id(id_vendedor);
             int id = Integer.parseInt(""+TTable.getValueAt(linha, 0));
             produtoPojo = pd.buscar_produto_id(id);
-            VerMais_VIEW tela = new VerMais_VIEW(produtoPojo, usuarioPojo);
-            TelaPrincipal_VIEW.Painel.add(tela);
-            tela.setVisible(true);
+            VerMais_VIEW tela_vermais = new VerMais_VIEW(produtoPojo, usuarioPojo);
+            TelaPrincipal_VIEW.Painel.add(tela_vermais);
+            tela_vermais.setVisible(true);
         }
     }
     public Pesquisa_VIEW(Usuario_POJO up , String nome) 

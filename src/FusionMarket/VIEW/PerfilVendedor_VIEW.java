@@ -5,14 +5,14 @@ import FusionMarket.POJO.Usuario_POJO;
 public class PerfilVendedor_VIEW extends javax.swing.JInternalFrame 
 {
 
-    public PerfilVendedor_VIEW(Usuario_POJO dados_vendedor) 
+    public PerfilVendedor_VIEW() 
     {
         initComponents();
         
-        LNome.setText(dados_vendedor.getNome());
-        LEmail.setText(dados_vendedor.getEmail());
-        LEndereco.setText(dados_vendedor.getEndereco());
-        LCpf.setText(dados_vendedor.getCpf());
+        //LNome.setText(dados_vendedor.getNome());
+        //LEmail.setText(dados_vendedor.getEmail());
+        //LEndereco.setText(dados_vendedor.getEndereco());
+        //LCpf.setText(""+dados_vendedor.getCpf());
         
     }
 
@@ -66,14 +66,12 @@ public class PerfilVendedor_VIEW extends javax.swing.JInternalFrame
 
     private void LContinuarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LContinuarMouseClicked
         
-        this.dispose();
-        
+  
     }//GEN-LAST:event_LContinuarMouseClicked
 
     private void LCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LCancelarMouseClicked
         
-        this.dispose();
-        
+
     }//GEN-LAST:event_LCancelarMouseClicked
 
 
