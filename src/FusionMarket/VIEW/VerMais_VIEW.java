@@ -24,7 +24,7 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
         LPreco.setText(dados_produto.getPreco());
         LQuantidade.setText(""+dados_produto.getQuantidade());
         LCondicao.setText(dados_produto.getCondicao());
-        LDescrição.setText(dados_produto.getDescricao());
+        LDescricao.setText(dados_produto.getDescricao());
         LNome.setText(dados_produto.getTitulo());
         
         up = dados_usuario;
@@ -39,7 +39,6 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
         LPreco = new javax.swing.JLabel();
         LQuantidade = new javax.swing.JLabel();
         LCondicao = new javax.swing.JLabel();
-        LDescrição = new javax.swing.JLabel();
         LNome = new javax.swing.JLabel();
         LVendedor = new javax.swing.JLabel();
         LReputacao = new javax.swing.JLabel();
@@ -47,6 +46,7 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        LDescricao = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(950, 550));
@@ -76,10 +76,6 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
         LCondicao.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         getContentPane().add(LCondicao);
         LCondicao.setBounds(194, 230, 170, 40);
-
-        LDescrição.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        getContentPane().add(LDescrição);
-        LDescrição.setBounds(42, 350, 330, 170);
 
         LNome.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
         getContentPane().add(LNome);
@@ -113,6 +109,10 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
         getContentPane().add(jLabel6);
         jLabel6.setBounds(706, 226, 169, 50);
 
+        LDescricao.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        getContentPane().add(LDescricao);
+        LDescricao.setBounds(44, 350, 330, 170);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_VerMais.png"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 940, 550);
@@ -145,7 +145,7 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LCondicao;
-    private javax.swing.JLabel LDescrição;
+    private javax.swing.JLabel LDescricao;
     private javax.swing.JLabel LNome;
     private javax.swing.JLabel LPreco;
     private javax.swing.JLabel LQuantidade;

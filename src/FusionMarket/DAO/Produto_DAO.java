@@ -104,6 +104,7 @@ public class Produto_DAO
                 produto.setPreco(rs.getString("preco"));
                 produto.setCategoria(rs.getString("categoria"));
                 produto.setQuantidade(rs.getInt("quantidade"));
+                produto.setDescricao(rs.getString("descricao"));
                 produto.setCondicao(rs.getString("condicao"));
                 lista.add(produto);
             }
@@ -133,6 +134,7 @@ public class Produto_DAO
                 produto.setPreco(rs.getString("preco"));
                 produto.setCategoria(rs.getString("categoria"));
                 produto.setQuantidade(rs.getInt("quantidade"));
+                produto.setDescricao(rs.getString("descricao"));
                 produto.setCondicao(rs.getString("condicao"));
                 lista.add(produto);
             }
@@ -159,6 +161,7 @@ public class Produto_DAO
                 pp.setTitulo(rs.getString("titulo"));
                 pp.setPreco(rs.getString("preco"));
                 pp.setCategoria(rs.getString("categoria"));
+                pp.setDescricao(rs.getString("descricao"));
                 pp.setQuantidade(rs.getInt("quantidade"));
                 pp.setCondicao(rs.getString("condicao"));
             }
@@ -185,6 +188,7 @@ public class Produto_DAO
                 produto.setQuantidade(rs.getInt("quantidade"));
                 produto.setPreco(rs.getString("preco"));
                 produto.setCategoria(rs.getString("categoria"));
+                produto.setDescricao(rs.getString("descricao"));
                 produto.setCondicao(rs.getString("condicao"));
                 lista.add(produto);
             }

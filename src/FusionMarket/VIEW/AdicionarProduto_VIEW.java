@@ -32,7 +32,14 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         pp.setTitulo(TTitulo.getText());
         pp.setPreco(TPreco.getText());
         pp.setQuantidade(Integer.parseInt(TQuantidade.getText()));
-        pp.setDescricao(TDescricao.getText());
+        String Descricao = "<html>"+Descricao1.getText();
+        Descricao = Descricao+"<p>"+ Descricao2.getText();
+        Descricao = Descricao+"<p>"+ Descricao3.getText();
+        Descricao = Descricao+"<p>"+ Descricao4.getText();
+        Descricao = Descricao+"<p>"+ Descricao5.getText();
+        Descricao = Descricao+"<p>"+ Descricao6.getText();
+        Descricao = Descricao+"<p>"+Descricao7.getText()+"<html>";
+        pp.setDescricao(Descricao);
         pp.setCategoria(TCategoria.getText());
         pp.setCondicao(""+TCondicao.getSelectedItem());
         pp.setId_usuario(id_usuario);
@@ -49,8 +56,20 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         TPreco = new javax.swing.JTextField();
         TQuantidade = new javax.swing.JTextField();
         TCondicao = new javax.swing.JComboBox();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        TDescricao = new javax.swing.JTextArea();
+        Descricao1 = new javax.swing.JTextField();
+        Descricao2 = new javax.swing.JTextField();
+        Descricao3 = new javax.swing.JTextField();
+        Descricao4 = new javax.swing.JTextField();
+        Descricao5 = new javax.swing.JTextField();
+        Descricao6 = new javax.swing.JTextField();
+        Descricao7 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         PainelAdicionarProduto = new javax.swing.JLabel();
         TUrl = new javax.swing.JLabel();
 
@@ -96,7 +115,7 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         getContentPane().add(LFoto);
         LFoto.setBounds(750, 145, 164, 165);
 
-        TTitulo.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        TTitulo.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         TTitulo.setBorder(null);
         TTitulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,14 +125,22 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         getContentPane().add(TTitulo);
         TTitulo.setBounds(29, 150, 340, 40);
 
+        TCategoria.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         TCategoria.setBorder(null);
         getContentPane().add(TCategoria);
         TCategoria.setBounds(30, 256, 340, 40);
 
+        TPreco.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         TPreco.setBorder(null);
+        TPreco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TPrecoActionPerformed(evt);
+            }
+        });
         getContentPane().add(TPreco);
         TPreco.setBounds(30, 367, 340, 40);
 
+        TQuantidade.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         TQuantidade.setBorder(null);
         getContentPane().add(TQuantidade);
         TQuantidade.setBounds(30, 476, 340, 40);
@@ -126,22 +153,89 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         getContentPane().add(TCondicao);
         TCondicao.setBounds(413, 470, 302, 50);
 
-        TDescricao.setColumns(20);
-        TDescricao.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        TDescricao.setRows(5);
-        jScrollPane2.setViewportView(TDescricao);
+        Descricao1.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        Descricao1.setBorder(null);
+        Descricao1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Descricao1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Descricao1);
+        Descricao1.setBounds(430, 148, 280, 30);
 
-        getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(420, 150, 290, 260);
+        Descricao2.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        Descricao2.setBorder(null);
+        getContentPane().add(Descricao2);
+        Descricao2.setBounds(430, 186, 280, 30);
+
+        Descricao3.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        Descricao3.setBorder(null);
+        getContentPane().add(Descricao3);
+        Descricao3.setBounds(430, 224, 280, 30);
+
+        Descricao4.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        Descricao4.setBorder(null);
+        getContentPane().add(Descricao4);
+        Descricao4.setBounds(430, 262, 280, 30);
+
+        Descricao5.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        Descricao5.setBorder(null);
+        getContentPane().add(Descricao5);
+        Descricao5.setBounds(430, 301, 280, 30);
+
+        Descricao6.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        Descricao6.setBorder(null);
+        getContentPane().add(Descricao6);
+        Descricao6.setBounds(430, 340, 280, 30);
+
+        Descricao7.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        Descricao7.setBorder(null);
+        getContentPane().add(Descricao7);
+        Descricao7.setBounds(430, 379, 280, 30);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setText("-");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(420, 383, 20, 22);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setText("-");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(420, 150, 20, 22);
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel4.setText("-");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(420, 190, 20, 22);
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel5.setText("-");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(420, 227, 20, 22);
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setText("-");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(420, 265, 20, 22);
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel7.setText("-");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(420, 304, 20, 22);
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel8.setText("-");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(420, 344, 20, 22);
 
         PainelAdicionarProduto.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         PainelAdicionarProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel _AdicionarProduto.png"))); // NOI18N
         getContentPane().add(PainelAdicionarProduto);
         PainelAdicionarProduto.setBounds(0, 0, 950, 550);
 
-        TUrl.setText("jLabel1");
+        TUrl.setText("jLabel9");
         getContentPane().add(TUrl);
-        TUrl.setBounds(330, 80, 34, 14);
+        TUrl.setBounds(300, 100, 34, 14);
 
         setBounds(0, 0, 950, 550);
     }// </editor-fold>//GEN-END:initComponents
@@ -211,19 +305,39 @@ public class AdicionarProduto_VIEW extends javax.swing.JInternalFrame
         // TODO add your handling code here:
     }//GEN-LAST:event_TTituloActionPerformed
 
+    private void TPrecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TPrecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TPrecoActionPerformed
+
+    private void Descricao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Descricao1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Descricao1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Cancelar;
+    private javax.swing.JTextField Descricao1;
+    private javax.swing.JTextField Descricao2;
+    private javax.swing.JTextField Descricao3;
+    private javax.swing.JTextField Descricao4;
+    private javax.swing.JTextField Descricao5;
+    private javax.swing.JTextField Descricao6;
+    private javax.swing.JTextField Descricao7;
     private javax.swing.JLabel LFoto;
     private javax.swing.JLabel PainelAdicionarProduto;
     private javax.swing.JLabel Publicar;
     private javax.swing.JTextField TCategoria;
     private javax.swing.JComboBox TCondicao;
-    private javax.swing.JTextArea TDescricao;
     private javax.swing.JTextField TPreco;
     private javax.swing.JTextField TQuantidade;
     private javax.swing.JTextField TTitulo;
     private javax.swing.JLabel TUrl;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     // End of variables declaration//GEN-END:variables
 }
