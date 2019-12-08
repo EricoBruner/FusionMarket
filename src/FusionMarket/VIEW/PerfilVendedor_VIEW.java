@@ -39,13 +39,13 @@ public class PerfilVendedor_VIEW extends javax.swing.JInternalFrame
         setPreferredSize(new java.awt.Dimension(950, 550));
         getContentPane().setLayout(null);
         getContentPane().add(LNome);
-        LNome.setBounds(500, 140, 400, 40);
+        LNome.setBounds(510, 140, 400, 40);
         getContentPane().add(LEmail);
-        LEmail.setBounds(500, 210, 400, 50);
+        LEmail.setBounds(509, 215, 400, 40);
         getContentPane().add(LCpf);
-        LCpf.setBounds(500, 294, 400, 40);
+        LCpf.setBounds(512, 294, 400, 40);
         getContentPane().add(LEndereco);
-        LEndereco.setBounds(500, 370, 400, 40);
+        LEndereco.setBounds(512, 370, 400, 40);
 
         LCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -88,6 +88,7 @@ public class PerfilVendedor_VIEW extends javax.swing.JInternalFrame
         
         TelaPrincipal_VIEW.Painel.removeAll();
         MaisVendidos_VIEW tela = new MaisVendidos_VIEW();
+        TelaPrincipal_VIEW.Painel.add(tela);
         tela.setVisible(true);
         
     }//GEN-LAST:event_LCancelarMouseClicked
