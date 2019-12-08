@@ -5,6 +5,7 @@ import FusionMarket.MODEL.Produto_MODEL;
 import FusionMarket.POJO.Produto_POJO;
 import FusionMarket.POJO.Usuario_POJO;
 import java.awt.Color;
+import java.awt.event.KeyEvent;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
@@ -252,7 +253,15 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
     }//GEN-LAST:event_TPesquisarMouseClicked
 
     private void TProdutoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TProdutoKeyPressed
-        // TODO add your handling code here:
+        
+        int key = evt.getKeyCode();
+        if (key == KeyEvent.VK_ENTER) 
+        {
+            nome=TProduto.getText();
+            Pesquisa_VIEW tela = new Pesquisa_VIEW(usuarioPOJO,nome);
+            TelaPrincipal_VIEW.Painel.add(tela);
+            tela.setVisible(true);
+        }
     }//GEN-LAST:event_TProdutoKeyPressed
 
     
