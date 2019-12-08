@@ -127,9 +127,9 @@ public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         
-        ConfirmarDados_VIEW tela = new ConfirmarDados_VIEW(usuarioPojo);
-        TelaPrincipal_VIEW.Painel.add(tela);
-        tela.setVisible(true);
+        ConfirmarDados_VIEW tela_confirmardados = new ConfirmarDados_VIEW(usuarioPojo);
+        TelaPrincipal_VIEW.Painel.add(tela_confirmardados);
+        tela_confirmardados.setVisible(true);
         
     }//GEN-LAST:event_jLabel3MouseClicked
 

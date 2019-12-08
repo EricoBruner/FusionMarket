@@ -141,7 +141,9 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         
-        
+        PerfilVendedor_VIEW tela = new PerfilVendedor_VIEW(vendedor);
+        TelaPrincipal_VIEW.Painel.add(tela);
+        tela.setVisible(true);
         
     }//GEN-LAST:event_jLabel3MouseClicked
 
