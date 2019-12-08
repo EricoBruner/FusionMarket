@@ -45,6 +45,7 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         TPesquisar = new javax.swing.JLabel();
         TCategoria = new javax.swing.JComboBox();
         TRegiao = new javax.swing.JComboBox();
+        jLabel6 = new javax.swing.JLabel();
         TelaPrincipal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -187,6 +188,14 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         getContentPane().add(TRegiao);
         TRegiao.setBounds(30, 530, 286, 46);
 
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(1255, 52, 50, 50);
+
         TelaPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_TelaPrincipal.png"))); // NOI18N
         getContentPane().add(TelaPrincipal);
         TelaPrincipal.setBounds(0, -30, 1366, 830);
@@ -264,6 +273,14 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
         }
     }//GEN-LAST:event_TProdutoKeyPressed
 
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        
+        Carrinho_VIEW tela = new  Carrinho_VIEW();
+        Painel.add(tela);
+        tela.setVisible(true);
+        
+    }//GEN-LAST:event_jLabel6MouseClicked
+
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -279,5 +296,6 @@ public class TelaPrincipal_VIEW extends javax.swing.JFrame
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
 }
