@@ -2,6 +2,7 @@ package FusionMarket.VIEW;
 
 import FusionMarket.DAO.Produto_DAO;
 import java.awt.Color;
+import java.awt.Toolkit;
 
 public class Aviso extends javax.swing.JFrame {
 
@@ -28,6 +29,7 @@ public class Aviso extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -55,6 +57,14 @@ public class Aviso extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(380, 260, 650, 250);
 
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(0, 0, 1400, 800);
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -63,6 +73,9 @@ public class Aviso extends javax.swing.JFrame {
         
         pd.excluir_produto(produto);
         TelaPrincipal_VIEW.Painel.removeAll();
+        MaisVendidos_VIEW tela2 = new MaisVendidos_VIEW();
+        TelaPrincipal_VIEW.Painel.add(tela2);
+        tela2.toBack();
         MinhaLoja_VIEW tela = new MinhaLoja_VIEW(usuario);
         TelaPrincipal_VIEW.Painel.add(tela);
         tela.setVisible(true);
@@ -74,6 +87,12 @@ public class Aviso extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        
+        Toolkit.getDefaultToolkit().beep();   
+        
+    }//GEN-LAST:event_jLabel4MouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -111,5 +130,6 @@ public class Aviso extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }
