@@ -3,14 +3,18 @@ package FusionMarket.VIEW;
 import FusionMarket.DAO.Produto_DAO;
 import FusionMarket.POJO.Produto_POJO;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 
 public class MinhaLoja_VIEW extends javax.swing.JInternalFrame 
 {
     int Id_usuario;
+    
     Produto_POJO dados_produto;
-    Produto_DAO pd;
+    
+    Produto_DAO pd = new Produto_DAO();
+    Produto_POJO pp = new Produto_POJO();
     
     public void produto_selecionado()
     {
@@ -20,15 +24,18 @@ public class MinhaLoja_VIEW extends javax.swing.JInternalFrame
         {
             LAviso.setVisible(true);
         }
-        if(linha > 0)
+        else
         {
-            int id = Integer.parseInt(""+TTabela.getValueAt(linha, 0));
+            String id = ""+TTabela.getValueAt(linha, 0);
             dados_produto = pd.buscar_produto_id(id);
+
             AlterarProduto_VIEW tela = new AlterarProduto_VIEW(dados_produto);
             TelaPrincipal_VIEW.Painel.add(tela);
-            tela.setVisible(true);     
+            tela.setVisible(true);
+            tela.toFront();
         }
     }
+    
     public MinhaLoja_VIEW(int id) 
     {
         initComponents();
@@ -41,8 +48,6 @@ public class MinhaLoja_VIEW extends javax.swing.JInternalFrame
         BasicInternalFrameUI bi =(BasicInternalFrameUI)this.getUI();
         bi.setNorthPane(null);
         
-        Produto_DAO pd = new Produto_DAO();
-        Produto_POJO pp = new Produto_POJO();
         List lista = pd.buscar_produto(id);
         DefaultTableModel dtm = (DefaultTableModel)TTabela.getModel();
         for (int i=0 ; i < lista.size() ; i++)
@@ -52,7 +57,7 @@ public class MinhaLoja_VIEW extends javax.swing.JInternalFrame
             {
                 pp.getId_produto(),pp.getTitulo(), pp.getCategoria(), pp.getQuantidade(), pp.getPreco()
             });
-        }    
+        } 
     }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -137,11 +142,14 @@ public class MinhaLoja_VIEW extends javax.swing.JInternalFrame
     }//GEN-LAST:event_B_AdicionarMouseClicked
 
     private void B_VoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B_VoltarMouseClicked
+        
         this.dispose();
+        
     }//GEN-LAST:event_B_VoltarMouseClicked
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         
+        produto_selecionado();
         
     }//GEN-LAST:event_jLabel2MouseClicked
 

@@ -145,34 +145,41 @@ public class Produto_DAO
         }
         return lista;
         }
-        public Produto_POJO buscar_produto_id(int id)
-    {
-        Produto_POJO pp = new Produto_POJO();
-        Connection con = cn.getConnection();
-        String sql = "select * from produto where id_produto=?;";
+    
+        public Produto_POJO buscar_produto_id(String id)  
+    {   
+        Connection con= cn.getConnection();
+        
+        PreparedStatement stmt=null;
+        ResultSet rs=null;
+        Produto_POJO pp=new Produto_POJO();
         try
         {
-            PreparedStatement p = con.prepareStatement(sql);
-            p.setString(1, id+"");
-            ResultSet rs = p.executeQuery();
-            while (rs.next())
-            {
-                pp.setId_produto(rs.getInt("id_produto"));
+            stmt=con.prepareStatement("SELECT * FROM produto where id_produto=?");
+            stmt.setString(1, id);
+               
+            rs=stmt.executeQuery();
+               
+            while(rs.next())
+               {
+                   
                 pp.setTitulo(rs.getString("titulo"));
-                pp.setPreco(rs.getString("preco"));
-                pp.setCategoria(rs.getString("categoria"));
-                pp.setDescricao(rs.getString("descricao"));
-                pp.setQuantidade(rs.getInt("quantidade"));
                 pp.setCondicao(rs.getString("condicao"));
+                pp.setDescricao(rs.getString("descricao"));
+                pp.setPreco(rs.getString("preco"));
+                pp.setQuantidade(rs.getInt("quantidade"));
                 pp.setId_usuario(rs.getInt("id_usuario"));
-            }
+                pp.setId_produto(rs.getInt("id_produto"));
+                pp.setCategoria(rs.getString("categoria"));
+                
+               }
         }
-        catch (SQLException e)
+        catch (SQLException ex) 
         {
-            JOptionPane.showMessageDialog( null, e ) ;
-        }
-        return pp;
-        }   
+
+        } 
+        return pp;  
+    }   
         
         public List buscar_produto_like(String nome){
         List lista = new ArrayList();

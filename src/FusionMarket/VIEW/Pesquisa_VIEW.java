@@ -15,6 +15,7 @@ public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
     Produto_POJO pp = new Produto_POJO();
     Produto_DAO pd = new Produto_DAO();
     Usuario_DAO ud = new Usuario_DAO();
+    
     Produto_POJO produtoPojo;
     Usuario_POJO usuarioPojo;
     Usuario_POJO vendedor;
@@ -29,7 +30,7 @@ public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
         }
         if(linha > 0)
         {
-            int id = Integer.parseInt(""+TTable.getValueAt(linha, 0));
+            String id = ""+TTable.getValueAt(linha, 0);
             produtoPojo = pd.buscar_produto_id(id);
             
             String id_vendedor = ""+produtoPojo.getId_usuario();
@@ -58,8 +59,7 @@ public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
         
         });
         
-                
-
+      
         }
          
         
