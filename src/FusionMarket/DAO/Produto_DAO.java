@@ -205,6 +205,7 @@ public class Produto_DAO
         }
         return lista;
     }
+    
         public void alterar_produto(Produto_POJO produto)
     {
         Connection con = cn.getConnection();
@@ -221,6 +222,22 @@ public class Produto_DAO
                 p.setString(6, produto.getCondicao());
                 p.setInt(7, produto.getId_produto());
                
+                p.executeUpdate();
+            }
+            catch (SQLException e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+    }
+    
+        public void excluir_produto(Produto_POJO produto)
+    {
+        Connection con = cn.getConnection();
+        String sql = "delete from produto where id_produto = ?;";
+            try
+            {    
+                PreparedStatement p = con.prepareStatement(sql);
+                p.setInt(1, produto.getId_produto()); 
                 p.executeUpdate();
             }
             catch (SQLException e)
