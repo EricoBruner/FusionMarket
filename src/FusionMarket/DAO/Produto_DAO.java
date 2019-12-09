@@ -205,7 +205,7 @@ public class Produto_DAO
         }
         return lista;
     }
-            public void alterar_produto(Produto_POJO produto)
+        public void alterar_produto(Produto_POJO produto)
     {
         Connection con = cn.getConnection();
         String sql = "update produto set titulo = ?, preco = ?, quantidade = ?, categoria = ?, descricao = ?, condicao = ? where id_produto = ?;";
