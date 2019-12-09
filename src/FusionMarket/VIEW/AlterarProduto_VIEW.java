@@ -1,5 +1,6 @@
 package FusionMarket.VIEW;
 
+import FusionMarket.DAO.Produto_DAO;
 import FusionMarket.POJO.Produto_POJO;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
@@ -7,8 +8,43 @@ public class AlterarProduto_VIEW extends javax.swing.JInternalFrame {
     
     String Descricao;
     
+    Produto_POJO pp = new Produto_POJO();
+    Produto_DAO pd = new Produto_DAO();
     
-    public AlterarProduto_VIEW(Produto_POJO produto) 
+    int Id_usuario;
+    
+    int Id_produto;
+    
+    public void Pegar_Dados_Nova_Descricao()
+    {
+        pp.setTitulo(TTitulo.getText());
+        pp.setPreco(TPreco.getText());
+        pp.setQuantidade(Integer.parseInt(TQuantidade.getText()));
+        String Descricao = "<html>"+Descricao1.getText();
+        Descricao = Descricao+"<p>"+ Descricao2.getText();
+        Descricao = Descricao+"<p>"+ Descricao3.getText();
+        Descricao = Descricao+"<p>"+ Descricao4.getText();
+        Descricao = Descricao+"<p>"+ Descricao5.getText();
+        Descricao = Descricao+"<p>"+ Descricao6.getText()+"<html>";
+        pp.setDescricao(Descricao);
+        pp.setCategoria(TCategoria.getText());
+        pp.setCondicao(""+TCondicao.getSelectedItem());
+        pp.setId_usuario(Id_usuario);
+        pp.setId_produto(Id_produto);
+    }
+        public void Pegar_Dados()
+    {
+        pp.setTitulo(TTitulo.getText());
+        pp.setPreco(TPreco.getText());
+        pp.setQuantidade(Integer.parseInt(TQuantidade.getText()));
+        pp.setDescricao(TDescricao.getText());
+        pp.setCategoria(TCategoria.getText());
+        pp.setCondicao(""+TCondicao.getSelectedItem());
+        pp.setId_usuario(Id_usuario);
+        pp.setId_produto(Id_produto);
+    }
+    
+    public AlterarProduto_VIEW(Produto_POJO produto, int Id) 
     {
         initComponents();
         
@@ -16,7 +52,13 @@ public class AlterarProduto_VIEW extends javax.swing.JInternalFrame {
         BasicInternalFrameUI bi =(BasicInternalFrameUI)this.getUI();
         bi.setNorthPane(null);
         
+        Id_produto = produto.getId_produto();
+        
         TTitulo.setText(produto.getTitulo());
+        
+        Id_usuario = Id;
+        
+        Descricao = "Sem_mudança";
         
         String cond = produto.getCondicao();
         int condicao = 0;
@@ -74,6 +116,7 @@ public class AlterarProduto_VIEW extends javax.swing.JInternalFrame {
         Descricao4 = new javax.swing.JTextField();
         Descricao5 = new javax.swing.JTextField();
         Descricao6 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(950, 550));
@@ -147,6 +190,8 @@ public class AlterarProduto_VIEW extends javax.swing.JInternalFrame {
         });
         getContentPane().add(LNovaDescricao);
         LNovaDescricao.setBounds(589, 376, 120, 30);
+
+        TDescricao.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         getContentPane().add(TDescricao);
         TDescricao.setBounds(430, 150, 280, 260);
 
@@ -233,6 +278,14 @@ public class AlterarProduto_VIEW extends javax.swing.JInternalFrame {
         getContentPane().add(Descricao6);
         Descricao6.setBounds(430, 340, 280, 30);
 
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(747, 469, 170, 50);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_EditarProduto.png"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 950, 550);
@@ -286,6 +339,33 @@ public class AlterarProduto_VIEW extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Descricao1ActionPerformed
 
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        
+        if (Descricao.equals("Nova_mudança"))
+        {
+            Pegar_Dados_Nova_Descricao();
+            pd.alterar_produto(pp);
+            
+            TelaPrincipal_VIEW.Painel.removeAll();
+            MinhaLoja_VIEW tela = new MinhaLoja_VIEW(Id_usuario);
+            TelaPrincipal_VIEW.Painel.add(tela);
+            tela.setVisible(true);
+            
+        }
+        
+        if(Descricao.equals("Sem_mudança"))
+        {
+            Pegar_Dados();
+            pd.alterar_produto(pp);
+            
+            TelaPrincipal_VIEW.Painel.removeAll();
+            MinhaLoja_VIEW tela = new MinhaLoja_VIEW(Id_usuario);
+            TelaPrincipal_VIEW.Painel.add(tela);
+            tela.setVisible(true);
+            
+        }
+    }//GEN-LAST:event_jLabel4MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Descricao1;
@@ -312,5 +392,6 @@ public class AlterarProduto_VIEW extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }

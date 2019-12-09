@@ -205,5 +205,28 @@ public class Produto_DAO
         }
         return lista;
     }
+            public void alterar_produto(Produto_POJO produto)
+    {
+        Connection con = cn.getConnection();
+        String sql = "update produto set titulo = ?, preco = ?, quantidade = ?, categoria = ?, descricao = ?, condicao = ? where id_produto = ?;";
+            try
+            {
+                
+                PreparedStatement p = con.prepareStatement(sql);
+                p.setString(1, produto.getTitulo());
+                p.setString(2, produto.getPreco());
+                p.setInt(3, produto.getQuantidade());
+                p.setString(4, produto.getCategoria());
+                p.setString(5, produto.getDescricao());
+                p.setString(6, produto.getCondicao());
+                p.setInt(7, produto.getId_produto());
+               
+                p.executeUpdate();
+            }
+            catch (SQLException e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+    }
 }
 

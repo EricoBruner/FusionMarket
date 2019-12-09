@@ -29,7 +29,7 @@ public class MinhaLoja_VIEW extends javax.swing.JInternalFrame
             String id = ""+TTabela.getValueAt(linha, 0);
             dados_produto = pd.buscar_produto_id(id);
 
-            AlterarProduto_VIEW tela = new AlterarProduto_VIEW(dados_produto);
+            AlterarProduto_VIEW tela = new AlterarProduto_VIEW(dados_produto, Id_usuario);
             TelaPrincipal_VIEW.Painel.add(tela);
             tela.setVisible(true);
             tela.toFront();
