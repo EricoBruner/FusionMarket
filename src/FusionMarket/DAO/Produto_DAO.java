@@ -230,14 +230,14 @@ public class Produto_DAO
             }
     }
     
-        public void excluir_produto(Produto_POJO produto)
+        public void excluir_produto(int id)
     {
         Connection con = cn.getConnection();
         String sql = "delete from produto where id_produto = ?;";
             try
             {    
                 PreparedStatement p = con.prepareStatement(sql);
-                p.setInt(1, produto.getId_produto()); 
+                p.setInt(1, id); 
                 p.executeUpdate();
             }
             catch (SQLException e)
