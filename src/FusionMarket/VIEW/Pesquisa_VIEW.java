@@ -44,6 +44,26 @@ public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
             tela_vermais.setVisible(true);
         }
     }
+    public void produto_selecionado_comprar()
+    {
+        int linha = TTable.getSelectedRow();
+        
+        if(linha < 0 )
+        {
+            LAviso.setVisible(true);
+        }
+        if(linha > 0)
+        {
+            String id = ""+TTable.getValueAt(linha, 0);
+            produtoPojo = pd.buscar_produto_id(id);
+            
+            buscar_vendedor();
+            
+            ConfirmarDados_VIEW tela_confirmardados = new ConfirmarDados_VIEW(usuarioPojo, vendedor, produtoPojo);
+            TelaPrincipal_VIEW.Painel.add(tela_confirmardados);
+            tela_confirmardados.setVisible(true);
+        }
+    }
     public Pesquisa_VIEW(Usuario_POJO up , String nome) 
     {
         initComponents();
@@ -139,11 +159,7 @@ public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         
-        //buscar_vendedor();
-        
-        //ConfirmarDados_VIEW tela_confirmardados = new ConfirmarDados_VIEW(usuarioPojo, vendedor, produtoPojo);
-        //TelaPrincipal_VIEW.Painel.add(tela_confirmardados);
-        //tela_confirmardados.setVisible(true);
+        produto_selecionado_comprar();
         
     }//GEN-LAST:event_jLabel3MouseClicked
 
