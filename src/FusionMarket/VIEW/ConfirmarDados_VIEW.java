@@ -13,11 +13,13 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
     Usuario_POJO dados_vendedor;
     Produto_POJO dados_produto;
     int quantidade = 0;
+    int max = 0;
     
     public void pegar_quantidade()
-    {
-        quantidade = Caixa_quantidade.getSelectedIndex();
+    {   
+        quantidade = Caixa_quantidade.getSelectedIndex();    
     }
+    
     public ConfirmarDados_VIEW(Usuario_POJO up, Usuario_POJO vendedor, Produto_POJO produto) 
     {
         initComponents();
@@ -37,10 +39,14 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         LBoleto.setVisible(false);
         
         Aviso.setVisible(false);
+        Aviso_2.setVisible(false);
+        Aviso_3.setVisible(false);
         
         dados_usuario = up;
         dados_vendedor = vendedor;
         dados_produto = produto;
+        
+        max = produto.getQuantidade();
     }
 
     @SuppressWarnings("unchecked")
@@ -59,6 +65,8 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         Caixa_quantidade = new javax.swing.JComboBox();
         jLabel5 = new javax.swing.JLabel();
         Aviso = new javax.swing.JLabel();
+        Aviso_2 = new javax.swing.JLabel();
+        Aviso_3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(950, 550));
@@ -118,7 +126,7 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         getContentPane().add(LBoleto);
         LBoleto.setBounds(93, 303, 169, 51);
 
-        Caixa_quantidade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "   1", "   2", "   3", "   4", "   5", "   6", "   8", "   9 ", "  10", "  11", "  12", "  13", "  14", "  15", "  16", "  17", "  18", "  19", "  20" }));
+        Caixa_quantidade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "   0 ", "   1", "   2", "   3", "   4", "   5", "   6", "   8", "   9 ", "  10", "  11", "  12", "  13", "  14", "  15", "  16", "  17", "  18", "  19", "  20" }));
         Caixa_quantidade.setBorder(null);
         Caixa_quantidade.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Caixa_quantidade.setVerifyInputWhenFocusTarget(false);
@@ -139,6 +147,19 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         getContentPane().add(Aviso);
         Aviso.setBounds(667, 440, 250, 14);
 
+        Aviso_2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        Aviso_2.setForeground(new java.awt.Color(255, 0, 0));
+        Aviso_2.setText("Selecione quantos produtos deseja");
+        getContentPane().add(Aviso_2);
+        Aviso_2.setBounds(719, 422, 200, 14);
+
+        Aviso_3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        Aviso_3.setForeground(new java.awt.Color(255, 0, 0));
+        Aviso_3.setText("Apenas 5 produtos disponiveis");
+        getContentPane().add(Aviso_3);
+        Aviso_3.setBounds(90, 460, 180, 14);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FusionMarket/IMAGENS/Painel_ConfirmarDados_VIEW.png"))); // NOI18N
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -198,21 +219,40 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         if (tipo_pagamento == "boleto")
         {
             pegar_quantidade();
-            
-            PagamentoRealizado_VIEW aviso = new PagamentoRealizado_VIEW(tipo_pagamento,dados_usuario,dados_vendedor,quantidade, dados_produto);
-            MaisVendidos_VIEW tela = new MaisVendidos_VIEW();
-            TelaPrincipal_VIEW.Painel.removeAll();
-            TelaPrincipal_VIEW.Painel.add(tela);
-            TelaPrincipal_VIEW.Painel.add(aviso);
-            tela.setVisible(true);
-            aviso.setVisible(true);
-            aviso.toFront();
+            if (quantidade == 0)
+            {
+                Aviso_2.setVisible(true);
+            }
+            if (quantidade > max )
+            {
+                Aviso_3.setVisible(true);
+            }
+            if (quantidade > 0 && quantidade < max )
+            { 
+                PagamentoRealizado_VIEW aviso = new PagamentoRealizado_VIEW(tipo_pagamento,dados_usuario,dados_vendedor,quantidade, dados_produto);
+                MaisVendidos_VIEW tela = new MaisVendidos_VIEW();
+                TelaPrincipal_VIEW.Painel.removeAll();
+                TelaPrincipal_VIEW.Painel.add(tela);
+                TelaPrincipal_VIEW.Painel.add(aviso);
+                tela.setVisible(true);
+                aviso.setVisible(true);
+                aviso.toFront();
+            }
         }
         
         if (tipo_pagamento == "cartão")
         {
             pegar_quantidade();
-            
+            if (quantidade == 0)
+            {
+                Aviso_2.setVisible(true);
+            }
+            if (quantidade > max )
+            {
+                Aviso_3.setVisible(true);
+            }
+            if (quantidade > 0 && quantidade < max )
+            { 
             PagamentoRealizado_VIEW aviso = new PagamentoRealizado_VIEW(tipo_pagamento,dados_usuario,dados_vendedor,quantidade, dados_produto);
             MaisVendidos_VIEW tela = new MaisVendidos_VIEW();
             TelaPrincipal_VIEW.Painel.removeAll();
@@ -221,12 +261,15 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
             tela.setVisible(true);
             aviso.setVisible(true);   
             aviso.toFront();
+            }
         }
     }//GEN-LAST:event_jLabel5MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Aviso;
+    private javax.swing.JLabel Aviso_2;
+    private javax.swing.JLabel Aviso_3;
     private javax.swing.JComboBox Caixa_quantidade;
     private javax.swing.JLabel LBoleto;
     private javax.swing.JLabel LCartao;

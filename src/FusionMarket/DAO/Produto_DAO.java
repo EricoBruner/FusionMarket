@@ -254,8 +254,8 @@ public class Produto_DAO
             {
                 
                 PreparedStatement p = con.prepareStatement(sql);
-                p.setInt(3, nova_quantidade);
-                p.setInt(7, produto.getId_produto());
+                p.setInt(1, nova_quantidade);
+                p.setInt(2, produto.getId_produto());
                
                 p.executeUpdate();
             }

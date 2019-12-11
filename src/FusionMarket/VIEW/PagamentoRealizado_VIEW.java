@@ -16,14 +16,14 @@ public class PagamentoRealizado_VIEW extends javax.swing.JInternalFrame {
         LVendedor.setText(dados_vendedor.getNome());
         LProduto.setText(dados_produto.getTitulo());
         LPagamento.setText(tipo_pagamento);
-        LQuantidade.setText(""+(quantidade+1));
+        LQuantidade.setText(""+(quantidade));
         LEndereco.setText(dados_usuario.getEndereco());
         
         float valor = Float.parseFloat(dados_produto.getPreco());
     
-        LValor_total.setText("RS"+valor*(quantidade+1));
+        LValor_total.setText("RS"+valor*(quantidade));
         
-        int nova_quantidade = (dados_produto.getQuantidade()) - (quantidade+1);
+        int nova_quantidade = (dados_produto.getQuantidade()) - (quantidade);
         
         pd.retirar_produto_comprado(dados_produto, nova_quantidade);
             

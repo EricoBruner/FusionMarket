@@ -6,7 +6,6 @@ import FusionMarket.MODEL.Produto_MODEL;
 import FusionMarket.POJO.Produto_POJO;
 import FusionMarket.POJO.Usuario_POJO;
 import java.util.List;
-import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 
