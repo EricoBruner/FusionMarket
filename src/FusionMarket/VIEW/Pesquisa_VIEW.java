@@ -20,6 +20,11 @@ public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
     Usuario_POJO usuarioPojo;
     Usuario_POJO vendedor;
     
+    public  void buscar_vendedor()
+    {
+        String id_vendedor = ""+produtoPojo.getId_usuario();
+        vendedor = ud.buscar_usuario_id(id_vendedor);
+    }
     public void produto_selecionado()
     {
         int linha = TTable.getSelectedRow();
@@ -33,8 +38,7 @@ public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
             String id = ""+TTable.getValueAt(linha, 0);
             produtoPojo = pd.buscar_produto_id(id);
             
-            String id_vendedor = ""+produtoPojo.getId_usuario();
-            vendedor = ud.buscar_usuario_id(id_vendedor);
+            buscar_vendedor();
             
             VerMais_VIEW tela_vermais = new VerMais_VIEW(produtoPojo, usuarioPojo, vendedor);
             TelaPrincipal_VIEW.Painel.add(tela_vermais);
@@ -135,7 +139,9 @@ public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         
-        ConfirmarDados_VIEW tela_confirmardados = new ConfirmarDados_VIEW(usuarioPojo);
+        buscar_vendedor();
+        
+        ConfirmarDados_VIEW tela_confirmardados = new ConfirmarDados_VIEW(usuarioPojo, vendedor, produtoPojo);
         TelaPrincipal_VIEW.Painel.add(tela_confirmardados);
         tela_confirmardados.setVisible(true);
         

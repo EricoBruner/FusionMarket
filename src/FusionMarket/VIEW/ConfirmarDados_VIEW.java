@@ -1,16 +1,24 @@
 package FusionMarket.VIEW;
 
+import FusionMarket.POJO.Produto_POJO;
 import FusionMarket.POJO.Usuario_POJO;
 import java.awt.Color;
-import static java.lang.Thread.sleep;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame 
 {
     
-    String tipo_pagamento = "vazio";
+    String tipo_pagamento = "vazio";   
+    Usuario_POJO dados_usuario;  
+    Usuario_POJO dados_vendedor;
+    Produto_POJO dados_produto;
+    String quantidade = "0";
     
-    public ConfirmarDados_VIEW(Usuario_POJO up) 
+    public void pegar_quantidade()
+    {
+        quantidade = "" + Caixa_quantidade.getSelectedItem();
+    }
+    public ConfirmarDados_VIEW(Usuario_POJO up, Usuario_POJO vendedor, Produto_POJO produto) 
     {
         initComponents();
         
@@ -30,6 +38,9 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         
         Aviso.setVisible(false);
         
+        dados_usuario = up;
+        dados_vendedor = vendedor;
+        dados_produto = produto;
     }
 
     @SuppressWarnings("unchecked")
@@ -45,7 +56,7 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         jLabel2 = new javax.swing.JLabel();
         LCartao = new javax.swing.JLabel();
         LBoleto = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        Caixa_quantidade = new javax.swing.JComboBox();
         jLabel5 = new javax.swing.JLabel();
         Aviso = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -107,11 +118,11 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         getContentPane().add(LBoleto);
         LBoleto.setBounds(93, 303, 169, 51);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "   1", "   2", "   3", "   4", "   5", "   6", "   8", "   9 ", "  10" }));
-        jComboBox1.setBorder(null);
-        jComboBox1.setVerifyInputWhenFocusTarget(false);
-        getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(237, 412, 50, 38);
+        Caixa_quantidade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "   1", "   2", "   3", "   4", "   5", "   6", "   8", "   9 ", "  10" }));
+        Caixa_quantidade.setBorder(null);
+        Caixa_quantidade.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(Caixa_quantidade);
+        Caixa_quantidade.setBounds(237, 412, 50, 38);
 
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -185,7 +196,9 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         
         if (tipo_pagamento == "boleto")
         {
-            PagamentoRealizado_VIEW aviso = new PagamentoRealizado_VIEW(tipo_pagamento);
+            pegar_quantidade();
+            
+            PagamentoRealizado_VIEW aviso = new PagamentoRealizado_VIEW(tipo_pagamento,dados_usuario,dados_vendedor,quantidade, dados_produto);
             MaisVendidos_VIEW tela = new MaisVendidos_VIEW();
             TelaPrincipal_VIEW.Painel.removeAll();
             TelaPrincipal_VIEW.Painel.add(tela);
@@ -196,7 +209,9 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         
         if (tipo_pagamento == "cartão")
         {
-            PagamentoRealizado_VIEW aviso = new PagamentoRealizado_VIEW(tipo_pagamento);
+            pegar_quantidade();
+            
+            PagamentoRealizado_VIEW aviso = new PagamentoRealizado_VIEW(tipo_pagamento,dados_usuario,dados_vendedor,quantidade, dados_produto);
             MaisVendidos_VIEW tela = new MaisVendidos_VIEW();
             TelaPrincipal_VIEW.Painel.removeAll();
             TelaPrincipal_VIEW.Painel.add(tela);
@@ -209,13 +224,13 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Aviso;
+    private javax.swing.JComboBox Caixa_quantidade;
     private javax.swing.JLabel LBoleto;
     private javax.swing.JLabel LCartao;
     private javax.swing.JLabel LCpf;
     private javax.swing.JLabel LEmail;
     private javax.swing.JLabel LEndereco;
     private javax.swing.JLabel LNome;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

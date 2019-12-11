@@ -13,6 +13,7 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
     
     Usuario_POJO up;
     Usuario_POJO vendedor;
+    Produto_POJO produto;
     
     public VerMais_VIEW(Produto_POJO dados_produto, Usuario_POJO dados_usuario, Usuario_POJO dados_vendedor) 
     {
@@ -31,8 +32,8 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
         LVendedor.setText(dados_vendedor.getNome());
         
         vendedor = dados_vendedor;
-        
         up = dados_usuario;
+        produto = dados_produto;
 
     }
 
@@ -133,7 +134,7 @@ public class VerMais_VIEW extends javax.swing.JInternalFrame {
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         
-        ConfirmarDados_VIEW tela = new ConfirmarDados_VIEW(up);
+        ConfirmarDados_VIEW tela = new ConfirmarDados_VIEW(up, vendedor, produto);
         TelaPrincipal_VIEW.Painel.add(tela);
         tela.setVisible(true);
         
