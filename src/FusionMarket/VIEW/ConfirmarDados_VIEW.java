@@ -126,7 +126,7 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         getContentPane().add(LBoleto);
         LBoleto.setBounds(93, 303, 169, 51);
 
-        Caixa_quantidade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "   0 ", "   1", "   2", "   3", "   4", "   5", "   6", "   8", "   9 ", "  10", "  11", "  12", "  13", "  14", "  15", "  16", "  17", "  18", "  19", "  20" }));
+        Caixa_quantidade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "   0 ", "   1", "   2", "   3", "   4", "   5", "   6", "   7", "   8", "   9 ", "  10", "  11", "  12", "  13", "  14", "  15", "  16", "  17", "  18", "  19", "  20", "  21", "  22 ", "  23", "  24 ", "  25", "  26", "  27", "  28" }));
         Caixa_quantidade.setBorder(null);
         Caixa_quantidade.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Caixa_quantidade.setVerifyInputWhenFocusTarget(false);
@@ -224,7 +224,8 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
                 Aviso_2.setVisible(true);
             }
             if (quantidade > max )
-            {
+            {    
+                Aviso_3.setText("Apenas "+dados_produto.getQuantidade()+" produtos disponiveis");
                 Aviso_3.setVisible(true);
             }
             if (quantidade > 0 && quantidade < max )
@@ -249,6 +250,7 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
             }
             if (quantidade > max )
             {
+                Aviso_3.setText("Apenas "+dados_produto.getQuantidade()+" produtos disponiveis");
                 Aviso_3.setVisible(true);
             }
             if (quantidade > 0 && quantidade < max )
