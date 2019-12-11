@@ -245,5 +245,24 @@ public class Produto_DAO
                 JOptionPane.showMessageDialog(null, e);
             }
     }
+        
+    public void retirar_produto_comprado(Produto_POJO produto, int nova_quantidade)
+    {
+        Connection con = cn.getConnection();
+        String sql = "update produto set quantidade = ? where id_produto = ?;";
+            try
+            {
+                
+                PreparedStatement p = con.prepareStatement(sql);
+                p.setInt(3, nova_quantidade);
+                p.setInt(7, produto.getId_produto());
+               
+                p.executeUpdate();
+            }
+            catch (SQLException e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+    }
 }
 

@@ -103,6 +103,7 @@ public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
         getContentPane().add(jLabel3);
         jLabel3.setBounds(20, 20, 200, 50);
 
+        TTable.setFont(new java.awt.Font("Arial", 0, 17)); // NOI18N
         TTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

@@ -1,9 +1,12 @@
 package FusionMarket.VIEW;
 
+import FusionMarket.DAO.Produto_DAO;
 import FusionMarket.POJO.Produto_POJO;
 import FusionMarket.POJO.Usuario_POJO;
 
 public class PagamentoRealizado_VIEW extends javax.swing.JInternalFrame {
+    
+    Produto_DAO pd = new Produto_DAO();
     
     public PagamentoRealizado_VIEW(String tipo_pagamento, Usuario_POJO dados_usuario, Usuario_POJO dados_vendedor, int quantidade, Produto_POJO dados_produto)
     {
@@ -20,6 +23,10 @@ public class PagamentoRealizado_VIEW extends javax.swing.JInternalFrame {
     
         LValor_total.setText("RS"+valor*(quantidade+1));
         
+        int nova_quantidade = (dados_produto.getQuantidade()) - (quantidade+1);
+        
+        pd.retirar_produto_comprado(dados_produto, nova_quantidade);
+            
     }
 
     @SuppressWarnings("unchecked")
