@@ -16,7 +16,7 @@ public class PagamentoRealizado_VIEW extends javax.swing.JInternalFrame {
         LQuantidade.setText(""+(quantidade+1));
         LEndereco.setText(dados_usuario.getEndereco());
         
-        int valor = Integer.parseInt(dados_produto.getPreco());
+        float valor = Float.parseFloat(dados_produto.getPreco());
     
         LValor_total.setText("RS"+valor*(quantidade+1));
         
