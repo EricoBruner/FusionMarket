@@ -139,11 +139,11 @@ public class Pesquisa_VIEW extends javax.swing.JInternalFrame {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         
-        buscar_vendedor();
+        //buscar_vendedor();
         
-        ConfirmarDados_VIEW tela_confirmardados = new ConfirmarDados_VIEW(usuarioPojo, vendedor, produtoPojo);
-        TelaPrincipal_VIEW.Painel.add(tela_confirmardados);
-        tela_confirmardados.setVisible(true);
+        //ConfirmarDados_VIEW tela_confirmardados = new ConfirmarDados_VIEW(usuarioPojo, vendedor, produtoPojo);
+        //TelaPrincipal_VIEW.Painel.add(tela_confirmardados);
+        //tela_confirmardados.setVisible(true);
         
     }//GEN-LAST:event_jLabel3MouseClicked
 

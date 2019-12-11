@@ -4,8 +4,8 @@ import FusionMarket.POJO.Produto_POJO;
 import FusionMarket.POJO.Usuario_POJO;
 
 public class PagamentoRealizado_VIEW extends javax.swing.JInternalFrame {
-
-    public PagamentoRealizado_VIEW(String tipo_pagamento, Usuario_POJO dados_usuario, Usuario_POJO dados_vendedor, String quantidade, Produto_POJO dados_produto)
+    
+    public PagamentoRealizado_VIEW(String tipo_pagamento, Usuario_POJO dados_usuario, Usuario_POJO dados_vendedor, int quantidade, Produto_POJO dados_produto)
     {
         initComponents();
         
@@ -13,14 +13,13 @@ public class PagamentoRealizado_VIEW extends javax.swing.JInternalFrame {
         LVendedor.setText(dados_vendedor.getNome());
         LProduto.setText(dados_produto.getTitulo());
         LPagamento.setText(tipo_pagamento);
-        LQuantidade.setText(quantidade);
+        LQuantidade.setText(""+(quantidade+1));
         LEndereco.setText(dados_usuario.getEndereco());
         
-        int quant = Integer.parseInt(quantidade);
         int valor = Integer.parseInt(dados_produto.getPreco());
+    
+        LValor_total.setText("RS"+valor*(quantidade+1));
         
-        int total = (quant * valor);
-        LValor_total.setText("R$ "+total);
     }
 
     @SuppressWarnings("unchecked")

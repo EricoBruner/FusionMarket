@@ -12,11 +12,11 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
     Usuario_POJO dados_usuario;  
     Usuario_POJO dados_vendedor;
     Produto_POJO dados_produto;
-    String quantidade = "0";
+    int quantidade = 0;
     
     public void pegar_quantidade()
     {
-        quantidade = "" + Caixa_quantidade.getSelectedItem();
+        quantidade = Caixa_quantidade.getSelectedIndex();
     }
     public ConfirmarDados_VIEW(Usuario_POJO up, Usuario_POJO vendedor, Produto_POJO produto) 
     {
@@ -118,8 +118,9 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
         getContentPane().add(LBoleto);
         LBoleto.setBounds(93, 303, 169, 51);
 
-        Caixa_quantidade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "   1", "   2", "   3", "   4", "   5", "   6", "   8", "   9 ", "  10" }));
+        Caixa_quantidade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "   1", "   2", "   3", "   4", "   5", "   6", "   8", "   9 ", "  10", "  11", "  12", "  13", "  14", "  15", "  16", "  17", "  18", "  19", "  20" }));
         Caixa_quantidade.setBorder(null);
+        Caixa_quantidade.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Caixa_quantidade.setVerifyInputWhenFocusTarget(false);
         getContentPane().add(Caixa_quantidade);
         Caixa_quantidade.setBounds(237, 412, 50, 38);
@@ -204,7 +205,8 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
             TelaPrincipal_VIEW.Painel.add(tela);
             TelaPrincipal_VIEW.Painel.add(aviso);
             tela.setVisible(true);
-            tela.setVisible(true);    
+            aviso.setVisible(true);
+            aviso.toFront();
         }
         
         if (tipo_pagamento == "cartão")
@@ -217,7 +219,8 @@ public class ConfirmarDados_VIEW extends javax.swing.JInternalFrame
             TelaPrincipal_VIEW.Painel.add(tela);
             TelaPrincipal_VIEW.Painel.add(aviso);
             tela.setVisible(true);
-            aviso.setVisible(true);    
+            aviso.setVisible(true);   
+            aviso.toFront();
         }
     }//GEN-LAST:event_jLabel5MouseClicked
 
